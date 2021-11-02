@@ -24,6 +24,9 @@ option {
     margin: 0 10px;
   } */
 .slick-arrow {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
   position: absolute;
   top: 50%;
   transform: translateY(-150%);
@@ -43,6 +46,10 @@ option {
   transition: all 0.2s linear;
   background-color: #112d6b;
   color: white;
+}
+.image-slider:hover .slick-arrow {
+  opacity: 1;
+  visibility: visible;
 }
 .slick-prev {
   left: 10px;
