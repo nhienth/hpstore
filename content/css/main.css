@@ -143,39 +143,37 @@
 .img-category::before {
   content: "";
   position: absolute;
-  width: 0;
+  width: 100%;
   height: 100%;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 1;
-  background: rgba(67, 69, 113, 0.2);
-  /* background: rgba(255, 0, 0, 0.534); */
+  background: rgba(250, 250, 210, 0.1);
+  background: rgba(67, 69, 113, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease-in-out;
 }
 .img-category:hover::before {
-  width: 100%;
-  /* left: 50%;
-  transform: translate(-50%, 0); */
+  width: 0;
 }
-
-/* .img-category::after {
+.img-category::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
+  top: 50%;
   left: 0;
+  transform: translate(0, -50%);
   z-index: 1;
-  background: rgba(67, 69, 113, 0);
-  background: rgba(255, 0, 0, 0.404);
-  -webkit-transition: all 0.5s ease-in-out;
+  background: rgba(250, 250, 210, 0.1);
+  background: rgba(67, 69, 113, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease-in-out;
 }
 .img-category:hover::after {
-  width: 0;
   height: 0;
-} */
+}
 .awe-section-6 {
   margin: 0 auto;
   margin-top: 40px;
