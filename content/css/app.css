@@ -95,3 +95,46 @@ body::-webkit-scrollbar-thumb {
   background-color: #112d6b;
   transition: all 0.2s linear;
 }
+#myBtn {
+  visibility: hidden;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #112d6b;
+  color: #fff;
+  cursor: pointer;
+  line-height: 35px;
+  border-radius: 3px;
+  font-size: 18px;
+  height: 35px;
+  width: 35px;
+  /* position: relative; */
+}
+#myBtn::before {
+  content: "";
+  position: absolute;
+  font-size: 14px;
+  color: white;
+  background-color: white;
+  border-radius: 100rem;
+  width: 50%;
+  height: 50%;
+  color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#myBtn::after {
+  content: "\f062";
+  font-family: FontAwesome;
+  position: absolute;
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #112d6b;
+  font-size: 13px;
+}

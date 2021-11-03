@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .awe-section-1 {
   margin-bottom: 25px;
 }
