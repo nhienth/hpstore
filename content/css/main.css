@@ -188,17 +188,22 @@
   padding-bottom: 5px;
   transition: all 0.2s linear;
 }
-.section6-title:hover {
+.section6-title a {
+  color: black;
+  transition: all 0.2s linear;
+}
+.section6-title a:hover {
   color: #112d6b;
 }
 .section6-title::before {
   content: "";
   width: 260px;
-  height: 2px;
+  height: 1.5px;
   background-color: #fc0137;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 1px;
+  z-index: 2;
   transform: translateY(100%);
 }
 .section6-news {
