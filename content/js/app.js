@@ -9,9 +9,9 @@ window.onscroll = function () {
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     // mybutton.style.display = "block";
-
     mybutton.style.opacity = "1";
     mybutton.style.visibility = "visible";
+    mybutton.style.transition = "all 0.2s ease";
   } else {
     // mybutton.style.display = "none";
     mybutton.style.opacity = "0";
