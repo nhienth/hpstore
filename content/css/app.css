@@ -9,6 +9,7 @@ select,
 textarea,
 option {
   font-family: "Fira Sans", sans-serif;
+  font-size: 14px;
 }
 body::-webkit-scrollbar {
   width: 1em;

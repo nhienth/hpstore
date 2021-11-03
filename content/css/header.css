@@ -205,8 +205,30 @@
 }
 .account-hover ul li a {
   transition: all 0.2s linear;
-  color: black;
+  color: #0a1a3f;
 }
 .account-hover ul li a:hover {
+  color: red;
+}
+.bottom-nav {
+  background-color: rgba(211, 211, 211, 0.2);
+  padding: 13px 0px;
+}
+.bottom-nav--title {
+  margin: 0 auto;
+}
+.blue {
   color: #0a1a3f;
+}
+.fa-chevron-right {
+  font-size: 12px;
+  color: gray;
+}
+.bottom-nav--title a {
+  color: gray;
+  transition: all 0.2s linear;
+}
+.bottom-nav--title a:hover {
+  color: #0a1a3f;
+  color: #112d6b;
 }
