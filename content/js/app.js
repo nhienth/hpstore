@@ -1,5 +1,6 @@
 //Get the button:
 mybutton = document.getElementById("myBtn");
+mynavigation = document.querySelector(".main-navagation");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
@@ -8,15 +9,18 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    // mybutton.style.display = "block";
     mybutton.style.opacity = "1";
     mybutton.style.visibility = "visible";
     mybutton.style.transition = "all 0.2s ease";
+    mynavigation.style.position = "fixed";
+    mynavigation.style.top = "0";
+    mynavigation.style.left = "0";
+    mynavigation.style.zIndex = "999";
   } else {
-    // mybutton.style.display = "none";
     mybutton.style.opacity = "0";
     mybutton.style.visibility = "hidden";
     mybutton.style.transition = "all 0.2s ease";
+    mynavigation.style.position = "relative";
   }
 }
 
