@@ -15,7 +15,7 @@ function scrollFunction() {
     mynavigation.style.position = "fixed";
     mynavigation.style.top = "0";
     mynavigation.style.left = "0";
-    mynavigation.style.zIndex = "999";
+    mynavigation.style.zIndex = "99";
   } else {
     mybutton.style.opacity = "0";
     mybutton.style.visibility = "hidden";
