@@ -111,6 +111,7 @@
   background-color: #0a1a3f;
   padding: 12px 14px;
   border-radius: 100rem;
+  cursor: pointer;
 }
 @keyframes phone-ring {
   0% {
