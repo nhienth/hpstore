@@ -49,7 +49,10 @@
     <link rel="stylesheet" href="../../content/css/footer.css" />
     <link rel="stylesheet" href="../../content/css/main.css" />
     <link rel="stylesheet" href="../../content/css/login.css" />
-    <title>Đăng ký tài khoản</title>
+    <link rel="stylesheet" href="../../content/css/product.css" />
+    <link rel="stylesheet" href="../../content/css/details.css" />
+    <link rel="stylesheet" href="../../content/css/cart.css" />
+    <title>Giày bóng chuyền chính hãng</title>
   </head>
   <body>
     <header class="header">
@@ -79,7 +82,7 @@
             <ul>
               <li><a href="login.html">Đăng nhập</a></li>
               <li><a href="register.html">Đăng ký</a></li>
-              <li><a href="forget-pass.html">Quên mật khẩu</a></li>
+              <li><a href="#">Quên mật khẩu</a></li>
             </ul>
           </div>
           <div class="account-icon"><i class="fas fa-user"></i></div>
@@ -115,33 +118,100 @@
       <div class="bottom-nav--title width-normal">
         <a href="../../index.html">Trang chủ</a>
         <i class="fas fa-chevron-right"></i>
-        <span class="blue">Đăng ký tài khoản</span>
+        <a? href="produt-by-category.html">Giỏ hàng</a>
       </div>
     </div>
 
-    <section class="section-row width-normal">
-      <div class="login-block">
-        <div class="login-title">Đăng ký tài khoản</div>
-        <div class="login-title--else">
-          Nếu chưa có tài khoản vui lòng đăng ký tại đây
+    <div class="container">
+        <div class="cart-layout width-normal">
+            <div class="cart-title">
+                <span class="cart-title--txt">Giỏ hàng</span>
+                <span class="cart-title--count">(0 sản phẩm)</span>
+            </div>
         </div>
-        <form action="" class="login-form">
-          <label for="name">Họ và tên<span class="red">*</span></label>
-          <input type="text" id="name" />
-          <label for="email">Email<span class="red">*</span></label>
-          <input type="email" id="email" />
-          <label for="user">Tên đăng nhập<span class="red">*</span></label>
-          <input type="text" id="user" />
-          <label for="pass">Mật khẩu<span class="red">*</span></label>
-          <input type="password" id="pass" />
-          <!-- <input type="submit" value="Đăng nhập" class="btn-submit" /> -->
-          <div class="box-button">
-            <button class="btn-submit">Đăng ký</button>
-            <button class="btn-login">Đăng nhập</button>
-          </div>
+    </div>
+
+    <div class="container">
+    
+        <form action="" class="form-list-cart" method="post" enctype="multipart/form-data">
+            <div class="list-cart">
+                <div class="list-cart--img">
+                    <a href="#"><img src="../../content/images/product/beyono-golden-start-c-7.jpg" alt=""></a>
+                </div>
+                <div class="list-cart--name">
+                    <a href="#">Giày Bóng Chuyền Beyono Sky Dream - White Red - 37</a>
+                    <a href="#" class="list-cart--delete">Xóa</a>
+                </div>
+                <div class="list-cart--price">
+                    650.000đ
+                </div>
+                <div class="list-cart--quantity">
+                    <div class="quantity buttons_added" style="margin-top: 0px">
+                        <input type="button" value="-" class="minus minus2" /><input
+                          type="number"
+                          step="1"
+                          min="1"
+                          max=""
+                          name="quantity"
+                          value="1"
+                          title="Qty"
+                          class="input-text qty text input-text2"
+                          size="4"
+                          pattern=""
+                          inputmode=""
+                        /><input type="button" value="+" class="plus plus2" />
+                      </div>
+                </div>
+        </div>
+            <div class="list-cart">
+                    <div class="list-cart--img">
+                        <a href="#"><img src="../../content/images/product/beyono-golden-start-c-7.jpg" alt=""></a>
+                    </div>
+                    <div class="list-cart--name">
+                        <a href="#">Giày Bóng Chuyền Beyono Sky Dream - White Red - 37</a>
+                        <a href="#" class="list-cart--delete">Xóa</a>
+                    </div>
+                    <div class="list-cart--price">
+                        650.000đ
+                    </div>
+                    <div class="list-cart--quantity">
+                        <div class="quantity buttons_added" style="margin-top: 0px">
+                            <input type="button" value="-" class="minus minus2" /><input
+                              type="number"
+                              step="1"
+                              min="1"
+                              max=""
+                              name="quantity"
+                              value="1"
+                              title="Qty"
+                              class="input-text qty text input-text2"
+                              size="4"
+                              pattern=""
+                              inputmode=""
+                            /><input type="button" value="+" class="plus plus2" />
+                          </div>
+                    </div>
+            </div>
+
+            <div class="list-cart--money">
+                <div class="money--tmp tmp-first">
+                    <div class="money-txt">Tạm tính : </div>
+                    <div class="money-number">650.000đ</div>
+                </div>
+                <div class="money--tmp">
+                    <div class="money-txt transform-y">Thành tiền : </div>
+                    <div class="money-number--into">650.000đ</div>
+                </div>
+                <!-- <div class="money--into">Thành tiền : 650.000đ</div> -->
+                <div class="money-button margin-top">
+                    <button class="btn-pay">Thanh toán ngay</button>
+                    <button class="btn-ctn">Tiếp tục mua hàng</button>
+                </div>
+            </div>
         </form>
-      </div>
-    </section>
+     
+    </div>
+
 
     <footer>
       <div class="footer">
@@ -218,7 +288,16 @@
         </div>
       </div>
     </footer>
-
+    <div class="fixed-fb"></div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <!-- <i class="fas fa-arrow-up"></i> -->
+    </button>
+    <script
+      data-require="jquery@3.1.1"
+      data-semver="3.1.1"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script src="../../content/js/stylling.js"></script>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
@@ -231,6 +310,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-    <script src="./content/js/Slider.js"></script>
+    <script src="../../content/js/app.js"></script>
+    <!-- <script src="./content/js/Slider.js"></script> -->
   </body>
 </html>

@@ -29,7 +29,8 @@
   font-weight: 500;
 }
 .login-form input[type="text"],
-.login-form input[type="password"] {
+.login-form input[type="password"],
+.login-form input[type="email"] {
   padding: 10px 15px;
   display: block;
   border-radius: 3px;
