@@ -166,9 +166,44 @@
   transition: all 0.2s linear;
   font-size: 13.5px;
   font-weight: 500;
+  position: relative;
+  transition: all 0.25s linear;
+  transition: background-color 0.25s linear 0.15s;
 }
-.navigation-horizontal ul li a:active {
-  background-color: #333333;
+.navigation-horizontal ul li a span {
+  position: absolute;
+  transition: all 0.25s linear;
+  background-color: white;
+}
+.navigation-horizontal ul li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+}
+.navigation-horizontal ul li a span:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 2.5px;
+  height: 0;
+}
+.navigation-horizontal ul li a span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+}
+.navigation-horizontal ul li a span:nth-child(4) {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+}
+.navigation-horizontal ul li a:hover span:nth-child(odd) {
+  width: 100%;
+}
+.navigation-horizontal ul li a:hover span:nth-child(even) {
+  height: 100%;
 }
 .navigation-horizontal ul li a:hover {
   background-color: #575454;
