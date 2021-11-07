@@ -1,7 +1,6 @@
 body {
   font-family: "Fira Sans", sans-serif;
   font-size: 14px;
-  /* height: 6000px; */
 }
 input,
 button,
@@ -10,6 +9,8 @@ textarea,
 option {
   font-family: "Fira Sans", sans-serif;
   font-size: 14px;
+  border: none;
+  outline: none;
 }
 body::-webkit-scrollbar {
   width: 1em;
