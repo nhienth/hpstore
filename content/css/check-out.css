@@ -64,6 +64,10 @@
 .info-log a {
   color: #2a9dcc;
   font-size: 16px;
+  transition: all 0.2s linear;
+}
+.info-log a:hover {
+  color: #112d6b;
 }
 .form-field input {
   display: block;
@@ -317,7 +321,7 @@
   border-radius: 3px;
   position: relative;
   transition: background-color 0.25s ease 0.5s;
-  transition: box-shadow 0.25s ease 1.5s;
+  transition: box-shadow 0.25s ease 0.75s;
 }
 .btn-order span {
   display: inline-block;
@@ -325,34 +329,35 @@
   background-color: red;
   background-image: linear-gradient(to right, #780206, #061161);
   /* background-image: linear-gradient(to right, #ff4e50, #f9d423); */
+  transition: all 0.25s linear;
 }
 .btn-order span:nth-child(1) {
   top: 0;
   left: 0;
   width: 0;
   height: 2px;
-  transition: all 0.25s linear;
+  /* transition: all 0.25s linear; */
 }
 .btn-order span:nth-child(2) {
   top: 0;
   right: 0;
   width: 2px;
   height: 0;
-  transition: all 0.25s linear 0.25s;
+  /* transition: all 0.25s linear 0.25s; */
 }
 .btn-order span:nth-child(3) {
   bottom: 0;
   right: 0;
   width: 0;
   height: 2px;
-  transition: all 0.25s linear 0.5s;
+  /* transition: all 0.25s linear 0.5s; */
 }
 .btn-order span:nth-child(4) {
   bottom: 0;
   left: 0;
   width: 2px;
   height: 0;
-  transition: all 0.25s linear 0.75s;
+  /* transition: all 0.25s linear 0.75s; */
 }
 .btn-order:hover span:nth-child(odd) {
   width: 100%;
@@ -374,7 +379,7 @@
   height: 100%;
   z-index: -1;
   background-image: linear-gradient(to right, #136a8a, #267871);
-  transition: all 0.5s linear 1s;
+  transition: all 0.5s linear 0.25s;
 }
 /* .btn-order::after {
   content: "";
