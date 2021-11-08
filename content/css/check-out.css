@@ -182,6 +182,8 @@
   /* border: 1px solid blue; */
   min-height: 718px;
   border-left: 1px solid lightgray;
+  /* background-color: #fafafa;
+  z-index: -10; */
 }
 .payment-order--title {
   font-weight: 500;
