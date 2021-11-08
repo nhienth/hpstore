@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1200px;
+    border: 1px solid gray;
+    margin-top: 20px;
+    margin-left: 90px;
+}
+aside{
+    float: left;
+    width: 200px;
+    border-right: 1px solid blue;
+}
+article{
+    float: left;
+    width: 1000px;
+}
+footer{
+    clear: both;
+}
+.div1{
+    margin-bottom: 5px;
+    height: 150px;
+    border-bottom: 1px solid blue;
+}
+h3{
+    font-size: 25px;
+    color: gray;
+}
+.div1 ul li{
+    display: inline-block;
+    list-style: none;
+}
+.div1 ul li a{
+    display: block;
+    text-decoration: none;
+}
+.div1 ul{
+    display: block;
+}
+.div1 ul ul{
+    display: none;
+    list-style: none;
+}
+.div1 ul li:hover ul{
+    display: inline-flex;
+    flex-wrap: wrap-reverse;
+}
+.div1 ul ul a{
+    display: block;
+    text-decoration: none;
+}
