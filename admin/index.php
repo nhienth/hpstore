@@ -1,6 +1,7 @@
 <?php 
     include "../model/pdo.php";
     include "../model/danhmuc.php";
+    include "../model/hanghoa.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -46,6 +47,18 @@
                 include "danhmuc/list.php";
                 break;
             case 'addhh' :
+                $listdanhmuc=loadall_danhmuc();
+                if(isset($_POST['btn-add']) && ($_POST['btn-add'])){
+                    $tensp = $_POST['tensp'];
+                    $dongia = $_POST['dongia'];
+                    $giamgia = $_POST['giamgia'];
+                    $hinh = $_POST['img'];
+                    $danhmuc = $_POST['danhmuc'];
+                    $mota = $_POST['mota'];
+                    $ngaynhap = date("Y-m-d H:i:s");
+                    insert_hanghoa($tensp, $dongia, $giamgia, $hinh, $danhmuc, $ngaynhap, $mota);
+                    $thongbao ="Theem thafnh cong";
+                }
                 include "hanghoa/add.php";
                 break;
             case 'listkh' :
@@ -55,6 +68,7 @@
                 include "binhluan/list.php";
                 break;
             case 'listhh' :
+                $listhanghoa = loadAll_hanghoa();
                 include "hanghoa/list.php";
                 break;
             default :

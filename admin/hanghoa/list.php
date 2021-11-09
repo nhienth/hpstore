@@ -17,34 +17,41 @@
             <div class="table2">
                 <table border="1">
                     <tr>
-                        <th></th>
                         <th>Mã hàng hóa</th>
                         <th>Tên hàng hóa</th>
                         <th>Đơn giá</th>
                         <th>Giảm giá</th>
                         <th>Hình</th>
-                        <th>Size</th>
-                        <th>Mã danh mục</th>
+                        <th>Loại hàng</th>
                         <th>Ngày nhập</th>
                         <th>Mô tả</th>
                         <th>THAO TÁC</th>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
+                    <?php 
+                    
+                    foreach ($listhanghoa as $hanghoa) {
+                        extract($hanghoa);
+                        $ten_danhmuc = loadTen_danhmuc($ma_danhmuc);
+                        echo '
+                        <tr>
+                        <td>'.$ma_hanghoa.'</td>
+                        <td>'.$ten_hanghoa.'</td>
+                        <td>'.$don_gia.'</td>
+                        <td>'.$giam_gia.'</td>
+                        <td>'.$hinh.'</td>
+                        <td>'.$ten_danhmuc.'</td>
+                        <td>'.$ngay_nhap.'</td>
+                        <td>'.$mo_ta.'</td>
                         <td>
                             <a href=""><input type="button" value="Xóa" id="button1"></a>
                             <a href=""><input type="button" value="Sửa" id="button1"></a>
                         </td>
                     </tr>
+                        ';
+                    }
+                    
+                    ?>
+                 
                 </table>
                 <a href=""><input type="button" value="Chọn tất cả"></a>
                 <a href=""><input type="button" value="Bỏ chọn tất cả"></a>
