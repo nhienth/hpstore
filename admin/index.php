@@ -48,7 +48,7 @@
                 break;
             case 'addhh' :
                 $listdanhmuc=loadall_danhmuc();
-                if(isset($_POST['btn-add']) && ($_POST['btn-add'])){
+                if(isset($_POST['btn-add']) ){
                     $tensp = $_POST['tensp'];
                     $dongia = $_POST['dongia'];
                     $giamgia = $_POST['giamgia'];
@@ -57,7 +57,7 @@
                     $mota = $_POST['mota'];
                     $ngaynhap = date("Y-m-d");
                     insert_hanghoa($tensp, $dongia, $giamgia, $hinh, $danhmuc, $ngaynhap, $mota);
-                    $thongbao ="Theem thafnh cong";
+                    $thongbao ="Thêm sản phẩm thành công";
                 }
                 include "hanghoa/add.php";
                 break;
@@ -84,15 +84,15 @@
                 }
                 include "hanghoa/details.php";
                 break;
+            case 'listhh' :
+                $listhanghoa = loadAll_hanghoa();
+                include "hanghoa/list.php";
+                break;
             case 'listkh' :
                 include "danhmuc/add.php";
                 break;
             case 'listbl' :
                 include "binhluan/list.php";
-                break;
-            case 'listhh' :
-                $listhanghoa = loadAll_hanghoa();
-                include "hanghoa/list.php";
                 break;
             default :
                 include "home.php";

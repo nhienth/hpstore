@@ -11,6 +11,14 @@
 
 <div class="right-bgc">
             <div class="layout-function">
+              <?php
+              
+              if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              }
+              
+              ?>
+             
               <div class="function-title">Danh sách sản phẩm</div>
               <div class="function-table">
                 <table class="tabel-list">

@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="../content/css/app.css">
     <link rel="stylesheet" href="../content/css/main.css">
     <link rel="stylesheet" href="../content/css/admin.css">
+    <link rel="stylesheet" href="../content/css/admin-form.css">
     <title>HPstore - Quản trị website</title>
   </head>
   <body>
@@ -72,7 +73,7 @@
             <div class="left-element--title">Quản lý sản phẩm</div>
             <div class="left-element--content">
               <div class="more-function">
-                <a href="#">Thêm sản phẩm</a>
+                <a href="index.php?act=addhh">Thêm sản phẩm</a>
                 <a href="index.php?act=listhh">Danh sách</a>
               </div>
               <a href="index.php?act=listhh"><i class="fas fa-volleyball-ball"></i> Sản phẩm</a>

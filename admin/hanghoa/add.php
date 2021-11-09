@@ -1,40 +1,51 @@
+<div class="layout-right">
+<div class="right-top">
+            <div class="website-title">Trang quản trị websitie</div>
+            <div class="admin-info">
+              <div class="admin-name">ADMIN</div>
+              <div class="admin-img">
+                <img src="../content/images/home/support-online.jpg" alt="">
+              </div>
+            </div>
+          </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="..//cssadmin.css">
-</head>
-<body>
-    <div class="status1">
-        <h3>THÊM SẢN PHẨM</h3>
-    </div>
-    <div class="contenaddlh">
-        <form action="" method="post">
-            <label for="">TÊN SẢN PHẨM</label><br>
-            <input type="text" name="tensp"><br>
-            <label for="">ĐƠN GIÁ</label><br>
-            <input type="text" name="dongia"><br>
-            <label for="">GIẢM GIÁ</label><br>
-            <input type="text" name="giamgia"><br>
-            <label for="">HÌNH</label><br>
-            <input type="file" name="img"><br>
-            <select name="danhmuc" id="">
-                <?php 
-                    foreach ($listdanhmuc as $danhmuc) {
-                        extract($danhmuc);
-                        echo '<option value="'.$ma_danhmuc.'">'.$ten_danhmuc.'</option>';
-                    }
-                ?>
-            </select> <br>
-            <label for="">MÔ TẢ</label><br>
-            <textarea name="mota" id="" cols="53" rows="10"></textarea><br>
-            <label for=""></label>
-            <a href=""><input type="submit"  name="btn-add" value="THÊM"></a>
-            <a href="index.php?act=listhh"><input type="button" value="DANH SÁCH"></a>
-        </form>
-    </div>
-</body>
-</html>
+<div class="right-bgc">
+            <div class="layout-function">
+            <?php
+              
+                if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao">'.$thongbao.'</div>';
+                }
+            
+            ?>
+              <div class="function-title">Thêm sản phẩm</div>
+              
+            <div class="form-funtcion">
+                <form action="index.php?act=addhh" method="post" class="form-add--product">
+                    <label for="tensp">Tên sản phẩm</label>
+                    <input type="text" name="tensp" id="tensp">
+                    <label for="danhmuc">Danh mục sản phẩm</label>
+                    <select name="danhmuc" id="danhmuc">
+                        <?php
+                            foreach ($listdanhmuc as $danhmuc) {
+                                extract($danhmuc);
+                                echo '<option value="'.$ma_danhmuc.'">'.$ten_danhmuc.'</option>';
+                            }
+                        ?>
+                    </select>
+                    <label for="hinh">Hình sản phẩm</label>
+                    <input type="file" name="img" id="hinh">
+                    <label for="dongia">Giá sản phẩm</label>
+                    <input type="text" name="dongia" id="dongia">
+                    <label for="giamgia">Giảm giá ( tính theo % )</label>
+                    <input type="text" name="giamgia" id="giamgia">
+                    <label for="mota">Mô tả</label>
+                    <textarea name="mota" id="mota" cols="30" rows="8"></textarea>
+                    <button type="submit" name="btn-add">Thêm sản phẩm</button>
+                    <button type="reset">Nhập lại</button>
+                    <button> <a href="index.php?act=listhh"> Danh sách </a></button>
+                </form>
+            </div>
+
+            </div>
+          </div>
