@@ -31,6 +31,8 @@
                     
                     foreach ($listhanghoa as $hanghoa) {
                         extract($hanghoa);
+                        $addsl = "index.php?act=addsl&&id=".$ma_hanghoa;
+                        $chitiet = "index.php?act=chitiethh&&id=".$ma_hanghoa;
                         $ten_danhmuc = loadTen_danhmuc($ma_danhmuc);
                         echo '
                         <tr>
@@ -43,6 +45,8 @@
                         <td>'.$ngay_nhap.'</td>
                         <td>'.$mo_ta.'</td>
                         <td>
+                        <a href="'.$chitiet.'"><input type="button" value="XEM CT" id="button1"></a>
+                        <a href="'.$addsl.'"><input type="button" value="THÊM SL" id="button1"></a>
                             <a href=""><input type="button" value="Xóa" id="button1"></a>
                             <a href=""><input type="button" value="Sửa" id="button1"></a>
                         </td>
