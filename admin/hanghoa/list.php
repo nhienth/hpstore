@@ -23,10 +23,10 @@
                         <th>Đơn giá</th>
                         <th>Giảm giá</th>
                         <th>Hình</th>
-                        <th>Size</th>
-                        <th>Mã danh mục</th>
+                        <th>Loại danh mục</th>
                         <th>Ngày nhập</th>
                         <th>Mô tả</th>
+                        <th>ADD model</th>
                         <th>THAO TÁC</th>
                     </tr>
                     <tr>
@@ -39,7 +39,7 @@
                         <td>hà nội</td>
                         <td>hà nội</td>
                         <td>hà nội</td>
-                        <td>hà nội</td>
+                        <td><a href=""><input type="button" value="Add model" id="button1"></a></td>
                         <td>
                             <a href=""><input type="button" value="Xóa" id="button1"></a>
                             <a href=""><input type="button" value="Sửa" id="button1"></a>

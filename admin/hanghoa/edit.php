@@ -23,7 +23,7 @@
             <input type="text"><br>
             <label for="">HÌNH</label><br>
             <input type="file"><br>
-            <label for="">MÃ DANH MỤC</label><br>
+            <label for="">LOẠI DANH MỤC</label><br>
             <input type="text"><br>
             <label for="">NGÀY NHẬP</label><br>
             <input type="text"><br>

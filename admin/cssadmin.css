@@ -172,6 +172,10 @@ table tr{
     width: 50px;
     margin-bottom: 7px;
 }
+form select{
+    width: 150px;
+    margin-bottom: 5px;
+}
 /* kết thức css phần danh sách sản phẩm */
 /* css phần danh sách tin tức */
 #select1{

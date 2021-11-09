@@ -17,7 +17,7 @@
         <h3>SỬA LOẠI HÀNG</h3>
     </div>
     <div class="contenaddlh">
-        <form action="" method="post">
+        <form action="index.php?act=updatedm" method="post">
             <label for="">MÃ LOẠI</label><br>
             <input type="text" disabled placeholder="AUTO NUMBER"><br>
             <label for="">TÊN LOẠI</label><br>

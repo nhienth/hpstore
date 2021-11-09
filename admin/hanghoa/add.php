@@ -12,7 +12,7 @@
         <h3>THÊM SẢN PHẨM</h3>
     </div>
     <div class="contenaddlh">
-        <form action="" method="post">
+        <form action="index.php?act=addsp" method="post">
             <label for="">MÃ SẢN PHẨM</label><br>
             <input type="text"><br>
             <label for="">TÊN SẢN PHẨM</label><br>
@@ -23,10 +23,15 @@
             <input type="text"><br>
             <label for="">HÌNH</label><br>
             <input type="file"><br>
-            <label for="">SIZE</label><br>
-            <input type="text"><br>
-            <label for="">MÃ DANH MỤC</label><br>
-            <input type="text"><br>
+            <label for="">LOẠI DANH MỤC</label><br>
+            <select name="" id="">
+                <?php 
+                    foreach ($listdanhmuc as $danhmuc) {
+                        extract($danhmuc);
+                        echo '<option value="'.$ma_danhmuc.'">'.$ten_danhmuuc.'</option>';
+                    }
+                ?>
+            </select><br>
             <label for="">NGÀY NHẬP</label><br>
             <input type="text"><br>
             <label for="">MÔ TẢ</label><br>
