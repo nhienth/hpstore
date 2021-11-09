@@ -22,4 +22,11 @@
         $dm=pdo_query_one($sql);
         return $dm;
     }
+
+    function loadTen_danhmuc($ma_danhmuc){
+        $sql = "SELECT * FROM danh_muc WHERE ma_danhmuc =".$ma_danhmuc;
+        $tenDM = pdo_query_one($sql);
+        extract($tenDM);
+        return $ten_danhmuc;
+    }
 ?>

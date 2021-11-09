@@ -17,7 +17,6 @@
             <div class="table2">
                 <table border="1">
                     <tr>
-                        <th></th>
                         <th>Mã hàng hóa</th>
                         <th>Tên hàng hóa</th>
                         <th>Đơn giá</th>
@@ -45,6 +44,11 @@
                             <a href=""><input type="button" value="Sửa" id="button1"></a>
                         </td>
                     </tr>
+                        ';
+                    }
+                    
+                    ?>
+                 
                 </table>
                 <a href=""><input type="button" value="Chọn tất cả"></a>
                 <a href=""><input type="button" value="Bỏ chọn tất cả"></a>

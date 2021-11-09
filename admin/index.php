@@ -1,6 +1,7 @@
 <?php 
     include "../model/pdo.php";
     include "../model/danhmuc.php";
+    include "../model/hanghoa.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -13,7 +14,7 @@
                         echo "Vui lòng nhập tên loại hàng";
                     }else{
                         insert_danhmuc($ten_danhmuc);
-                        echo "Thêm thành công";
+                        echo "THÊM THÀNH CÔNG";
                     }
                 }
                 include "danhmuc/add.php";
@@ -40,12 +41,25 @@
                     $ten_danhmuc=$_POST['tenloai'];
                     $ma_danhmuc=$_POST['maloai'];
                     update_danhmuc($ma_danhmuc,$ten_danhmuc);
-                    $thongbao = "Cập nhật thành công";
+                    $thongbao = "CẬP NHẬT THÀNH CÔNG";
                 }
                 $listdanhmuc=loadall_danhmuc();
                 include "danhmuc/list.php";
                 break;
+                // controller phần hàng hóa 
             case 'addhh' :
+                $listdanhmuc=loadall_danhmuc();
+                if(isset($_POST['btn-add']) && ($_POST['btn-add'])){
+                    $tensp = $_POST['tensp'];
+                    $dongia = $_POST['dongia'];
+                    $giamgia = $_POST['giamgia'];
+                    $hinh = $_POST['img'];
+                    $danhmuc = $_POST['danhmuc'];
+                    $mota = $_POST['mota'];
+                    $ngaynhap = date("Y-m-d H:i:s");
+                    insert_hanghoa($tensp, $dongia, $giamgia, $hinh, $danhmuc, $ngaynhap, $mota);
+                    $thongbao ="THÊM THÀNH CÔNG";
+                }
                 include "hanghoa/add.php";
                 break;
             case 'listkh' :
@@ -55,6 +69,7 @@
                 include "binhluan/list.php";
                 break;
             case 'listhh' :
+                $listhanghoa = loadAll_hanghoa();
                 include "hanghoa/list.php";
                 break;
             default :
