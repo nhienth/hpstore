@@ -286,3 +286,10 @@
   background-color: #666666;
   color: white;
 }
+.thongbao {
+  font-size: 17px;
+  padding: 10px 0px;
+  color: #4a6edc;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
