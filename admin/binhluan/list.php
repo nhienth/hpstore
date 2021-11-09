@@ -1,48 +1,83 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="..//cssadmin.css">
-</head>
-<body>
-    <div class="status1">
-        <h3>DANH SÁCH BÌNH LUẬN</h3>
-    </div>
-    <div class="contenaddlh">
-        <form action="" method="post">
-            <div class="table3">
-                <table border="1">
-                    <tr>
-                        <th></th>
-                        <th>Mã bình luận</th>
-                        <th>Mã hàng hóa</th>
-                        <th>Mã khách hàng</th>
-                        <th>Nội dung</th>
-                        <th>Ngày bình luận</th>
-                        <th>Mã tin tức</th>
-                        <th>THAO TÁC</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>
-                            <a href=""><input type="button" value="Xóa" id="button2"></a>
-                        </td>
-                    </tr>
-                </table>
-                <a href=""><input type="button" value="Chọn tất cả"></a>
-                <a href=""><input type="button" value="Bỏ chọn tất cả"></a>
+<div class="layout-right">
+<div class="right-top">
+            <div class="website-title">Trang quản trị websitie</div>
+            <div class="admin-info">
+              <div class="admin-name">ADMIN</div>
+              <div class="admin-img">
+                <img src="../content/images/home/support-online.jpg" alt="">
+              </div>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+          </div>
+
+<div class="right-bgc">
+            <div class="layout-function">
+              <?php
+              
+              if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              }
+              
+              ?>
+             
+              <div class="function-title">Danh sách bình luận</div>
+              <div class="function-table">
+                <table class="tabel-list4">
+                  <tr>
+                    <th>Mã bình luận</th>
+                    <th>Nội dung</th>
+                    <th>Mã hàng hóa</th>
+                    <th>Ngày bình luận</th>
+                    <th>Mã khách hàng</th>
+                    <th colspan="3">Sửa / Xóa</th>
+                  </tr>
+                  <tr>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td><a href="'.$xoadm.'" class="a-delete"
+                        ><i class="fas fa-trash-alt" ></i
+                      ></a></td>
+                      <td>
+                      <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
+                    </td>
+                    
+                  </tr>
+                <?php
+
+                
+                // foreach ($listdanhmuc as $danhmuc) {
+                //     extract($danhmuc);
+                //     $suadm="index.php?act=suadm&id=".$ma_danhmuc;
+                //     $xoadm="index.php?act=xoadm&id=".$ma_danhmuc;
+                //     echo '
+                    
+                //     <tr>
+                //     <td>ff</td>
+                //     <td>
+                //       <span>ff</span>
+                //     </td>
+                //     <td>ff</td>
+                //     <td>ff</td>
+                //     <td>ff</td>
+                //     <td>ff</td>
+                //     <td>
+                //       <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
+                //     </td>
+                //     <td>
+                //       <a href="'.$xoadm.'" class="a-delete"
+                //         ><i class="fas fa-trash-alt" ></i
+                //       ></a>
+                //     </td>
+                //   </tr>
+                    
+                //     ';
+                // }
+                
+                ?>
+
+            </table>
+              </div>
+            </div>
+          </div>

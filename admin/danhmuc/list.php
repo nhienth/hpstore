@@ -1,50 +1,63 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="..//cssadmin.css">
-</head>
-<body>
-    <div class="status1">
-        <h3>DANH SÁCH</h3>
-    </div>
-    <div class="contenaddlh">
-        <form action="" method="post">
-            <div class="table1">
-                <table border="1">
-                    <tr>
-                        <th></th>
-                        <th>MÃ LOẠI</th>
-                        <th>TÊN LOẠI</th>
-                        <th>THAO TÁC</th>
-                    </tr>
-                    <?php 
-                        foreach ($listdanhmuc as $danhmuc) {
-                            extract($danhmuc);
-                            $suadm = "index.php?act=suadm&id=".$ma_danhmuc;
-                            $xoadm = "index.php?act=xoadm&id=".$ma_danhmuc;
-                            echo '
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>'.$ma_danhmuc.'</td>
-                                    <td>'.$ten_danhmuc.'</td>
-                                    <td>
-                                    <a href="'.$suadm.'"><input type="button" value="Sửa"></a><a href="'.$xoadm.'"><input type="button" value="Xóa"></a>
-                                    </td>
-                                </tr>
-                            ';
-                        }
-                    ?>
-                </table>
-                <a href=""><input type="button" value="Chọn tất cả"></a>
-                <a href=""><input type="button" value="Bỏ chọn tất cả"></a>
-                <a href="index.php?act=adddm"><input type="button" value="Nhập thêm"></a>
+<div class="layout-right">
+<div class="right-top">
+            <div class="website-title">Trang quản trị websitie</div>
+            <div class="admin-info">
+              <div class="admin-name">ADMIN</div>
+              <div class="admin-img">
+                <img src="../content/images/home/support-online.jpg" alt="">
+              </div>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+          </div>
+
+<div class="right-bgc">
+            <div class="layout-function">
+              <?php
+              
+              if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              }
+              
+              ?>
+             
+              <div class="function-title">Danh sách danh mục</div>
+              <div class="function-table">
+                <table class="tabel-list1">
+                  <tr>
+                    <th>Mã danh mục</th>
+                    <th>Tên danh mục</th>
+                    <th colspan="2">Sửa / Xóa</th>
+                  </tr>
+                <?php
+                
+                foreach ($listdanhmuc as $danhmuc) {
+                    extract($danhmuc);
+                    $suadm="index.php?act=suadm&id=".$ma_danhmuc;
+                    $xoadm="index.php?act=xoadm&id=".$ma_danhmuc;
+                    echo '
+                    
+                    <tr>
+                    <td>'.$ma_danhmuc.'</td>
+                    <td>
+                      <span
+                        >'.$ten_danhmuc.'</span
+                      >
+                    </td>
+                    <td>
+                      <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
+                    </td>
+                    <td>
+                      <a href="'.$xoadm.'" class="a-delete"
+                        ><i class="fas fa-trash-alt" ></i
+                      ></a>
+                    </td>
+                  </tr>
+                    
+                    ';
+                }
+                
+                ?>
+
+            </table>
+              </div>
+            </div>
+          </div>

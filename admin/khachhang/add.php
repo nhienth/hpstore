@@ -18,29 +18,24 @@
                 }
             
             ?>
-              <div class="function-title">Thêm sản phẩm</div>
+              <div class="function-title">Thêm tài khoản</div>
               
             <div class="form-funtcion">
                 <form action="index.php?act=addhh" method="post" class="form-add--product">
-                    <label for="tensp">Tên sản phẩm</label>
-                    <input type="text" name="tensp" id="tensp">
-                    <label for="danhmuc">Danh mục sản phẩm</label>
-                    <select name="danhmuc" id="danhmuc">
-                        <?php
-                            foreach ($listdanhmuc as $danhmuc) {
-                                extract($danhmuc);
-                                echo '<option value="'.$ma_danhmuc.'">'.$ten_danhmuc.'</option>';
-                            }
-                        ?>
-                    </select>
-                    <label for="hinh">Hình sản phẩm</label>
+                    <label for="">Tên đăng nhập</label>
+                    <input type="text" name="" id="">
+                    <label for="">Mật khẩu</label>
+                    <input type="password" name="" id="">
+                    <label for="">Họ tên</label>
+                    <input type="text" name="" id="">
+                    <label for="">Hình ảnh</label>
                     <input type="file" name="file" id="hinh">
-                    <label for="dongia">Giá sản phẩm</label>
-                    <input type="text" name="dongia" id="dongia">
-                    <label for="giamgia">Giảm giá ( tính theo % )</label>
-                    <input type="text" name="giamgia" id="giamgia">
-                    <label for="mota">Mô tả</label>
-                    <textarea name="mota" id="mota" cols="30" rows="8"></textarea>
+                    <label for="">Email</label>
+                    <input type="text" name="" id="">
+                    <label for="">Số điện thoại</label>
+                    <input type="text" name="" id="">
+                    <label for="">Địa chỉ</label>
+                    <input type="text" name="" id="">
                     <input type="submit" name="themmoi" value="Thêm sản phẩm" >
                     <button type="reset">Nhập lại</button>
                     <button> <a href="index.php?act=listhh"> Danh sách </a></button>

@@ -1,0 +1,63 @@
+.form-funtcion {
+  background-color: white;
+  border: 1px solid darkgray;
+  border-top: none;
+  padding: 20px 40px;
+}
+.form-funtcion .form-add--product label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.form-funtcion .form-add--product input,
+.form-add--product select,
+.form-add--product textarea {
+  padding: 10px 20px;
+  border: 1px solid darkgray;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  width: 100%;
+  transition: all 0.25s linear;
+  resize: none;
+}
+.form-funtcion .form-add--product input:focus,
+.form-add--product select:focus,
+.form-add--product textarea:focus {
+  border-color: #4a6edc;
+}
+.form-add--product button {
+  display: inline-block;
+  padding: 15px 20px;
+  margin-top: 30px;
+  background-color: #4a6edc;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 20px;
+  border-radius: 3px;
+  transition: all 0.25s linear;
+}
+.form-add--product input[type="submit"]{
+  display: inline-block;
+  padding: 15px 20px;
+  margin-top: 30px;
+  background-color: #4a6edc;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 20px;
+  border-radius: 3px;
+  transition: all 0.25s linear;
+  width: 160px;
+}
+
+.form-add--product button a {
+  color: white;
+}
+.form-add--product button:hover {
+  background-color: #112d6b;
+}

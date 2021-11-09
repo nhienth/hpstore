@@ -1,60 +1,83 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="..//cssadmin.css">
-</head>
-<body>
-    <div class="status1">
-        <h3>DANH SÁCH HÀNG HÓA</h3>
-    </div>
-    <div class="contenaddlh">
-        <form action="" method="post">
-            <div class="table2">
-                <table border="1">
-                    <tr>
-                        <th>Mã hàng hóa</th>
-                        <th>Tên hàng hóa</th>
-                        <th>Đơn giá</th>
-                        <th>Giảm giá</th>
-                        <th>Hình</th>
-                        <th>Loại danh mục</th>
-                        <th>Ngày nhập</th>
-                        <th>Mô tả</th>
-                        <th>ADD model</th>
-                        <th>THAO TÁC</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td><a href=""><input type="button" value="Add model" id="button1"></a></td>
-                        <td>
-                            <a href=""><input type="button" value="Xóa" id="button1"></a>
-                            <a href=""><input type="button" value="Sửa" id="button1"></a>
-                        </td>
-                    </tr>
-                        ';
-                    }
-                    
-                    ?>
-                 
-                </table>
-                <a href=""><input type="button" value="Chọn tất cả"></a>
-                <a href=""><input type="button" value="Bỏ chọn tất cả"></a>
-                <a href=""><input type="button" value="Nhập thêm"></a>
+<div class="layout-right">
+<div class="right-top">
+            <div class="website-title">Trang quản trị websitie</div>
+            <div class="admin-info">
+              <div class="admin-name">ADMIN</div>
+              <div class="admin-img">
+                <img src="../content/images/home/support-online.jpg" alt="">
+              </div>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+          </div>
+
+<div class="right-bgc">
+            <div class="layout-function">
+              <?php
+              
+              if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              }
+              
+              ?>
+             
+              <div class="function-title">Danh sách sản phẩm</div>
+              <div class="function-table">
+                <table class="tabel-list">
+                  <tr>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Hình ảnh</th>
+                    <th>Loại hàng</th>
+                    <th>Đơn giá</th>
+                    <th>Giảm giá (%)</th>
+                    <th>Ngày nhập</th>
+                    <th>Mô tả</th>
+                    <th colspan="2">SL</th>
+                    <th colspan="2">Sửa / Xóa</th>
+                  </tr>
+
+
+                <?php
+                
+                foreach ($listhanghoa as $hanghoa) {
+                    extract($hanghoa);
+                    $ten_danhmuc = loadTen_danhmuc($ma_danhmuc);
+                    echo '
+                    
+                    <tr>
+                    <td>'.$ma_hanghoa.'</td>
+                    <td>
+                      <span
+                        >'.$ten_hanghoa.'</span
+                      >
+                    </td>
+                    <td>'.$hinh.'</td>
+                    <td>'.$ten_danhmuc.'</td>
+                    <td>'.$don_gia.'</td>
+                    <td>'.$giam_gia.'</td>
+                    <td>'.$ngay_nhap.'</td>
+                    <td>
+                      <span>
+                        '.$mo_ta.'
+                      </span>
+                    </td>
+                    <td><a href="">Nhập</a></td>
+                    <td><a href="">Thay đổi</a></td>
+                    <td>
+                      <a href="" class="a-edit"><i class="fas fa-edit"></i></a>
+                    </td>
+                    <td>
+                      <a href="" class="a-delete"
+                        ><i class="fas fa-trash-alt"></i
+                      ></a>
+                    </td>
+                  </tr>
+                    
+                    ';
+                }
+                
+                ?>
+
+            </table>
+              </div>
+            </div>
+          </div>
