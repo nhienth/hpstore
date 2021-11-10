@@ -94,8 +94,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 32px 40px;
   background-color: white;
+  box-shadow: 5px 5px 10px gray;
 }
 .website-title {
   font-size: 25px;
@@ -109,15 +110,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 .admin-name {
   font-weight: 500;
-  color: #999;
+  color: #666666;
 }
 .admin-img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 100rem;
 }
 .admin-img img {
@@ -126,8 +127,9 @@
 }
 .right-bgc {
   width: 100%;
-  background-color: rgba(211, 211, 211, 0.5);
-  /* background-color: gray; */
+  background-color: rgba(211, 211, 211, 0.4);
+  /* background-color: rgba(192, 192, 192, 0.5); */
+  /* background-color: rgba(220, 220, 220, 0.7); */
   min-height: 700px;
   /* overflow-y: auto; */
 }
@@ -136,12 +138,12 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-left: -5px;
+  margin-left: -13px;
 }
 .right-main--boxed {
-  width: calc(33% - 20px);
-  margin-left: 20px;
-  margin-top: 30px;
+  width: calc(33% - 35px);
+  margin-left: 35px;
+  margin-top: 35px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;

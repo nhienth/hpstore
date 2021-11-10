@@ -2,6 +2,7 @@
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/hanghoa.php";
+    include "../model/khachhang.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -129,18 +130,62 @@
                 $listhanghoa = loadAll_hanghoa();
                 include "hanghoa/list.php";
                 break;
+            case 'addkh' :
+                if(isset($_POST['btn-add'])){
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $address = $_POST['address'];
+                    $phone = $_POST['phone'];
+                    $avatar = $_FILES['avatar']['name'];
+                    //upload file
+                    $target_dir = "../uploads/";
+                    $target_file = $target_dir . basename($avatar);
+                    move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
+                    insert_khachhang($user, $pass, $name, $address, $phone, $email, $avatar);
+                    $thongbao = "Thêm tài khoản thành công !";
+                }
+                include "khachhang/add.php";
+                break;
             case 'listkh' :
+                $listkhachhang = loadAll_khachhang();
                 include "khachhang/list.php";
                 break;
+            case 'edit-acc':
+                if(isset($_GET['id']) && ($_GET['id'])>0){
+                    $khachhang = loadOne_khachhang($_GET['id']);
+                }
+                include "khachhang/edit.php";
+                break;
+            case 'update-acc':
+            if(isset($_POST['btn-update'])){
+                $ma_khachhang = $_POST['ma_khachhang'];
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
+                $role = $_POST['vaitro'];
+                $avatar = $_FILES['avatar']['name'];
+                //upload file
+                $target_dir = "../uploads/";
+                $target_file = $target_dir . basename($avatar);
+                move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
+                update_khachhang($user, $pass, $name, $address, $phone, $email, $role, $avatar, $ma_khachhang);
+                $thongbao = "Tài khoản đã dược cập nhật !";
+            }
+            $listkhachhang = loadAll_khachhang();
+            include "khachhang/list.php";
+            break;
             case 'listhd' :
                 include "hoadon/list.php";
                 break;
             case 'listbl' :
                 include "binhluan/list.php";
                 break;
-            case 'addkh' :
-                include "khachhang/add.php";
-                break;
+            
             default :
                 include "home.php";
                 break;

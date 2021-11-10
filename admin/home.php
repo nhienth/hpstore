@@ -2,6 +2,7 @@
 
 $countPro = countAll_hanghoa();
 $countCate = countAll_danhmuc();
+$countAcc = countAll_khachhang();
 
 ?>
 
@@ -11,7 +12,7 @@ $countCate = countAll_danhmuc();
             <div class="admin-info">
               <div class="admin-name">ADMIN</div>
               <div class="admin-img">
-                <img src="../content/images/home/support-online.jpg" alt="">
+                <img src="../content/images/home/ec9a4c0a7f3aea8a819354a0933540ad.jpg" alt="">
               </div>
             </div>
           </div>
@@ -20,7 +21,7 @@ $countCate = countAll_danhmuc();
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Tài khoản</div>
-                  <div class="boxed-content--count">3</div>
+                  <div class="boxed-content--count"><?=$countAcc?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-user-circle"></i>

@@ -11,7 +11,7 @@ if(is_array($hanghoa)) extract($hanghoa);
             <div class="admin-info">
               <div class="admin-name">ADMIN</div>
               <div class="admin-img">
-                <img src="../content/images/home/support-online.jpg" alt="">
+                <img src="../content/images/home/ec9a4c0a7f3aea8a819354a0933540ad.jpg" alt="">
               </div>
             </div>
           </div>
