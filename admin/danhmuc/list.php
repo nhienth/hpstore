@@ -11,13 +11,13 @@
 
 <div class="right-bgc">
             <div class="layout-function">
-              <?php
+            <?php
               
-              if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao">'.$thongbao.'</div>';
-              }
-              
-              ?>
+                if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+                }
+            
+            ?>
              
               <div class="function-title">Danh sách danh mục</div>
               <div class="function-table">

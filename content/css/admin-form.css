@@ -40,7 +40,15 @@
   border-radius: 3px;
   transition: all 0.25s linear;
 }
-.form-add--product input[type="submit"]{
+.form-add--product .edit-pro--img {
+  width: 20%;
+  height: 20%;
+  margin-bottom: 10px;
+}
+.form-add--product .edit-pro--img img {
+  border-radius: 3px;
+}
+.form-add--product input[type="submit"] {
   display: inline-block;
   padding: 15px 20px;
   margin-top: 30px;
@@ -60,4 +68,33 @@
 }
 .form-add--product button:hover {
   background-color: #112d6b;
+}
+.pro-quantity .pro-quantity--name {
+  color: #4a6edc;
+  color: #112d6b;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: 600;
+  margin-right: 30px;
+  display: inline-block;
+  padding: 5px 0px 30px 0px;
+}
+.tabel-list--normal {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+.tabel-list--normal th,
+.tabel-list--normal td {
+  border: 1px solid darkgray;
+  padding: 10px;
+  text-align: center;
+}
+.pro-name--table {
+  text-align: left;
+  padding: 5px 30px;
+  color: #112d6b;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: 600;
 }

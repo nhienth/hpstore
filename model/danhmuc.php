@@ -29,4 +29,10 @@
         extract($tenDM);
         return $ten_danhmuc;
     }
+
+    function countAll_danhmuc(){
+        $sql = "SELECT count(*) FROM danh_muc";
+        $count = pdo_query_value($sql);
+        return $count;
+    }
 ?>

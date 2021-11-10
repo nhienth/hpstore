@@ -15,8 +15,8 @@
             <div class="layout-function">
             <?php
               
-                if(isset($thongbao2) && ($thongbao2 != "")) {
-                echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao2.'</div>';
+                if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
                 }
             
             ?>
@@ -28,7 +28,8 @@
                     <input type="text" disabled placeholder="AUTO NUMBER" >
                     <label for="">Tên danh mục</label>
                     <input type="text" name="tenloai" id="">
-                    <input type="submit" name="themmoi" value="Thêm danh mục">
+                    <!-- <button type="submit" name="themmoi" value="Thêm danh mục"> -->
+                    <button type="submit" name="themmoi"> Thêm danh mục</button>
                     <button type="reset">Nhập lại</button>
                     <button> <a href="index.php?act=listdm"> Danh sách </a></button>
                 </form>

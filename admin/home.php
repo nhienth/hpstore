@@ -1,3 +1,10 @@
+<?php
+
+$countPro = countAll_hanghoa();
+$countCate = countAll_danhmuc();
+
+?>
+
 <div class="layout-right">
           <div class="right-top">
             <div class="website-title">Trang quản trị websitie</div>
@@ -23,7 +30,7 @@
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Danh mục</div>
-                  <div class="boxed-content--count">5</div>
+                  <div class="boxed-content--count"><?=$countCate?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-copyright"></i>
@@ -33,7 +40,7 @@
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Sản phẩm</div>
-                  <div class="boxed-content--count">25</div>
+                  <div class="boxed-content--count"><?=$countPro?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-volleyball-ball"></i>

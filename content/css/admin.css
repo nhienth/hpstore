@@ -336,12 +336,13 @@
 }
 .tabel-list1 tr td:nth-child(5) {
   width: 5%;
-}.tabel-list1 tr td:nth-child(5) {
+}
+.tabel-list1 tr td:nth-child(5) {
   width: 5%;
 }
-.tabel-list1{
+.tabel-list1 {
   width: 100%;
-  ​border-collapse​:​ collapse;
+  border-collapse: collapse;
   background-color: white;
 }
 /* kêt thúc css list danh mục */
@@ -405,11 +406,11 @@
   width: 7%;
 }
 .tabel-list2 tr td:nth-child(9) {
-  width: 8%
+  width: 8%;
 }
-.tabel-list2{
+.tabel-list2 {
   width: 100%;
-  ​border-collapse​:​ collapse;
+  border-collapse: collapse;
   background-color: white;
 }
 /* kêt thúc css list hóa đơn */
@@ -470,21 +471,21 @@
   width: 10%;
 }
 .tabel-list3 tr td:nth-child(8) {
-  width:10%;
+  width: 10%;
 }
 .tabel-list3 tr td:nth-child(9) {
-  width:7%
+  width: 7%;
 }
 .tabel-list3 tr td:nth-child(10) {
-  width:6%
+  width: 6%;
 }
 .tabel-list3 tr td:nth-child(11) {
-  width:6%
+  width: 6%;
 }
 
-.tabel-list3{
+.tabel-list3 {
   width: 100%;
-  ​border-collapse​:​ collapse;
+  border-collapse: collapse;
   background-color: white;
 }
 /* kêt thúc css list khách hàng */
@@ -545,9 +546,9 @@
   width: 10%;
 }
 
-.tabel-list4{
+.tabel-list4 {
   width: 100%;
-  ​border-collapse​:​ collapse;
+  border-collapse: collapse;
   background-color: white;
 }
 /* kêt thúc css list bình luận */

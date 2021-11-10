@@ -35,5 +35,25 @@ function loadTen_hanghoa($ma_hanghoa){
     return $ten_hanghoa;
 }
 
+function delete_hanghoa($ma_hanghoa){
+    $sql ="DELETE FROM hang_hoa WHERE ma_hanghoa=".$ma_hanghoa;
+    pdo_execute($sql);
+}
+
+function update_hanghoa($tensp, $dongia, $giamgia, $hinhpath, $danhmuc, $mota, $ma_hanghoa){
+    if($hinhpath != ""){
+        $sql = "UPDATE hang_hoa SET ten_hanghoa = '".$tensp."', don_gia = '".$dongia."', giam_gia = '".$giamgia."', hinh = '".$hinhpath."', ma_danhmuc = '".$danhmuc."', mo_ta = '".$mota."' WHERE ma_hanghoa =".$ma_hanghoa;
+    }else{
+        $sql = "UPDATE hang_hoa SET ten_hanghoa = '".$tensp."', don_gia = '".$dongia."', giam_gia = '".$giamgia."', ma_danhmuc = '".$danhmuc."', mo_ta = '".$mota."' WHERE ma_hanghoa =".$ma_hanghoa;
+    }
+    pdo_execute($sql);
+}
+
+function countAll_hanghoa(){
+    $sql = "SELECT COUNT(*) FROM hang_hoa";
+    $count = pdo_query_value($sql);
+    return $count;
+}
+
 
 ?>

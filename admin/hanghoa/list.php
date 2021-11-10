@@ -11,13 +11,13 @@
 
 <div class="right-bgc">
             <div class="layout-function">
-              <?php
+            <?php
               
               if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
               }
-              
-              ?>
+          
+          ?>
              
               <div class="function-title">Danh sách sản phẩm</div>
               <div class="function-table">
@@ -34,6 +34,7 @@
                     <th colspan="2">SL</th>
                     <th colspan="2">Sửa / Xóa</th>
                   </tr>
+                 
 
 
                 <?php
@@ -41,6 +42,9 @@
                 foreach ($listhanghoa as $hanghoa) {
                     extract($hanghoa);
                     $ten_danhmuc = loadTen_danhmuc($ma_danhmuc);
+                    $deletePro = "index.php?act=delete-pro&&id=".$ma_hanghoa;
+                    $editPro = "index.php?act=edit-pro&&id=".$ma_hanghoa;
+                    $addSL = "index.php?act=add-sl&&id=".$ma_hanghoa;
                     echo '
                     
                     <tr>
@@ -50,7 +54,9 @@
                         >'.$ten_hanghoa.'</span
                       >
                     </td>
-                    <td>'.$hinh.'</td>
+                    <td>
+                    <img src="../uploads/'.$hinh.'">
+                    </td>
                     <td>'.$ten_danhmuc.'</td>
                     <td>'.$don_gia.'</td>
                     <td>'.$giam_gia.'</td>
@@ -60,13 +66,13 @@
                         '.$mo_ta.'
                       </span>
                     </td>
-                    <td><a href="">Nhập</a></td>
+                    <td><a href="'.$addSL.'">Nhập</a></td>
                     <td><a href="">Thay đổi</a></td>
                     <td>
-                      <a href="" class="a-edit"><i class="fas fa-edit"></i></a>
+                      <a href="'.$editPro.'" class="a-edit"><i class="fas fa-edit"></i></a>
                     </td>
                     <td>
-                      <a href="" class="a-delete"
+                      <a href="'.$deletePro.'" class="a-delete"
                         ><i class="fas fa-trash-alt"></i
                       ></a>
                     </td>
