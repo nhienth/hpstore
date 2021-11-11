@@ -46,7 +46,7 @@
                       <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
                     </td>
                     <td>
-                      <a href="'.$xoadm.'" class="a-delete"
+                      <a href="'.$xoadm.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')" class="a-delete"
                         ><i class="fas fa-trash-alt" ></i
                       ></a>
                     </td>

@@ -74,7 +74,7 @@
                       <a href="'.$editPro.'" class="a-edit"><i class="fas fa-edit"></i></a>
                     </td>
                     <td>
-                      <a href="'.$deletePro.'" class="a-delete"
+                      <a href="'.$deletePro.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')" class="a-delete"
                         ><i class="fas fa-trash-alt"></i
                       ></a>
                     </td>

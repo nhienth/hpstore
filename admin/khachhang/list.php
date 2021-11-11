@@ -59,7 +59,7 @@
                       <td>
                       <a href="'.$edit.'" class="a-edit"><i class="fas fa-edit" ></i></a>
                     </td>
-                      <td><a href="'.$delete.'" class="a-delete"
+                      <td><a href="'.$delete.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')" class="a-delete"
                         ><i class="fas fa-trash-alt" ></i
                       ></a></td>
                       
