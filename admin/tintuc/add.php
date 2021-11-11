@@ -21,17 +21,17 @@
               <div class="function-title">Thêm tin tức</div>
               
             <div class="form-funtcion">
-                <form action="index.php?act=addtt" method="post" class="form-add--product">
+                <form action="index.php?act=addtt" method="post" class="form-add--product" enctype="multipart/form-data">
                     <label for="">Tiêu đề</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="tieude" id="">
                     <label for="">Nội dung</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="noidung" id="" cols="30" rows="10"></textarea>
                     <label for="">Ngày đăng</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="ngaydang" id="">
                     <label for="">Hình ảnh</label>
                     <input type="file" name="file">
                     <label for="">Tóm tắt</label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="tomtat" id="">
                     <input type="submit" name="themmoi" value="Thêm tin" >
                     <button type="reset">Nhập lại</button>
                     <button> <a href="index.php?act=listtt"> Danh sách </a></button>

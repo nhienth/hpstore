@@ -4,20 +4,20 @@
             <div class="admin-info">
               <div class="admin-name">ADMIN</div>
               <div class="admin-img">
-                <img src="../content/images/home/support-online.jpg" alt="">
+                <img src="../content/images/home/ec9a4c0a7f3aea8a819354a0933540ad.jpg" alt="">
               </div>
             </div>
           </div>
 
 <div class="right-bgc">
             <div class="layout-function">
-              <?php
+            <?php
               
-              if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao">'.$thongbao.'</div>';
-              }
-              
-              ?>
+                if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+                }
+            
+            ?>
              
               <div class="function-title">Danh sách khách hàng</div>
               <div class="function-table">
@@ -25,63 +25,54 @@
                   <tr>
                     <th>Mã khách hàng</th>
                     <th>Tên đăng nhập</th>
-                    <th>Mật khẩu</th>
                     <th>Họ tên</th>
                     <th>Hình</th>
                     <th>Số điện thoại</th>
                     <th>Email</th>
                     <th>Địa chỉ</th>
                     <th>Vai trò</th>
-
                     <th colspan="2">Sửa / Xóa</th>
                   </tr>
+
+                <?php
+                
+                foreach ($listkhachhang as $khachhang) {
+                  extract($khachhang);
+                  $edit = "index.php?act=edit-acc&&id=".$ma_khachhang;
+                  $delete = "index.php?act=delete-acc&&id=".$ma_khachhang;
+                  if($vai_tro == 0){
+                    $vai_tro = "Khách hàng";
+                  }else{
+                    $vai_tro = "Nhân viên";
+                  }
+                  echo '
+                  
                   <tr>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td><a href="'.$xoadm.'" class="a-delete"
+                      <td>'.$ma_khachhang.'</td>
+                      <td>'.$ten_dangnhap.'</td>
+                      <td>'.$ho_ten.'</td>
+                      <td><img src="../uploads/'.$hinh.'" alt=""></td>
+                      <td>'.$so_dien_thoai.'</td>
+                      <td>'.$email.'</td>
+                      <td>'.$dia_chi.'</td>
+                      <td>'.$vai_tro.'</td>
+                      <td>
+                      <a href="'.$edit.'" class="a-edit"><i class="fas fa-edit" ></i></a>
+                    </td>
+                      <td><a href="'.$delete.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')" class="a-delete"
                         ><i class="fas fa-trash-alt" ></i
                       ></a></td>
-                      <td>
-                      <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
-                    </td>
+                      
                   </tr>
+                  
+                  ';
+                }
+                
+                ?>
+
+                  
                 <?php
 
-                
-                // foreach ($listdanhmuc as $danhmuc) {
-                //     extract($danhmuc);
-                //     $suadm="index.php?act=suadm&id=".$ma_danhmuc;
-                //     $xoadm="index.php?act=xoadm&id=".$ma_danhmuc;
-                //     echo '
-                    
-                //     <tr>
-                //     <td>ff</td>
-                //     <td>
-                //       <span>ff</span>
-                //     </td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>
-                //       <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
-                //     </td>
-                //     <td>
-                //       <a href="'.$xoadm.'" class="a-delete"
-                //         ><i class="fas fa-trash-alt" ></i
-                //       ></a>
-                //     </td>
-                //   </tr>
-                    
-                //     ';
-                // }
                 
                 ?>
 

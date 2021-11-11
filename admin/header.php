@@ -47,7 +47,7 @@
           </div>
           <div class="left-emelent">
             <div class="left-element--content">
-              <a href="index.php"><i class="fas fa-tv"></i> Trang chủ admin</a>
+              <a href="index.php" class="none-after"><i class="fas fa-tv"></i> Trang chủ admin</a>
             </div>
           </div>
           <div class="left-emelent">
@@ -57,7 +57,7 @@
                 <a href="index.php?act=addkh">Thêm tài khoản</a>
                 <a href="index.php?act=listkh">Danh sách</a>
               </div>
-              <a href=""><i class="fas fa-user"></i> Tài khoản</a>
+              <a href="index.php?act=listkh"><i class="fas fa-user"></i> Tài khoản</a>
             </div>
           </div>
           <div class="left-emelent">
@@ -67,7 +67,7 @@
                 <a href="index.php?act=adddm">Thêm danh mục</a>
                 <a href="index.php?act=listdm">Danh sách</a>
               </div>
-              <a href=""><i class="fas fa-copyright"></i> Danh mục</a>
+              <a href="index.php?act=listdm"><i class="fas fa-copyright"></i> Danh mục</a>
             </div>
           </div>
           <div class="left-emelent">
@@ -83,19 +83,13 @@
           <div class="left-emelent">
             <div class="left-element--title">Quản lý đơn hàng</div>
             <div class="left-element--content">
-            <div class="more-function">
-                <a href="index.php?act=listhd">Danh sách</a>
-            </div>
-              <a href=""><i class="fas fa-people-carry"></i> Đơn hàng</a>
+              <a href="index.php?act=listhd"><i class="fas fa-people-carry"></i> Đơn hàng</a>
             </div>
           </div>
           <div class="left-emelent">
             <div class="left-element--title">Quản lý bình luận</div>
             <div class="left-element--content">
-            <div class="more-function">
-                <a href="index.php?act=listbl">Danh sách</a>
-              </div>
-              <a href=""><i class="fas fa-comment-alt"></i> Bình luận</a>
+              <a href="index.php?act=listbl"><i class="fas fa-comment-alt"></i> Bình luận</a>
             </div>
           </div>
           <div class="left-emelent">

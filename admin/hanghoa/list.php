@@ -4,20 +4,20 @@
             <div class="admin-info">
               <div class="admin-name">ADMIN</div>
               <div class="admin-img">
-                <img src="../content/images/home/support-online.jpg" alt="">
+                <img src="../content/images/home/ec9a4c0a7f3aea8a819354a0933540ad.jpg" alt="">
               </div>
             </div>
           </div>
 
 <div class="right-bgc">
             <div class="layout-function">
-              <?php
+            <?php
               
               if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
               }
-              
-              ?>
+          
+          ?>
              
               <div class="function-title">Danh sách sản phẩm</div>
               <div class="function-table">
@@ -31,9 +31,11 @@
                     <th>Giảm giá (%)</th>
                     <th>Ngày nhập</th>
                     <th>Mô tả</th>
-                    <th colspan="2">SL</th>
+                    <th>Tổng SL</th>
+                    <th>Nhập SL</th>
                     <th colspan="2">Sửa / Xóa</th>
                   </tr>
+                 
 
 
                 <?php
@@ -41,6 +43,10 @@
                 foreach ($listhanghoa as $hanghoa) {
                     extract($hanghoa);
                     $ten_danhmuc = loadTen_danhmuc($ma_danhmuc);
+                    $deletePro = "index.php?act=delete-pro&&id=".$ma_hanghoa;
+                    $editPro = "index.php?act=edit-pro&&id=".$ma_hanghoa;
+                    $addSL = "index.php?act=add-sl&&id=".$ma_hanghoa;
+                    $sumSL = sum_soLuong($ma_hanghoa);
                     echo '
                     
                     <tr>
@@ -50,9 +56,11 @@
                         >'.$ten_hanghoa.'</span
                       >
                     </td>
-                    <td>'.$hinh.'</td>
+                    <td>
+                    <img src="../uploads/'.$hinh.'">
+                    </td>
                     <td>'.$ten_danhmuc.'</td>
-                    <td>'.$don_gia.'</td>
+                    <td>'.number_format($don_gia).'</td>
                     <td>'.$giam_gia.'</td>
                     <td>'.$ngay_nhap.'</td>
                     <td>
@@ -60,13 +68,13 @@
                         '.$mo_ta.'
                       </span>
                     </td>
-                    <td><a href="">Nhập</a></td>
-                    <td><a href="">Thay đổi</a></td>
+                    <td>'.$sumSL.'</td>
+                    <td><a href="'.$addSL.'" class="a-add"><i class="fas fa-plus"></i></a></td>
                     <td>
-                      <a href="" class="a-edit"><i class="fas fa-edit"></i></a>
+                      <a href="'.$editPro.'" class="a-edit"><i class="fas fa-edit"></i></a>
                     </td>
                     <td>
-                      <a href="" class="a-delete"
+                      <a href="'.$deletePro.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')" class="a-delete"
                         ><i class="fas fa-trash-alt"></i
                       ></a>
                     </td>

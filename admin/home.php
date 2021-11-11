@@ -1,10 +1,18 @@
+<?php
+
+$countPro = countAll_hanghoa();
+$countCate = countAll_danhmuc();
+$countAcc = countAll_khachhang();
+
+?>
+
 <div class="layout-right">
           <div class="right-top">
             <div class="website-title">Trang quản trị websitie</div>
             <div class="admin-info">
               <div class="admin-name">ADMIN</div>
               <div class="admin-img">
-                <img src="../content/images/home/support-online.jpg" alt="">
+                <img src="../content/images/home/ec9a4c0a7f3aea8a819354a0933540ad.jpg" alt="">
               </div>
             </div>
           </div>
@@ -13,7 +21,7 @@
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Tài khoản</div>
-                  <div class="boxed-content--count">3</div>
+                  <div class="boxed-content--count"><?=$countAcc?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-user-circle"></i>
@@ -23,7 +31,7 @@
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Danh mục</div>
-                  <div class="boxed-content--count">5</div>
+                  <div class="boxed-content--count"><?=$countCate?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-copyright"></i>
@@ -33,7 +41,7 @@
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Sản phẩm</div>
-                  <div class="boxed-content--count">25</div>
+                  <div class="boxed-content--count"><?=$countPro?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-volleyball-ball"></i>

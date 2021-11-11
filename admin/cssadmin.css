@@ -1,279 +1,278 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 /* css phần header */
-.head1{
-    width: 1200px;
-    height: 60px;
-    background-color: #3D3EF0;
-    margin-bottom: 20px;
-    border-radius: 7px;
-    margin-left: 90px;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 2fr 3fr 2fr;
+.head1 {
+  width: 1200px;
+  height: 60px;
+  background-color: #3d3ef0;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  margin-left: 90px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
 }
-.head1 h3{
-    padding-left: 50px;
-    color: #FFD41C;
-    font-size: 30px;
-    padding-top: 10px;
-    padding-right: 30px;
-    font-family: 'Courier New', Courier, monospace;
+.head1 h3 {
+  padding-left: 50px;
+  color: #ffd41c;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-right: 30px;
+  font-family: "Courier New", Courier, monospace;
 }
-.head1 #icon1{
-    color: #FFD41C;
-    font-size: 30px;
-    font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
-    padding-top: 10px;
+.head1 #icon1 {
+  color: #ffd41c;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 10px;
 }
-.head1 #icon1 a{
-    text-decoration: none;
-    color: #FFD41C;
+.head1 #icon1 a {
+  text-decoration: none;
+  color: #ffd41c;
 }
-.head1 #icon1 a:hover{
-    transition: 0.3s;
-    color: white;
-}
-.nav1{
-    width: 1200px;
-    margin-left: 90px;
-    height: 60px;
-    background-color: #3D3EF0;
-    border-radius: 7px;
-}
-.nav1 ul li{
-    display: inline-block;
-    padding-top: -2px;
-    padding-left: 12px;
-}
-.nav1 ul{
-    display: block;
-    list-style: none;
+.head1 #icon1 a:hover {
+  transition: 0.3s;
+  color: white;
 }
 .nav1 {
-    color: white;
+  width: 1200px;
+  margin-left: 90px;
+  height: 60px;
+  background-color: #3d3ef0;
+  border-radius: 7px;
 }
-.nav1 ul li a{
-    text-decoration: none;
-    display: block;
-    color: #FFD41C;
-    font-size: 25px;
-    padding-top: 20px;
-    padding-right: 5px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
+.nav1 ul li {
+  display: inline-block;
+  padding-top: -2px;
+  padding-left: 12px;
 }
-.nav1 ul li a:hover{
-    color: white;
-    transition: 0.3s;
+.nav1 ul {
+  display: block;
+  list-style: none;
+}
+.nav1 {
+  color: white;
+}
+.nav1 ul li a {
+  text-decoration: none;
+  display: block;
+  color: #ffd41c;
+  font-size: 25px;
+  padding-top: 20px;
+  padding-right: 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
+.nav1 ul li a:hover {
+  color: white;
+  transition: 0.3s;
 }
 /* kết thúc css phần header */
 
 /* css phần loại hàng */
-.status1{
-    margin-top: 20px;
-    width: 1200px;
-    margin-left: 90px;
-    background-color: chocolate;
-    color: darkblue;
-    border-radius: 7px;
-    height: 40px;
+.status1 {
+  margin-top: 20px;
+  width: 1200px;
+  margin-left: 90px;
+  background-color: chocolate;
+  color: darkblue;
+  border-radius: 7px;
+  height: 40px;
 }
-.status1 h3{
-    padding-top: 5px;
-    padding-left: 30px;
-    font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
+.status1 h3 {
+  padding-top: 5px;
+  padding-left: 30px;
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
 }
-.contenaddlh{
-    margin-top: 20px;
-    width: 1200px;
-    margin-left: 120px;
-    border-radius: 1px solid gray;
+.contenaddlh {
+  margin-top: 20px;
+  width: 1200px;
+  margin-left: 120px;
+  border-radius: 1px solid gray;
 }
-.contenaddlh form label{
-    color: blue ;
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
-    margin-bottom: 3px;
+.contenaddlh form label {
+  color: blue;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  margin-bottom: 3px;
 }
-.contenaddlh form input[type="text"]{
-    width: 400px;
-    height: 24px;
-    margin-bottom: 3px;
+.contenaddlh form input[type="text"] {
+  width: 400px;
+  height: 24px;
+  margin-bottom: 3px;
 }
-.contenaddlh form input[type="submit"],[type="button"]{
-    width: 160px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: green;
-    color: white;
-    font-size: 22px;
-    margin-top: 10px;
-    margin-left: 10px;
+.contenaddlh form input[type="submit"],
+[type="button"] {
+  width: 160px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
-.contenaddlh form a input[type="submit"]:hover{
-    background-color: red;
-    transition: 0.3s;
+.contenaddlh form a input[type="submit"]:hover {
+  background-color: red;
+  transition: 0.3s;
 }
-.contenaddlh form a input[type="button"]:hover{
-    background-color: red;
-    transition: 0.3s;
+.contenaddlh form a input[type="button"]:hover {
+  background-color: red;
+  transition: 0.3s;
 }
-.contenaddlh form select option{
-    width: 100px;
-    height: 25px;
+.contenaddlh form select option {
+  width: 100px;
+  height: 25px;
 }
-
 
 /* kết thúc css phần loại hàng */
 
 /* css phần danh sách danh mục */
-table tr{
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 3fr;
+table tr {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 3fr;
 }
-.table1 table{
-    width: 1100px;
-    border-radius: 7px;
+.table1 table {
+  width: 1100px;
+  border-radius: 7px;
 }
-.table1 table tr th{
-    background-color: rosybrown;
-    height: 30px;
-    font-size: 20px;
-    padding-top: 3px;
+.table1 table tr th {
+  background-color: rosybrown;
+  height: 30px;
+  font-size: 20px;
+  padding-top: 3px;
 }
-.table1 table tr td{
-    padding: 4px 4px;
+.table1 table tr td {
+  padding: 4px 4px;
 }
 /* kết thức css phần danh sách danh mục */
 
 /* css phần danh sách sản phẩm */
-.table2 table tr{
-    width: 1200px;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+.table2 table tr {
+  width: 1200px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .table2 table {
-    margin-left: -30px;
+  margin-left: -30px;
 }
-.table2 table tr th{
-    background-color: rosybrown;
-    height: 45px;
-    font-size: 20px;
-    padding-top: 3px;
+.table2 table tr th {
+  background-color: rosybrown;
+  height: 45px;
+  font-size: 20px;
+  padding-top: 3px;
 }
-.table2 table #button1{
-    width: 50px;
-    margin-bottom: 7px;
+.table2 table #button1 {
+  width: 50px;
+  margin-bottom: 7px;
 }
-form select{
-    width: 150px;
-    margin-bottom: 5px;
+form select {
+  width: 150px;
+  margin-bottom: 5px;
 }
 /* kết thức css phần danh sách sản phẩm */
 /* css phần danh sách tin tức */
-#select1{
-    margin-top: 20px;
-    margin-left: 10px;
+#select1 {
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 /* kết thức css phần danh sách tin tức */
 
 /* css phần danh sách bình luận */
-.table3 table{
-    width: 1200px;
-    margin-left: -30px;
+.table3 table {
+  width: 1200px;
+  margin-left: -30px;
 }
-.table3 table tr{
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+.table3 table tr {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
 }
-.table3 table tr td #button2{
-    width: 100px;
+.table3 table tr td #button2 {
+  width: 100px;
 }
-.table3 table tr th{
-    background-color: rosybrown;
-    
+.table3 table tr th {
+  background-color: rosybrown;
 }
 /* kết thức css phần danh sách bình luận */
 
 /*  css phần danh sách hóa đơn */
-.table4 table{
-    width: 1200px;
-    margin-left: -30px;
+.table4 table {
+  width: 1200px;
+  margin-left: -30px;
 }
-.table4 table tr{
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+.table4 table tr {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
 }
-.table4 table tr td #button3{
-    width: 120px;
-    height: 50px;
-    font-size: 16px;
+.table4 table tr td #button3 {
+  width: 120px;
+  height: 50px;
+  font-size: 16px;
 }
-.table4 table tr th{
-    background-color: rosybrown;
+.table4 table tr th {
+  background-color: rosybrown;
 }
 /* kết thức css phần danh sách hóa đơn */
 
 /* css phần danh sách hóa đơn chi tiết */
-.table5 table{
-    width: 1200px;
-    margin-left: -30px;
+.table5 table {
+  width: 1200px;
+  margin-left: -30px;
 }
-.table5 table tr{
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr ;
+.table5 table tr {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
 }
-.table5 table tr td #button3{
-    width: 120px;
-    height: 50px;
-    font-size: 16px;
+.table5 table tr td #button3 {
+  width: 120px;
+  height: 50px;
+  font-size: 16px;
 }
-.table5 table tr th{
-    background-color: rosybrown;
+.table5 table tr th {
+  background-color: rosybrown;
 }
 /* kết thức css phần danh sách hóa đơn  chi tiết*/
 
 /* css phần danh sách khách hàng */
-.table6 table{
-    width: 1200px;
-    margin-left: -30px;
+.table6 table {
+  width: 1200px;
+  margin-left: -30px;
 }
-.table6 table tr{
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+.table6 table tr {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.table6 table tr td #button4{
-    width: 100px;
-    height: 50px;
-    font-size: 16px;
+.table6 table tr td #button4 {
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
 }
-.table6 table tr th{
-    background-color: rosybrown;
-    height: 40px;
+.table6 table tr th {
+  background-color: rosybrown;
+  height: 40px;
 }
 
 /* css phần footer */
-.footer{
-    width: 1200px;
-    height: 40px;
-    background-color: indigo;
-    margin-left: 90px;
-    margin-top: 40px;
-    border-radius: 7px;
-    margin-bottom: 50px;
+.footer {
+  width: 1200px;
+  height: 40px;
+  background-color: indigo;
+  margin-left: 90px;
+  margin-top: 40px;
+  border-radius: 7px;
+  margin-bottom: 50px;
 }
-.footer h3{
-    font-size: 20px;
-    color: lavender;
-    padding-top: 8px;
-    margin-left: 180px;
+.footer h3 {
+  font-size: 20px;
+  color: lavender;
+  padding-top: 8px;
+  margin-left: 180px;
 }
 /* kết thúc phần css footer */
