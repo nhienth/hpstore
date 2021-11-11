@@ -27,7 +27,7 @@
                     <label for="">Mã danh mục</label>
                     <input type="text" disabled placeholder="AUTO NUMBER" >
                     <label for="">Tên danh mục</label>
-                    <input type="text" name="tenloai" id="">
+                    <input type="text" name="tenloai" id="" value="<?php if(isset($ten_danhmuc)) echo $ten_danhmuc ?>">
                     <!-- <button type="submit" name="themmoi" value="Thêm danh mục"> -->
                     <button type="submit" name="themmoi"> Thêm danh mục</button>
                     <button type="reset">Nhập lại</button>

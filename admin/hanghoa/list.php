@@ -31,7 +31,8 @@
                     <th>Giảm giá (%)</th>
                     <th>Ngày nhập</th>
                     <th>Mô tả</th>
-                    <th colspan="2">SL</th>
+                    <th>Tổng SL</th>
+                    <th>Nhập SL</th>
                     <th colspan="2">Sửa / Xóa</th>
                   </tr>
                  
@@ -45,6 +46,7 @@
                     $deletePro = "index.php?act=delete-pro&&id=".$ma_hanghoa;
                     $editPro = "index.php?act=edit-pro&&id=".$ma_hanghoa;
                     $addSL = "index.php?act=add-sl&&id=".$ma_hanghoa;
+                    $sumSL = sum_soLuong($ma_hanghoa);
                     echo '
                     
                     <tr>
@@ -66,8 +68,8 @@
                         '.$mo_ta.'
                       </span>
                     </td>
-                    <td><a href="'.$addSL.'">Nhập</a></td>
-                    <td><a href="">Thay đổi</a></td>
+                    <td>'.$sumSL.'</td>
+                    <td><a href="'.$addSL.'" class="a-add"><i class="fas fa-plus"></i></a></td>
                     <td>
                       <a href="'.$editPro.'" class="a-edit"><i class="fas fa-edit"></i></a>
                     </td>

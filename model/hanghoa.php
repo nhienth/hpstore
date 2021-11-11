@@ -60,5 +60,33 @@ function countAll_hanghoa(){
     return $count;
 }
 
+function loadOne_modelhh($ma_model){
+    $sql = "SELECT * FROM model_hang_hoa WHERE ma_model=".$ma_model;
+    $model = pdo_query_one($sql);
+    return $model;
+}
+
+function update_model($ma_model, $size, $so_luong) {
+    $sql = "UPDATE model_hang_hoa SET size = '".$size."', so_luong = '".$so_luong."'  WHERE ma_model =".$ma_model;
+    pdo_execute($sql);
+}
+
+function delete_model($ma_model) {
+    $sql = "DELETE FROM model_hang_hoa WHERE ma_model =".$ma_model;
+    pdo_execute($sql);
+}
+
+function sum_soLuong($ma_hanghoa){
+    $sql = "SELECT sum(so_luong) FROM model_hang_hoa WHERE ma_hanghoa=".$ma_hanghoa;
+    $count = pdo_query_value($sql);
+    return $count;
+}
+
+function exist_model($size){
+    $sql = "SELECT count(*) FROM model_hang_hoa WHERE size LIKE '%".$size."%' ";
+    $isExist = pdo_query_value($sql);
+    return $isExist > 0;
+}
+
 
 ?>

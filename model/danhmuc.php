@@ -35,4 +35,14 @@
         $count = pdo_query_value($sql);
         return $count;
     }
+
+
+    function exist_danhmuc($ten_danhmuc){
+        $sql = "SELECT count(*) FROM danh_muc WHERE ten_danhmuc LIKE '%".$ten_danhmuc."%' ";
+        $isExist = pdo_query_value($sql);
+        return $isExist > 0;
+    }
+
+
+
 ?>

@@ -37,6 +37,11 @@ function delete_khachhang($ma_khachhang) {
     pdo_execute($sql);
 }
 
+function exist_khachhang($user){
+    $sql = "SELECT count(*) FROM khach_hang WHERE ten_dangnhap LIKE '%".$user."%' ";
+    $isExist = pdo_query_value($sql);
+    return $isExist > 0;
+}
 
 
 ?>

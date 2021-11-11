@@ -13,9 +13,12 @@
                     $ten_danhmuc = $_POST['tenloai'];
                     if($ten_danhmuc == ""){
                         $thongbao = "Vui lòng nhập tên loại hàng";
+                    }else if(exist_danhmuc($ten_danhmuc)){
+                        $thongbao = "Danh mục đã tồn tại !";
                     }else{
                         insert_danhmuc($ten_danhmuc);
                         $thongbao = "Thêm danh mục thành công !";
+                        $ten_danhmuc = "";
                     }
                 }
                 include "danhmuc/add.php";
@@ -88,8 +91,16 @@
                     $masp = $_POST['ma_hanghoa'];
                     $size = $_POST['size'];
                     $so_luong = $_POST['so_luong'];
-                    insertSL_hanghoa($masp, $size, $so_luong);
-                    $thongbao = "Thêm số lượng thành công !";
+                    if($size == ""){
+                        $thongbao = "Thêm thất bại. Không được để trống size mặt hàng !";
+                    }else if($so_luong == ""){
+                        $thongbao = "Thêm thất bại. Không được để trống số lượng mặt hàng !";
+                    }else if(exist_model($size)){
+                        $thongbao = "Thêm thất bại. Mặt hàng đã tồn tại size này !";
+                    }else{
+                        insertSL_hanghoa($masp, $size, $so_luong);
+                        $thongbao = "Thêm số lượng thành công !";
+                    }
                 }
                 $listhanghoa = loadAll_hanghoa();
                 include "hanghoa/list.php";
@@ -131,6 +142,31 @@
                 $listhanghoa = loadAll_hanghoa();
                 include "hanghoa/list.php";
                 break;
+            case 'edit-SL' :
+                if(isset($_GET['id']) && ($_GET['id']) >0){
+                    $model = loadOne_modelhh($_GET['id']);
+                }
+                include "hanghoa/editsl.php";
+                break;
+            case 'update-SL':
+                if(isset($_POST['btn-update'])){
+                    $ma_model = $_POST['ma_model'];
+                    $size = $_POST['size'];
+                    $so_luong = $_POST['so_luong'];
+                    update_model($ma_model, $size, $so_luong);
+                    $thongbao = "Sản phẩm đã được cập nhật !";
+                }
+                $listhanghoa = loadAll_hanghoa();
+                include "hanghoa/list.php";
+                break;
+            case 'delete-SL' :
+                if(isset($_GET['id']) && ($_GET['id'])>0){
+                    delete_model($_GET['id']);
+                    $thongbao = "Mặt hàng đã được xóa !";
+                }
+                $listhanghoa = loadAll_hanghoa();
+                include "hanghoa/list.php";
+                break;
             case 'addkh' :
                 if(isset($_POST['btn-add'])){
                     $user = $_POST['user'];
@@ -144,8 +180,33 @@
                     $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($avatar);
                     move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
-                    insert_khachhang($user, $pass, $name, $address, $phone, $email, $avatar);
-                    $thongbao = "Thêm tài khoản thành công !";
+
+                    if($user == ""){
+                        $thongbao = "Không được để trống trên đăng nhập !";
+                    }else if(exist_khachhang($user)){
+                        $thongbao = "Tên đăng nhập đã tồn tại !";
+                    }else if($pass == "") {
+                        $thongbao = "Không được để trống mật khẩu !";
+                    }else if(strlen($pass) < 5){
+                        $thongbao = "Mật khẩu phải lớn hơn 5 ký tự !";
+                    }else if($name == ""){
+                        $thongbao = "Không được dể trống họ tên !";
+                    }else if($email == ""){
+                        $thongbao = "Không được để trống email !";
+                    }else if($phone == ""){
+                        $thongbao = "Không được để trống số điện thoại !";
+                    }else if($address == ""){
+                        $thongbao = "Không được để trống địa chỉ !";
+                    }else{
+                        insert_khachhang($user, $pass, $name, $address, $phone, $email, $avatar);
+                        $thongbao = "Thêm tài khoản thành công !";
+                        $user = "";
+                        $pass = "";
+                        $name = "";
+                        $email = "";
+                        $address = "";
+                        $phone = "";
+                    }
                 }
                 include "khachhang/add.php";
                 break;

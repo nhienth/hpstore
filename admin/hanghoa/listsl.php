@@ -31,24 +31,22 @@
                     <th>Số lượng</th>
                     <th colspan="2">Sửa / Xóa</th>
                   </tr>
-              
-
+            
 
                 <?php
                 
                 foreach ($listhanghoa as $hanghoa) {
                     extract($hanghoa);
                     $ten_danhmuc = loadTen_danhmuc($ma_danhmuc);
-                    $deletePro = "index.php?act=delete-pro&&id=".$ma_hanghoa;
-                    $editPro = "index.php?act=edit-pro&&id=".$ma_hanghoa;
-                    $addSL = "index.php?act=add-sl&&id=".$ma_hanghoa;
+                    $deleteSL = "index.php?act=delete-SL&&id=".$ma_model;
+                    $editSL = "index.php?act=edit-SL&&id=".$ma_model;
 
                     echo '   
                     <tr>
                         <td>'.$size.'</td>
                         <td>'.$so_luong.'</td>
-                        <td> <a href="" class="a-edit"><i class="fas fa-edit"></i></a></td>
-                        <td> <a href="" class="a-delete"
+                        <td> <a href="'.$editSL.'" class="a-edit"><i class="fas fa-edit"></i></a></td>
+                        <td> <a href="'.$deleteSL.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')" class="a-delete"
                         ><i class="fas fa-trash-alt"></i
                       ></a></td>
                     </tr>';

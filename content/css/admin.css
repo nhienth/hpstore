@@ -500,19 +500,21 @@
   color: #112d6b;
   text-decoration: underline;
 }
-.tabel-list4 tr td .a-edit,
-.tabel-list4 tr td .a-delete {
+.a-edit,
+.a-delete,
+.a-add {
   padding: 7px;
-  color: white;
+  color: white !important;
   background-color: #4c73dd;
   border-radius: 2px;
   transition: all 0.25s linear;
 }
-.tabel-list4 tr td .a-delete {
+.a-delete {
   background-color: #e64e39;
 }
-.tabel-list4 tr td .a-edit:hover,
-.tabel-list4 tr td .a-delete:hover {
+.a-edit:hover,
+.a-delete:hover,
+.a-add:hover {
   background-color: #666666;
   color: white;
 }
