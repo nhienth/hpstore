@@ -29,6 +29,12 @@
                 break;
             case 'xoadm' :
                 if(isset($_GET['id'])&&($_GET['id']>0)){
+                    $listhanghoa = loadAll_by_danhmuc($_GET['id']);
+                    foreach ($listhanghoa as $hanghoa) {
+                        extract($hanghoa);
+                        deleteModel_hanghoa($ma_hanghoa);
+                    }
+                    deletePro_by_danhmuc($_GET['id']);
                     delete_danhmuc($_GET['id']);
                     $thongbao = "Danh mục đã được xóa !";
                 }
@@ -95,7 +101,7 @@
                         $thongbao = "Thêm thất bại. Không được để trống size mặt hàng !";
                     }else if($so_luong == ""){
                         $thongbao = "Thêm thất bại. Không được để trống số lượng mặt hàng !";
-                    }else if(exist_model($size)){
+                    }else if(exist_model($size, $masp)){
                         $thongbao = "Thêm thất bại. Mặt hàng đã tồn tại size này !";
                     }else{
                         insertSL_hanghoa($masp, $size, $so_luong);

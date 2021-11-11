@@ -45,6 +45,18 @@ function deleteModel_hanghoa($ma_hanghoa){
     pdo_execute($sql);
 }
 
+function deletePro_by_danhmuc($ma_danhmuc){
+    $sql = "DELETE FROM hang_hoa WHERE ma_danhmuc =".$ma_danhmuc;
+    pdo_execute($sql);
+}
+
+function loadAll_by_danhmuc($ma_danhmuc){
+    $sql = "SELECT * FROM hang_hoa WHERE ma_danhmuc =".$ma_danhmuc;
+    $listhanghoa = pdo_query($sql);
+    return $listhanghoa;
+
+}
+
 function update_hanghoa($tensp, $dongia, $giamgia, $hinhpath, $danhmuc, $mota, $ma_hanghoa){
     if($hinhpath != ""){
         $sql = "UPDATE hang_hoa SET ten_hanghoa = '".$tensp."', don_gia = '".$dongia."', giam_gia = '".$giamgia."', hinh = '".$hinhpath."', ma_danhmuc = '".$danhmuc."', mo_ta = '".$mota."' WHERE ma_hanghoa =".$ma_hanghoa;
@@ -82,8 +94,8 @@ function sum_soLuong($ma_hanghoa){
     return $count;
 }
 
-function exist_model($size){
-    $sql = "SELECT count(*) FROM model_hang_hoa WHERE size LIKE '%".$size."%' ";
+function exist_model($size,$ma_hanghoa){
+    $sql = "SELECT count(*) FROM model_hang_hoa WHERE size LIKE '%".$size."%' AND ma_hanghoa =".$ma_hanghoa;
     $isExist = pdo_query_value($sql);
     return $isExist > 0;
 }
