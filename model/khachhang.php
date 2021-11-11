@@ -32,6 +32,11 @@ function countAll_khachhang(){
     return $count;
 }
 
+function delete_khachhang($ma_khachhang) {
+    $sql = "DELETE FROM khach_hang WHERE ma_khachhang =".$ma_khachhang;
+    pdo_execute($sql);
+}
+
 
 
 ?>

@@ -179,6 +179,14 @@
             $listkhachhang = loadAll_khachhang();
             include "khachhang/list.php";
             break;
+            case 'delete-acc':
+            if(isset($_GET['id']) && ($_GET['id'])>0){
+                delete_khachhang($_GET['id']);
+                $thongbao = "Tài khoản đã được xóa !";
+            }
+            $listkhachhang = loadAll_khachhang();
+            include "khachhang/list.php";
+            break;
             case 'listhd' :
                 include "hoadon/list.php";
                 break;

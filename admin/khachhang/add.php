@@ -36,7 +36,8 @@
                     <input type="text" name="phone" id="phone">
                     <label for="address">Địa chỉ</label>
                     <input type="text" name="address" id="address">
-                    <input type="submit" name="btn-add" value="Thêm tài khoản" >
+                    <!-- <input type="submit" name="btn-add" value="Thêm tài khoản" > -->
+                    <button type="submit" name="btn-add">Thêm tài khoản</button>
                     <button type="reset">Nhập lại</button>
                     <button> <a href="index.php?act=listkh"> Danh sách </a></button>
                 </form>
