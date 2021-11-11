@@ -40,6 +40,11 @@ function delete_hanghoa($ma_hanghoa){
     pdo_execute($sql);
 }
 
+function deleteModel_hanghoa($ma_hanghoa){
+    $sql = "DELETE FROM model_hang_hoa WHERE ma_hanghoa =".$ma_hanghoa;
+    pdo_execute($sql);
+}
+
 function update_hanghoa($tensp, $dongia, $giamgia, $hinhpath, $danhmuc, $mota, $ma_hanghoa){
     if($hinhpath != ""){
         $sql = "UPDATE hang_hoa SET ten_hanghoa = '".$tensp."', don_gia = '".$dongia."', giam_gia = '".$giamgia."', hinh = '".$hinhpath."', ma_danhmuc = '".$danhmuc."', mo_ta = '".$mota."' WHERE ma_hanghoa =".$ma_hanghoa;

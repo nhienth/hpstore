@@ -70,6 +70,7 @@
                 break;
             case 'delete-pro':
                 if(isset($_GET['id']) && ($_GET['id'])>0){
+                    deleteModel_hanghoa($_GET['id']);
                     delete_hanghoa($_GET['id']);
                     $thongbao ="Đã xóa sản phẩm !";
                 }
