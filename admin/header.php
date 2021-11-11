@@ -102,8 +102,8 @@
             <div class="left-element--title">Quản lý tin tức</div>
             <div class="left-element--content">
               <div class="more-function">
-                <a href="#">Thêm tin tức</a>
-                <a href="#">Danh sách tin tức</a>
+                <a href="index.php?act=addtt">Thêm tin tức</a>
+                <a href="index.php?act=listtt">Danh sách tin tức</a>
               </div>
               <a href=""><i class="fas fa-newspaper"></i> Tin tức</a>
             </div>

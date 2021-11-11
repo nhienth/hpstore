@@ -1,56 +1,84 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="..//cssadmin.css">
-</head>
-<body>
-    <div class="status1">
-        <h3>DANH SÁCH TIN TỨC</h3>
-    </div>
-    <div class="contenaddlh">
-        <form action="" method="post">
-            <div class="table2">
-                <table border="1">
-                    <tr>
-                        <th></th>
-                        <th>Mã tin tức</th>
-                        <th>Nội dung</th>
-                        <th>Ngày đăng</th>
-                        <th>Tiêu đề</th>
-                        <th>Hình</th>
-                        <th>Mã danh mục</th>
-                        <th>Tóm tắt</th>
-                        <th>Trạng thái</th>
-                        <th>THAO TÁC</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>hà nội</td>
-                        <td>
-                            <select name="" id="select1">
-                                <option value="">ĐÃ ĐĂNG</option>
-                                <option value="">CHƯA ĐĂNG</option>
-                            </select>
-                        </td>
-                        <td>
-                            <a href=""><input type="button" value="Xóa" id="button1"></a>
-                            <a href=""><input type="button" value="Sửa" id="button1"></a>
-                        </td>
-                    </tr>
-                </table>
+<div class="layout-right">
+<div class="right-top">
+            <div class="website-title">Trang quản trị websitie</div>
+            <div class="admin-info">
+              <div class="admin-name">ADMIN</div>
+              <div class="admin-img">
+                <img src="../content/images/home/support-online.jpg" alt="">
+              </div>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+          </div>
+
+<div class="right-bgc">
+            <div class="layout-function">
+              <?php
+              
+              if(isset($thongbao) && ($thongbao != "")) {
+                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              }
+              
+              ?>
+             
+              <div class="function-title">Danh sách tin tức</div>
+              <div class="function-table">
+                <table class="tabel-list6">
+                  <tr>
+                    <th>Mã tin tức</th>
+                    <th>Tiêu đề</th>
+                    <th>Tóm tắt</th>
+                    <th>Nội dung</th>
+                    <th>Hình</th>
+                    <th>Ngày đăng</th>
+                    <th colspan="2">Sửa / Xóa</th>
+                  </tr>
+                  <tr>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td>ha noi</td>
+                      <td><a href="'.$xoadm.'" class="a-delete"
+                        ><i class="fas fa-trash-alt" ></i
+                      ></a></td>
+                      <td>
+                      <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
+                    </td>
+                  </tr>
+                <?php
+
+                
+                // foreach ($listdanhmuc as $danhmuc) {
+                //     extract($danhmuc);
+                //     $suadm="index.php?act=suadm&id=".$ma_danhmuc;
+                //     $xoadm="index.php?act=xoadm&id=".$ma_danhmuc;
+                //     echo '
+                    
+                //     <tr>
+                //     <td>ff</td>
+                //     <td>
+                //       <span>ff</span>
+                //     </td>
+                //     <td>ff</td>
+                //     <td>ff</td>
+                //     <td>ff</td>
+                //     <td>ff</td>
+                //     <td>
+                //       <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
+                //     </td>
+                //     <td>
+                //       <a href="'.$xoadm.'" class="a-delete"
+                //         ><i class="fas fa-trash-alt" ></i
+                //       ></a>
+                //     </td>
+                //   </tr>
+                    
+                //     ';
+                // }
+                
+                ?>
+
+            </table>
+              </div>
+            </div>
+          </div>

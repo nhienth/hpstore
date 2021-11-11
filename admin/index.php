@@ -2,6 +2,7 @@
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/hanghoa.php";
+    include "../model/khachhang.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -11,10 +12,12 @@
                 if(isset($_POST['themmoi']) && $_POST['themmoi']){
                     $ten_danhmuc = $_POST['tenloai'];
                     if($ten_danhmuc == ""){
-                        echo $thongbao2 = "Vui lòng nhập tên loại hàng";
+                        $thongbao2 = "Vui lòng nhập tên loại hàng";
+                        echo $thongbao2;
                     }else{
                         insert_danhmuc($ten_danhmuc);
-                        echo $thongbao2 = "THÊM THÀNH CÔNG";
+                        $thongbao2 = "THÊM THÀNH CÔNG";
+                        echo $thongbao2;
                     }
                 }
                 include "danhmuc/add.php";
@@ -101,7 +104,27 @@
                 include "binhluan/list.php";
                 break;
             case 'addkh' :
+                if(isset($_POST['themmoi']) && ($_POST['themmoi'])){
+                    $ten_dangnhap = $_POST['user'];
+                    $mat_khau = $_POST['pass'];
+                    $email = $_POST['email'];
+                    $so_dt = $_POST['sdt'];
+                    $ho_ten = $_POST['fullname'];
+                    $dia_chi = $_POST['address'];
+                    $hinh = $_FILES['file']['name'];
+                    $linkup = "img/";
+                    move_uploaded_file($_FILES['file']['tmp_name'],$linkup,$hinh);
+                    insert_khachhang($ten_dangnhap,$mat_khau,$ho_ten,$hinh,$so_dt,$email,$dia_chi);
+                    $thongbao = "Thêm thành công";
+                    echo $thongbao;
+                }
                 include "khachhang/add.php";
+                break;
+            case 'listtt' :
+                include "tintuc/list.php";
+                break;
+            case 'addtt' :
+                include "tintuc/add.php";
                 break;
             default :
                 include "home.php";
