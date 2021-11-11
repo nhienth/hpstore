@@ -47,7 +47,7 @@
           </div>
           <div class="left-emelent">
             <div class="left-element--content">
-              <a href="index.php"><i class="fas fa-tv"></i> Trang chủ admin</a>
+              <a href="index.php" class="none-after"><i class="fas fa-tv"></i> Trang chủ admin</a>
             </div>
           </div>
           <div class="left-emelent">
