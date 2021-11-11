@@ -60,7 +60,7 @@
                     <img src="../uploads/'.$hinh.'">
                     </td>
                     <td>'.$ten_danhmuc.'</td>
-                    <td>'.$don_gia.'</td>
+                    <td>'.number_format($don_gia).'</td>
                     <td>'.$giam_gia.'</td>
                     <td>'.$ngay_nhap.'</td>
                     <td>

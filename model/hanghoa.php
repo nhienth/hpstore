@@ -6,7 +6,7 @@ function insert_hanghoa($tensp, $dongia, $giamgia, $hinh, $danhmuc, $ngaynhap, $
 }
 
 function loadAll_hanghoa(){
-    $sql = "SELECT * FROM hang_hoa";
+    $sql = "SELECT * FROM hang_hoa ORDER BY ma_hanghoa DESC";
     $listhanghoa = pdo_query($sql);
     return $listhanghoa;
 }
