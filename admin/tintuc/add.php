@@ -23,16 +23,16 @@
             <div class="form-funtcion">
                 <form action="index.php?act=addtt" method="post" class="form-add--product" enctype="multipart/form-data">
                     <label for="">Tiêu đề</label>
-                    <input type="text" name="tieude" id="">
+                    <input type="text" name="tieude" id="" value="<?php if(isset($tieude)) echo $tieude ?>">
                     <label for="">Nội dung</label>
-                    <textarea name="noidung" id="" cols="30" rows="10"></textarea>
+                    <textarea name="noidung" id="" cols="30" rows="10" value="<?php if(isset($noidung)) echo $noidung ?>"></textarea>
                     <label for="">Ngày đăng</label>
-                    <input type="text" name="ngaydang" id="">
+                    <input type="text" name="ngaydang" id="" value="<?php if(isset($ngaydang)) echo $ngaydang ?>">
                     <label for="">Hình ảnh</label>
                     <input type="file" name="file">
                     <label for="">Tóm tắt</label>
-                    <input type="text" name="tomtat" id="">
-                    <input type="submit" name="themmoi" value="Thêm tin" >
+                    <input type="text" name="tomtat" id="" value="<?php if(isset($tomtat)) echo $tomtat ?>">
+                    <button type="submit" name="themmoi">Thêm tin</button>
                     <button type="reset">Nhập lại</button>
                     <button> <a href="index.php?act=listtt"> Danh sách </a></button>
                 </form>

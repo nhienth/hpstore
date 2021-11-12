@@ -31,53 +31,32 @@
                     <th>Ngày đăng</th>
                     <th colspan="2">Sửa / Xóa</th>
                   </tr>
-                  <tr>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td><a href="'.$xoadm.'" class="a-delete"
-                        ><i class="fas fa-trash-alt" ></i
-                      ></a></td>
-                      <td>
-                      <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
-                    </td>
-                  </tr>
-                <?php
-
-                
-                // foreach ($listdanhmuc as $danhmuc) {
-                //     extract($danhmuc);
-                //     $suadm="index.php?act=suadm&id=".$ma_danhmuc;
-                //     $xoadm="index.php?act=xoadm&id=".$ma_danhmuc;
-                //     echo '
-                    
-                //     <tr>
-                //     <td>ff</td>
-                //     <td>
-                //       <span>ff</span>
-                //     </td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>
-                //       <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
-                //     </td>
-                //     <td>
-                //       <a href="'.$xoadm.'" class="a-delete"
-                //         ><i class="fas fa-trash-alt" ></i
-                //       ></a>
-                //     </td>
-                //   </tr>
-                    
-                //     ';
-                // }
-                
-                ?>
-
+                  <?php 
+                      foreach ($listtintuc as $tintuc) {
+                        extract($tintuc); 
+                        $edit = "index.php?act=edit-tt&&id=".$ma_tintuc;
+                        $delete = "index.php?act=delete-tt&&id=".$ma_tintuc;
+                      echo '
+                  
+                      <tr>
+                          <td>'.$ma_tintuc.'</td>
+                          <td>'.$tieu_de.'</td>
+                          <td>'.$tom_tat.'</td>
+                          <td>'.$noi_dung.'</td>
+                          <td><img src="../uploads/'.$hinh.'" alt=""></td>
+                          <td>'.$ngay_dang.'</td>
+                          <td>
+                          <a href="'.$edit.'" class="a-edit"><i class="fas fa-edit" ></i></a>
+                        </td>
+                          <td><a href="'.$delete.'" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')" class="a-delete"
+                            ><i class="fas fa-trash-alt" ></i
+                          ></a></td>
+                          
+                      </tr>
+                      
+                      ';
+                    }
+                  ?>             
             </table>
               </div>
             </div>
