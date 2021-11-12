@@ -331,13 +331,17 @@
 .details-description--comment {
   margin-top: 30px;
   border-bottom: 1px solid lightgray;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .description--comment--top {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
+}
+.description--comment--main {
+  border-top: 1px solid lightgray;
+  margin-top: 20px;
 }
 .comment-count {
   font-weight: 500;

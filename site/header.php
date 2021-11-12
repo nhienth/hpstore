@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="content/css/login.css" />
     <link rel="stylesheet" href="content/css/product.css" />
     <link rel="stylesheet" href="content/css/details.css" />
+    <link rel="stylesheet" href="content/css/comment.css" />
     <title>Cửa hàng bóng chuyển HPstore</title>
   </head>
   <body>
