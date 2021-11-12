@@ -267,7 +267,7 @@
                 if(isset($_POST['themmoi'])){
                     $tieude = $_POST['tieude'];
                     $noidung = $_POST['noidung'];
-                    $ngaydang = $_POST['ngaydang'];
+                      $ngaydang = $_POST['ngaydang'];
                     $hinh = $_FILES['file']['name'];
                     $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($hinh);
