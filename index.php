@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'model/pdo.php';
 include 'model/danhmuc.php';
 include 'model/hanghoa.php';
@@ -47,6 +48,78 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             }else{
                 include 'site/home.php';
             }
+            break;
+        case 'dangki' :
+            if(isset($_POST['btn-add'])){
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
+                $avatar = $_FILES['avatar']['name'];
+                //upload file
+                $target_dir = "uploads/";
+                $target_file = $target_dir . basename($avatar);
+                move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
+
+                if($user == ""){
+                    $thongbao = "Không được để trống trên đăng nhập !";
+                }else if(exist_khachhang($user)){
+                    $thongbao = "Tên đăng nhập đã tồn tại !";
+                }else if($pass == "") {
+                    $thongbao = "Không được để trống mật khẩu !";
+                }
+                else if(strlen($pass) < 5){
+                    $thongbao = "Mật khẩu phải lớn hơn 5 ký tự !";
+                }else if($name == ""){
+                    $thongbao = "Không được dể trống họ tên !";
+                }else if($email == ""){
+                    $thongbao = "Không được để trống email !";
+                }else if($phone == ""){
+                    $thongbao = "Không được để trống số điện thoại !";
+                }else if($address == ""){
+                    $thongbao = "Không được để trống địa chỉ !";
+                }else{
+                    insert_khachhang($user, $pass, $name, $address, $phone, $email, $avatar);
+                    $thongbao = "Thêm tài khoản thành công !";
+                    $user = "";
+                    $pass = "";
+                    $name = "";
+                    $email = "";
+                    $address = "";
+                    $phone = "";
+                }
+            }
+            include "site/account/register.php";
+            break;
+        case 'quenmk' :
+            if(isset($_POST['laylaimk'])){
+                $user = $_POST['user'];
+                $email = $_POST['email'];
+                $check = laymk($user,$email);
+                if(is_array($check)){
+                    $thongbao = "Mật khẩu của bạn là :".$check['mat_khau'];
+                }else {
+                    $thongbao = "Tài khoản không tồn tại";
+                }
+            }
+            include "site/account/forget-pass.php";
+                break;
+        case 'dangnhap' :
+            if(isset($_POST['dangnhap'])){
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $checkuser = checkuser($user,$pass);
+                if(is_array($checkuser)){
+                    $_SESSION['user'] = $checkuser;
+                    // echo "đăng nhập thành công";
+                    // header("location: index.php");
+                }else {
+                    $thongbao = "Tài khoản không tồn tại";
+                }
+            }
+            include 'site/account/login.php';
             break;
         default:
             include 'site/home.php';

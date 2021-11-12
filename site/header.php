@@ -79,21 +79,26 @@
         <div class="header-top-account">
           <div class="account-hover">
             <ul>
-              <li><a href="./site/account/login.html">Đăng nhập</a></li>
-              <li><a href="./site/account/register.html">Đăng ký</a></li>
+              <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
+              <li><a href="index.php?act=dangki">Đăng ký</a></li>
               <li>
-                <a href="./site/account/forget-pass.html">Quên mật khẩu</a>
+                <a href="index.php?act=quenmk">Quên mật khẩu</a>
               </li>
             </ul>
           </div>
+         
+
           <div class="account-icon"><i class="fas fa-user"></i></div>
           <!-- <div class="account-icon">
             <img src="./content/images/home/cate_2.jpg" alt="" />
           </div> -->
           <div class="account-content">
             <h4 class="account-title">Tài khoản</h4>
-            <p class="account-hello">Xin chào</p>
+            <p class="account-hello">Xin chào</p> 
+
+           
           </div>
+      
         </div>
         <div class="header-top-cart">
           <div class="cart-icon">

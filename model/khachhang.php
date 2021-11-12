@@ -44,5 +44,17 @@ function exist_khachhang($user){
     return $isExist > 0;
 }
 
+function laymk($user,$email){
+    $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' and email = '".$email."'";
+    $lay = pdo_query_one($sql);
+    return $lay;
+}
+
+function checkuser($user,$pass){
+    $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' and mat_khau = '".$pass."'";
+    $check = pdo_query_one($sql);
+    return $check;
+}
+
 
 ?>
