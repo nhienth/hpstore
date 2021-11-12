@@ -25,9 +25,7 @@
                     <label for="">Tiêu đề</label>
                     <input type="text" name="tieude" id="" value="<?php if(isset($tieude)) echo $tieude ?>">
                     <label for="">Nội dung</label>
-                    <textarea name="noidung" id="" cols="30" rows="10" value="<?php if(isset($noidung)) echo $noidung ?>"></textarea>
-                    <label for="">Ngày đăng</label>
-                    <input type="text" name="ngaydang" id="" value="<?php if(isset($ngaydang)) echo $ngaydang ?>">
+                    <textarea name="noidung" id="" cols="30" rows="10"><?php if(isset($noidung)) echo $noidung ?></textarea>
                     <label for="">Hình ảnh</label>
                     <input type="file" name="file">
                     <label for="">Tóm tắt</label>

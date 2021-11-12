@@ -11,13 +11,13 @@
 
 <div class="right-bgc">
             <div class="layout-function">
-              <?php
+            <?php
               
               if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
               }
-              
-              ?>
+          
+          ?>
              
               <div class="function-title">Danh sách tin tức</div>
               <div class="function-table">
@@ -41,8 +41,8 @@
                       <tr>
                           <td>'.$ma_tintuc.'</td>
                           <td>'.$tieu_de.'</td>
-                          <td>'.$tom_tat.'</td>
-                          <td>'.$noi_dung.'</td>
+                          <td><span>'.$tom_tat.'</span></td>
+                          <td><span>'.$noi_dung.'</span></td>
                           <td><img src="../uploads/'.$hinh.'" alt=""></td>
                           <td>'.$ngay_dang.'</td>
                           <td>

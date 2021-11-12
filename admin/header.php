@@ -99,13 +99,13 @@
                 <a href="index.php?act=addtt">Thêm tin tức</a>
                 <a href="index.php?act=listtt">Danh sách tin tức</a>
               </div>
-              <a href=""><i class="fas fa-newspaper"></i> Tin tức</a>
+              <a href="index.php?act=listtt"><i class="fas fa-newspaper"></i> Tin tức</a>
             </div>
           </div>
           <div class="left-emelent">
             <div class="left-element--title">Quản lý thống kê</div>
             <div class="left-element--content">
-              <a href=""><i class="fas fa-chart-pie"></i> Thống kê</a>
+              <a href="index.php?act=list-tk"><i class="fas fa-chart-pie"></i> Thống kê</a>
             </div>
           </div>
         </div>

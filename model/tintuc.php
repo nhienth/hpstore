@@ -18,12 +18,18 @@
         return $tintuc;
     }
     
-    function update_tintuc($tieude, $noidung, $ngaydang, $hinh, $tomtat,$ma_tintuc){
+    function update_tintuc($tieude, $noidung, $hinh, $tomtat,$ma_tintuc){
         if($hinh != ""){
-            $sql = "UPDATE tin_tuc SET noi_dung = '".$noidung."', ngay_dang = '".$ngaydang."', tieu_de = '".$tieude."', hinh = '".$hinh."', tom_tat = '".$tomtat."' WHERE ma_tintuc =".$ma_tintuc;
+            $sql = "UPDATE tin_tuc SET noi_dung = '".$noidung."', tieu_de = '".$tieude."', hinh = '".$hinh."', tom_tat = '".$tomtat."' WHERE ma_tintuc =".$ma_tintuc;
         }else{
-            $sql = "UPDATE tin_tuc SET noi_dung = '".$noidung."', ngay_dang = '".$ngaydang."', tieu_de = '".$tieude."',  tom_tat = '".$tomtat."' WHERE ma_tintuc =".$ma_tintuc;
+            $sql = "UPDATE tin_tuc SET noi_dung = '".$noidung."', tieu_de = '".$tieude."',  tom_tat = '".$tomtat."' WHERE ma_tintuc =".$ma_tintuc;
         }
         pdo_execute($sql);
+    }
+
+    function countAll_tintuc(){
+        $sql = "SELECT count(*) FROM tin_tuc";
+        $count = pdo_query_value($sql);
+        return $count;
     }
 ?>

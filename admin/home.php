@@ -3,6 +3,7 @@
 $countPro = countAll_hanghoa();
 $countCate = countAll_danhmuc();
 $countAcc = countAll_khachhang();
+$coungNew = countAll_tintuc();
 
 ?>
 
@@ -61,7 +62,7 @@ $countAcc = countAll_khachhang();
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Tin tức</div>
-                  <div class="boxed-content--count">5</div>
+                  <div class="boxed-content--count"><?=$coungNew?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-newspaper"></i>

@@ -4,6 +4,7 @@
     include "../model/hanghoa.php";
     include "../model/khachhang.php";
     include "../model/tintuc.php";
+    include "../model/thongke.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -262,19 +263,33 @@
             case 'listbl' :
                 include "binhluan/list.php";
                 break;
-          
-                
             case 'addtt' :
                 if(isset($_POST['themmoi'])){
                     $tieude = $_POST['tieude'];
                     $noidung = $_POST['noidung'];
-                      $ngaydang = $_POST['ngaydang'];
+                    $ngaydang = date("Y-m-d");
                     $hinh = $_FILES['file']['name'];
                     $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($hinh);
                     move_uploaded_file($_FILES['file']['tmp_name'], $target_file);
                     $tomtat = $_POST['tomtat'];
-                    insert_tintuc($tieude,$noidung,$ngaydang,$hinh,$tomtat);
+                    if($tieude == ""){
+                        $thongbao = "Không được để trống tiêu đề !";
+                    }else if($noidung == ""){
+                        $thongbao = "Không được để trống nội dung !";
+                    }else if($tomtat == ""){
+                        $thongbao = "Không được để trống tóm tắt !";
+                    }else if($hinh == ""){
+                        $thongbao = "Vui lòng thêm hình mô tả cho tin tức !";
+                    }else{
+                        insert_tintuc($tieude,$noidung,$ngaydang,$hinh,$tomtat);
+                        $thongbao = "Thêm tin tức thành công !";
+                        $tieude = "";
+                        $noidung = "";
+                        $hinh = "";
+                        $tomtat = "";
+                    }
+                    
                 }
                 include "tintuc/add.php";
                 break;
@@ -285,7 +300,7 @@
             case 'delete-tt' :
                 if(isset($_GET['id']) && ($_GET['id'])>0){
                     delete_tintuc($_GET['id']);
-                    $thongbao = "Tin tức đã đưuọc xóa";
+                    $thongbao = "Tin tức đã được xóa";
                 }
                 $listtintuc = loadAll_tintuc();
                 include "tintuc/list.php";
@@ -295,14 +310,13 @@
                     $ma_tintuc = $_POST['ma_tintuc'];
                     $tieude = $_POST['tieude'];
                     $noidung = $_POST['noidung'];
-                    $ngaydang = $_POST['ngaydang'];
                     $hinh = $_FILES['file']['name'];
                     //upload file
                     $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($hinh);
                     move_uploaded_file($_FILES['file']['tmp_name'], $target_file);
                     $tomtat = $_POST['tomtat'];
-                    update_tintuc($tieude, $noidung, $ngaydang, $hinh, $tomtat,$ma_tintuc);
+                    update_tintuc($tieude, $noidung, $hinh, $tomtat,$ma_tintuc);
                     $thongbao = "Tin tức đã được cập nhật !";
                 }
                 $listtintuc = loadAll_tintuc();
@@ -314,7 +328,14 @@
                 }
                 include "tintuc/edit.php";
                 break;
-
+            case 'list-tk':
+                $listthongke = loadAll_thongke();
+                include 'thongke/list.php';
+                break;
+            case 'chart-tk':
+                $listthongke = loadAll_thongke();
+                include 'thongke/chart.php';
+                break;
             default :
                 include "home.php";
                 break;

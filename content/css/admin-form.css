@@ -120,3 +120,20 @@
 .none-after::after {
   content: "" !important;
 }
+.table-td-button {
+  text-align: left !important;
+  padding: 20px 50px !important;
+}
+.btn-chart a {
+  display: inline-block;
+  color: white;
+  background-color: #4a6edc;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 2px;
+  transition: all 0.25s linear;
+}
+.btn-chart a:hover {
+  background-color: #112d6b;
+}

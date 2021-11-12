@@ -67,6 +67,7 @@
   border-left: 1px solid lightgray;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+  z-index: 999;
 }
 .more-function a {
   border-bottom: 1px solid lightgray;
@@ -78,6 +79,7 @@
 .left-element--content:hover .more-function {
   opacity: 1;
   visibility: visible;
+  z-index: 999;
 }
 .left-element--title {
   font-size: 16px;
@@ -556,7 +558,6 @@
   background-color: white;
 }
 /* kêt thúc css list bình luận */
-<<<<<<< HEAD
 
 /* css phần list hóa đơn chi tiết */
 .tabel-list5 tr td a {
@@ -614,9 +615,9 @@
   width: 10%;
 }
 
-.tabel-list5{
+.tabel-list5 {
   width: 100%;
-  ​border-collapse​:​ collapse;
+  border-collapse: collapse;
   background-color: white;
 }
 /* kêt thúc css list hóa đơn chi tiết */
@@ -664,6 +665,13 @@
 .tabel-list6 tr td:nth-child(3) {
   width: 20%;
 }
+.tabel-list6 tr td:nth-child(3) span,
+.tabel-list6 tr td:nth-child(4) span {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .tabel-list6 tr td:nth-child(4) {
   width: 20%;
 }
@@ -680,11 +688,9 @@
   width: 5%;
 }
 
-.tabel-list6{
+.tabel-list6 {
   width: 100%;
-  ​border-collapse​:​ collapse;
+  border-collapse: collapse;
   background-color: white;
 }
 /* kêt thúc css list hóa đơn chi tiết */
-=======
->>>>>>> 29991c1cffb8ed7e62373a7c25c58f4cfb1a450f

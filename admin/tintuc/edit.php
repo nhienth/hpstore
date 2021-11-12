@@ -31,9 +31,7 @@
                     <label for="">Tiêu đề</label>
                     <input type="text" name="tieude" value="<?=$tieu_de?>">
                     <label for="">Nội dung</label>
-                    <textarea name="noidung" id="" cols="30" rows="10" value="<?=$noi_dung?>"></textarea>
-                    <label for="">Ngày đăng</label>
-                    <input type="text" name="ngaydang" value="<?=$ngay_dang?>">
+                    <textarea name="noidung" id="" cols="30" rows="10"><?=$noi_dung?></textarea>
                     <label for="">Hình</label>
                     <div class="edit-pro--img">
                         <img src="../uploads/<?=$hinh?>">
