@@ -262,9 +262,8 @@
             case 'listbl' :
                 include "binhluan/list.php";
                 break;
-<<<<<<< HEAD
-=======
           
+                
             case 'addtt' :
                 if(isset($_POST['themmoi'])){
                     $tieude = $_POST['tieude'];
@@ -315,7 +314,7 @@
                 }
                 include "tintuc/edit.php";
                 break;
->>>>>>> a941526d73896f6abb8918f54613d586e5fd9c32
+
             default :
                 include "home.php";
                 break;
