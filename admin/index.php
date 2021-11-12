@@ -19,7 +19,6 @@
                         insert_danhmuc($ten_danhmuc);
                         $thongbao = "Thêm danh mục thành công !";
                         $ten_danhmuc = "";
-                        
                     }
                 }
                 include "danhmuc/add.php";
@@ -262,8 +261,6 @@
             case 'listbl' :
                 include "binhluan/list.php";
                 break;
-            
-                
             default :
                 include "home.php";
                 break;
