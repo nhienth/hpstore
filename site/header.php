@@ -79,25 +79,44 @@
         </div>
         <div class="header-top-account">
           <div class="account-hover">
-            <ul>
-              <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
-              <li><a href="index.php?act=dangki">Đăng ký</a></li>
-              <li>
-                <a href="index.php?act=quenmk">Quên mật khẩu</a>
-              </li>
-            </ul>
+            <?php
+            
+            if(isset($_SESSION['user'])){
+              extract($_SESSION['user']);
+            ?>
+              <ul>
+                <li><a href="">Quản lý tài khoản</a></li>
+                <li><a href="index.php?act=logout">Đăng xuất</a></li>
+                <?php if($vai_tro == 1) echo '<li><a href="">Quản trị website</a></li>';?>
+              </ul>
+            <?php } else { ?>
+            
+              <ul>
+                <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
+                <li><a href="index.php?act=dangki">Đăng ký</a></li>
+                <li>
+                  <a href="index.php?act=quenmk">Quên mật khẩu</a>
+                </li>
+              </ul>
+
+            <?php } ?>
+            
           </div>
          
 
           <div class="account-icon"><i class="fas fa-user"></i></div>
-          <!-- <div class="account-icon">
-            <img src="./content/images/home/cate_2.jpg" alt="" />
-          </div> -->
           <div class="account-content">
-            <h4 class="account-title">Tài khoản</h4>
-            <p class="account-hello">Xin chào</p> 
+              <?php
+                if(isset($_SESSION['user'])){
+                  extract($_SESSION['user']);
+                  echo '<h4 class="account-title">'.$ten_dangnhap.'</h4>
+                  <p class="account-hello">Xin chào</p>';
+                }else{
+                  echo '<h4 class="account-title">Tài khoản</h4>
+                  <p class="account-hello">Xin chào</p>';
+                }
+              ?>
 
-           
           </div>
       
         </div>

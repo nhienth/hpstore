@@ -45,13 +45,13 @@ function exist_khachhang($user){
 }
 
 function laymk($user,$email){
-    $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' and email = '".$email."'";
+    $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' AND email = '".$email."'";
     $lay = pdo_query_one($sql);
     return $lay;
 }
 
 function checkuser($user,$pass){
-    $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' and mat_khau = '".$pass."'";
+    $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' AND mat_khau = '".$pass."'";
     $check = pdo_query_one($sql);
     return $check;
 }

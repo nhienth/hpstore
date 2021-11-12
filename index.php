@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php
 session_start();
 include 'model/pdo.php';
@@ -113,13 +114,16 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $checkuser = checkuser($user,$pass);
                 if(is_array($checkuser)){
                     $_SESSION['user'] = $checkuser;
-                    // echo "đăng nhập thành công";
-                    // header("location: index.php");
+                    header("Location : index.php");
                 }else {
                     $thongbao = "Tài khoản không tồn tại";
                 }
             }
             include 'site/account/login.php';
+            break;
+        case 'logout':
+            session_unset();
+            header("Location: index.php");
             break;
         default:
             include 'site/home.php';
@@ -131,7 +135,5 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
 }
 
 include 'site/footer.php';
-
-
-
 ?>
+<?php ob_end_flush(); ?>
