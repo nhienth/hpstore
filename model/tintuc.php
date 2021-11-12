@@ -1,13 +1,20 @@
 <?php 
-    function insert_tintuc($noidung,$tieude,$ngaydang,$hinh,$tomtat){
-        $sql = "INSERT INTO tin_tuc(noi_dung , ngay_dang , tieu_de , hinh , tom_tat) VALUES('$noidung','$ngaydang' ,'$tieude' ,'$hinh' ,'$tomtat')";
+    function insert_tintuc($tieude,$noidung,$ngaydang,$hinh,$tomtat){
+        $sql = "INSERT INTO tin_tuc(tieu_de, ngay_dang, noi_dung, hinh, tom_tat) VALUES('$tieude','$ngaydang','$noidung','$hinh','$tomtat')";
         pdo_execute($sql);
     }
     function loadAll_tintuc(){
-        $sql = "SELECT * FROM tin_tuc ";
+        $sql = "SELECT * FROM tin_tuc ORDER BY ma_tintuc DESC";
         $listtintuc = pdo_query($sql);
         return $listtintuc;
     }
+
+    function loadHome_tintuc() {
+        $sql = "SELECT * FROM tin_tuc ORDER BY ma_tintuc DESC LIMIT 6";
+        $listtintuc = pdo_query($sql);
+        return $listtintuc;
+    }
+
     function delete_tintuc($ma_tintuc){
         $sql = "DELETE FROM tin_tuc WHERE ma_tintuc =".$ma_tintuc;
         pdo_execute($sql);
