@@ -143,13 +143,12 @@
         
         foreach ($listGoiY as $hanghoa) {
             extract($hanghoa);
+            $linkDetails = "index.php?act=details-pro&&id=".$ma_hanghoa;
         ?>
 
         <div class="details-suggestions--product">
             <div class="suggestions--product--img">
-              <img
-                src="./uploads/<?=$hinh?>"
-              />
+              <a href="<?=$linkDetails?>"><img src="./uploads/<?=$hinh?>"/></a>
             </div>
             <div class="suggestions--product--info">
               <div class="suggestions--name"><?=$ten_hanghoa?></div>
