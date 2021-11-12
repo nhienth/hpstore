@@ -47,12 +47,13 @@
     
     foreach ($productNew as $product) {
         extract($product);
+        $linkDetails = "index.php?act=details-pro&&id=".$ma_hanghoa;
         echo '
         
         <div class="product">
-            <div class="product-option">Tùy chọn</div>
+            <div class="product-option"><a href="'.$linkDetails.'" style="color:white">Chi tiết</a></div>
             <div class="product-image">
-            <img src="uploads/'.$hinh.'" />
+            <a href="'.$linkDetails.'"><img src="./uploads/'.$hinh.'" /></a>
             </div>
             <div class="product-name"><span>'.$ten_hanghoa.'<span></div>
             <div class="product-price">'.number_format($don_gia).'đ</div>
@@ -88,12 +89,13 @@
     
     foreach ($listGiay as $giay) {
         extract($giay);
+        $linkDetails = "index.php?act=details-pro&&id=".$ma_hanghoa;
         echo '
         
         <div class="product">
-            <div class="product-option">Tùy chọn</div>
+            <div class="product-option"><a href="'.$linkDetails.'" style="color:white">Chi tiết</a></div>
             <div class="product-image">
-            <img src="./uploads/'.$hinh.'" />
+            <a href="'.$linkDetails.'"><img src="./uploads/'.$hinh.'" /></a>
             </div>
             <div class="product-name"><span>'.$ten_hanghoa.'</span></div>
             <div class="product-price">'.number_format($don_gia).'đ</div>
@@ -120,12 +122,13 @@
     
     foreach ($listAo as $ao) {
         extract($ao);
+        $linkDetails = "index.php?act=details-pro&&id=".$ma_hanghoa;
         echo '
         
         <div class="product">
-            <div class="product-option">Tùy chọn</div>
+            <div class="product-option"><a href="'.$linkDetails.'" style="color:white">Chi tiết</a></div>
             <div class="product-image">
-            <img src="./uploads/'.$hinh.'" />
+            <a href="'.$linkDetails.'"><img src="./uploads/'.$hinh.'" /></a>
             </div>
             <div class="product-name"><span>'.$ten_hanghoa.'</span></div>
             <div class="product-price">'.number_format($don_gia).'đ</div>
@@ -150,12 +153,13 @@
     
     foreach ($listPhuKien as $phukien) {
         extract($phukien);
+        $linkDetails = "index.php?act=details-pro&&id=".$ma_hanghoa;
         echo '
         
         <div class="product">
-            <div class="product-option">Tùy chọn</div>
+            <div class="product-option"><a href="'.$linkDetails.'" style="color:white">Chi tiết</a></div>
             <div class="product-image">
-            <img src="./uploads/'.$hinh.'" />
+            <a href="'.$linkDetails.'"><img src="./uploads/'.$hinh.'" /></a>
             </div>
             <div class="product-name"><span>'.$ten_hanghoa.'</span></div>
             <div class="product-price">'.number_format($don_gia).'đ</div>
