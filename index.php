@@ -114,7 +114,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $checkuser = checkuser($user,$pass);
                 if(is_array($checkuser)){
                     $_SESSION['user'] = $checkuser;
-                    header("Location : index.php");
+                    header("location: index.php");
                 }else {
                     $thongbao = "Tài khoản không tồn tại";
                 }
