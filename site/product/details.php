@@ -123,7 +123,8 @@
           </div>
           <div class="details-description--comment">
             <div class="description--comment--top">
-              <div class="comment-count">0 bình luận</div>
+              <?php $countC = countCP_binhluan($ma_hanghoa) ?>
+              <div class="comment-count"><?=$countC?> bình luận</div>
               <div class="comment-filter">
                 <form action="" method="post">
                   <label for="filter-comment">Sắp xếp theo </label>

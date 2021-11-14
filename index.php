@@ -6,6 +6,7 @@ include 'model/danhmuc.php';
 include 'model/hanghoa.php';
 include 'model/khachhang.php';
 include 'model/tintuc.php';
+include 'model/binhluan.php';
 $listdanhmuc = loadall_danhmuc();
 include 'site/header.php';
 

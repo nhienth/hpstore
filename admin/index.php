@@ -4,6 +4,7 @@
     include "../model/hanghoa.php";
     include "../model/khachhang.php";
     include "../model/tintuc.php";
+    include "../model/binhluan.php";
     include "../model/thongke.php";
     include "header.php";
 
@@ -261,6 +262,24 @@
                 include "hoadon/list.php";
                 break;
             case 'listbl' :
+                $listcomment = thongke_binhluan();
+                include "binhluan/list.php";
+                break;
+            case 'details-cmt' :
+                if(isset($_GET['id']) && ($_GET['id'] >0)) {
+                    $ma_hanghoa = $_GET['id'];
+                    $ten_hanghoa = loadTen_hanghoa($ma_hanghoa);
+                    $listcomment = selectId_binhluan($ma_hanghoa);
+                    include 'binhluan/details.php';
+                }
+                break;
+            case 'delete-cmt' :
+                if(isset($_GET['id']) && ($_GET['id'] >0)) {
+                    $ma_binhluan = $_GET['id'];
+                    delete_binhluan($ma_binhluan);
+                    $thongbao = "Bình luận đã được xóa !";
+                }
+                $listcomment = thongke_binhluan();
                 include "binhluan/list.php";
                 break;
             case 'addtt' :

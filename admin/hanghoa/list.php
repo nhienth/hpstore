@@ -17,7 +17,7 @@
               echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
               }
           
-          ?>
+            ?>
              
               <div class="function-title">Danh sách sản phẩm</div>
               <div class="function-table">

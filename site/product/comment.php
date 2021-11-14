@@ -1,11 +1,9 @@
 <?php
     session_start();
-
     include "../../model/pdo.php";
     include "../../model/binhluan.php";
     $ma_hanghoa = $_REQUEST['idpro'];
-    $listcomment = loadPro_binhluan($ma_hanghoa);
-
+    $listcomment = selectAll_binhluan($ma_hanghoa);
 ?>
 <!DOCTYPE html>
 <html lang="en">

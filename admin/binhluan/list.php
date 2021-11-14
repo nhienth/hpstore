@@ -11,70 +11,49 @@
 
 <div class="right-bgc">
             <div class="layout-function">
-              <?php
+            <?php
               
               if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao">'.$thongbao.'</div>';
+              echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
               }
-              
-              ?>
+          
+            ?>
              
               <div class="function-title">Danh sách bình luận</div>
               <div class="function-table">
-                <table class="tabel-list4">
+                <table class="tabel-list--normal">
                   <tr>
-                    <th>Mã bình luận</th>
-                    <th>Nội dung</th>
-                    <th>Mã hàng hóa</th>
-                    <th>Ngày bình luận</th>
-                    <th>Mã khách hàng</th>
-                    <th colspan="3">Sửa / Xóa</th>
+                    <th>#</th>
+                    <th>Sản phẩm</th>
+                    <th>Số bình luận</th>
+                    <th>Mới nhất</th>
+                    <th>Cũ nhất</th>
+                    <th>Chi tiết</th>
                   </tr>
-                  <tr>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td>ha noi</td>
-                      <td><a href="'.$xoadm.'" class="a-delete"
-                        ><i class="fas fa-trash-alt" ></i
-                      ></a></td>
-                      <td>
-                      <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
-                    </td>
+
+                  <?php
+                  
+                  foreach ($listcomment as $comment) {
+                    extract($comment);
+                    $details = "index.php?act=details-cmt&&id=".$ma_hanghoa;
+                    echo '
                     
-                  </tr>
+                    <tr>
+                      <td></td>
+                      <td>'.$ten_hanghoa.'</td>
+                      <td>'.$so_luong.'</td>
+                      <td>'.$moi_nhat.'</td>
+                      <td>'.$cu_nhat.'</td>
+                      <td><a href="'.$details.'" class="a-edit"><i class="fas fa-eye"></i></a></td>
+                    </tr>
+                    
+                    ';
+                  }
+                  
+                  ?>
+                
                 <?php
 
-                
-                // foreach ($listdanhmuc as $danhmuc) {
-                //     extract($danhmuc);
-                //     $suadm="index.php?act=suadm&id=".$ma_danhmuc;
-                //     $xoadm="index.php?act=xoadm&id=".$ma_danhmuc;
-                //     echo '
-                    
-                //     <tr>
-                //     <td>ff</td>
-                //     <td>
-                //       <span>ff</span>
-                //     </td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>ff</td>
-                //     <td>
-                //       <a href="'.$suadm.'" class="a-edit"><i class="fas fa-edit" ></i></a>
-                //     </td>
-                //     <td>
-                //       <a href="'.$xoadm.'" class="a-delete"
-                //         ><i class="fas fa-trash-alt" ></i
-                //       ></a>
-                //     </td>
-                //   </tr>
-                    
-                //     ';
-                // }
-                
                 ?>
 
             </table>
