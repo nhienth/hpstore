@@ -25,7 +25,17 @@ function update_khachhang($user, $pass, $name, $address, $phone, $email, $role, 
         $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."', mat_khau = '".$pass."', ho_ten = '".$name."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."', vai_tro = '".$role."' WHERE ma_khachhang =".$ma_khachhang;
     }
     pdo_execute($sql);
+  
+
 }
+function update_khachhang2($user,$pass,$name,$address,$phone,$email,$avatar,$ma_khachhang){
+    if($avatar != ""){
+        $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."', mat_khau = '".$pass."', ho_ten = '".$name."', hinh = '".$avatar."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."' WHERE ma_khachhang =".$ma_khachhang;
+    }else{
+        $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."', mat_khau = '".$pass."', ho_ten = '".$name."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."' WHERE ma_khachhang =".$ma_khachhang;
+    }
+    pdo_execute($sql);
+}    
 
 function countAll_khachhang(){
     $sql = "SELECT COUNT(*) FROM khach_hang";

@@ -7,7 +7,11 @@
         <span class="blue">Trang khách hàng</span>
       </div>
     </div>
-
+    <?php 
+        if(isset($_SESSION['user'])&&(is_array($_SESSION['user']))){
+            extract($_SESSION['user']);
+        }
+    ?>
     <div class="container">
       <div class="section-AF width-normal">
         <div class="account-info--title">
@@ -32,14 +36,9 @@
               </div>
               <button class="btn-update">Cập nhật thông tin</button>
             </div> -->
-            <?php 
-                if(isset($_SESSION['user'])&&(is_array($_SESSION['user']))){
-                    extract($_SESSION['user']);
-                }
-            ?>
+          
             <div class="form-funtcion">
               <form action="index.php?act=update-tk" method="post" class="login-form" enctype="multipart/form-data">
-                  <input type="hidden" name="ma_khachhang" value="<?=$ma_khachhang?>">
                   <label for="tendn">Tên đăng nhập</label>
                   <input type="text" name="user" id="tendn" value="<?=$ten_dangnhap?>">
                   <label for="pass">Mật khẩu</label>
@@ -47,8 +46,8 @@
                   <label for="name">Họ tên</label>
                   <input type="text" name="name" id="name" value="<?=$ho_ten?>">
                   <label for="hinh">Hình đại diện</label>
-                  <div style="width:100px;height:100px;">
-                      <img src="../uploads/<?=$hinh?>">
+                  <div class="margin-bottom-20">
+                      <img src="./uploads/<?=$hinh?>" height="250px"; width="250px">
                   </div>
                   <input type="file" name="avatar" id="hinh">
                   <label for="email">Email</label>

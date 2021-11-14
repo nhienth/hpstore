@@ -61,7 +61,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $phone = $_POST['phone'];
                 $avatar = $_FILES['avatar']['name'];
                 //upload file
-                $target_dir = "uploads/";
+                $target_dir = "./uploads/";
                 $target_file = $target_dir . basename($avatar);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
 
@@ -137,11 +137,15 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $phone = $_POST['phone'];
                 $avatar = $_FILES['avatar']['name'];
                 //upload file
-                $target_dir = "../uploads/";
+                $target_dir = "./uploads/";
                 $target_file = $target_dir . basename($avatar);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
-                update_khachhang($user, $pass, $name, $address, $phone, $email, $avatar, $ma_khachhang);
+                update_khachhang2($user,$pass,$name,$address,$phone,$email,$avatar,$ma_khachhang);
+                
+                $_SESSION['user'] =checkuser($user,$pass);
+                header("location: index.php?act=update-tk");
                 $thongbao = "Tài khoản đã dược cập nhật !";
+                // header("Location: site/account/info.php");
             }
             include "site/account/info.php";
             break;
