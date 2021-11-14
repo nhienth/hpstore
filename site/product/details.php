@@ -123,7 +123,8 @@
           </div>
           <div class="details-description--comment">
             <div class="description--comment--top">
-              <div class="comment-count">0 bình luận</div>
+              <?php $countC = countCP_binhluan($ma_hanghoa) ?>
+              <div class="comment-count"><?=$countC?> bình luận</div>
               <div class="comment-filter">
                 <form action="" method="post">
                   <label for="filter-comment">Sắp xếp theo </label>
@@ -134,11 +135,11 @@
                 </form>
               </div>
             </div>
-            <!-- ---------------------COMMENT -->
+            <!-- ---------------------COMMENT--------------------------- -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
               <script>
                   $(document).ready(function(){
-                      $("#comment").load("site/product/comment.php",{idpro:<?=$ma_hanghoa?>});
+                      $("#comment").load("site/product/comment.php",{idpro: <?=$ma_hanghoa?>});
                   });
               </script>
             <div class="description--comment--main" id="comment">

@@ -228,7 +228,7 @@
   background-color: #4c73dd;
   color: white;
   padding: 13px 20px;
-  font-size: 18px;
+  font-size: 19px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
@@ -328,7 +328,7 @@
 }
 .tabel-list1 tr td,
 .tabel-list1 tr th {
-  padding: 10px;
+  padding: 15px;
   border: 1px solid darkgray;
   text-align: center;
 }
@@ -632,7 +632,6 @@
 }
 .tabel-list6 tr td .a-edit,
 .tabel-list6 tr td .a-delete {
-  padding: 7px;
   color: white;
   background-color: #4c73dd;
   border-radius: 2px;
@@ -652,7 +651,7 @@
 }
 .tabel-list6 tr td,
 .tabel-list6 tr th {
-  padding: 10px;
+  padding: 15px;
   border: 1px solid darkgray;
   text-align: center;
 }

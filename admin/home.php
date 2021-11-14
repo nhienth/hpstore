@@ -4,6 +4,7 @@ $countPro = countAll_hanghoa();
 $countCate = countAll_danhmuc();
 $countAcc = countAll_khachhang();
 $coungNew = countAll_tintuc();
+$countCMT = countAll_binhluan();
 
 ?>
 
@@ -72,7 +73,7 @@ $coungNew = countAll_tintuc();
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Bình luận</div>
-                  <div class="boxed-content--count">10</div>
+                  <div class="boxed-content--count"><?=$countCMT?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-comment-alt"></i>
