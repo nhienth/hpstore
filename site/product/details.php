@@ -134,11 +134,11 @@
                 </form>
               </div>
             </div>
-            <!-- ---------------------COMMENT -->
+            <!-- ---------------------COMMENT--------------------------- -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
               <script>
                   $(document).ready(function(){
-                      $("#comment").load("site/product/comment.php",{idpro:<?=$ma_hanghoa?>});
+                      $("#comment").load("site/product/comment.php",{idpro: <?=$ma_hanghoa?>});
                   });
               </script>
             <div class="description--comment--main" id="comment">
