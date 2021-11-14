@@ -85,7 +85,7 @@
               extract($_SESSION['user']);
             ?>
               <ul>
-                <li><a href="">Quản lý tài khoản</a></li>
+                <li><a href="index.php?act=update-tk">Quản lý tài khoản</a></li>
                 <li><a href="index.php?act=logout">Đăng xuất</a></li>
                 <?php if($vai_tro == 1) echo '<li><a href="">Quản trị website</a></li>';?>
               </ul>

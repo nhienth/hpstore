@@ -136,12 +136,12 @@
       </div>
     </section>
     <h2 style="color : red; font-size:25px; margin-left:560px;">
-                            <?php 
-                                if(isset($thongbao) && ($thongbao!="")){
-                                    echo $thongbao;
-                                }
-                            ?>
-                        </h2>
+      <?php 
+          if(isset($thongbao) && ($thongbao!="")){
+              echo $thongbao;
+          }
+      ?>
+    </h2>
     <footer>
       <div class="footer">
         <div class="footer-about footer-row">

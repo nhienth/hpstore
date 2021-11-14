@@ -125,6 +125,25 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             session_unset();
             header("Location: index.php");
             break;
+        case 'update-tk' :
+            if(isset($_POST['btn-update'])){
+                $ma_khachhang = $_POST['ma_khachhang'];
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
+                $avatar = $_FILES['avatar']['name'];
+                //upload file
+                $target_dir = "../uploads/";
+                $target_file = $target_dir . basename($avatar);
+                move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
+                update_khachhang($user, $pass, $name, $address, $phone, $email, $avatar, $ma_khachhang);
+                $thongbao = "Tài khoản đã dược cập nhật !";
+            }
+            include "site/account/info.php";
+            break;
         default:
             include 'site/home.php';
             break;

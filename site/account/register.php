@@ -47,7 +47,7 @@
                     <input type="text" name="user" id="tendn" value="<?php if(isset($user)) echo $user ?>">
                     <label for="pass">Mật khẩu</label>
                     <input type="password" name="pass" id="pass" value="<?php if(isset($pass)) echo $pass ?>">
-                    <label for="pass">Xác nhận mật khẩu</label>
+                    <label for="pass">HỌ tên</label>
                     <input type="text" name="name" id="name" value="<?php if(isset($name)) echo $name ?>">
                     <label for="hinh">Hình ảnh</label>
                     <input type="file" name="avatar" id="hinh" class="margin-bottom-20">
