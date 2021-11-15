@@ -37,32 +37,34 @@
         </form> -->
         <?php
               
-                if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao"><i class="far fa-check-circle"></i><h3 style="color :red"> '.$thongbao.'</h3></div>';
-                }
-            
-            ?>
+              if(isset($thongbao) && ($thongbao != "")) {
+              echo ' <div class="notification margin-bottom-20"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+              }
+          
+          ?>
         <form action="index.php?act=dangki" method="post" class="login-form" enctype="multipart/form-data">
-                    <label for="tendn">Tên đăng nhập</label>
+                    <label for="tendn">Tên đăng nhập<span class="red">*</span></label>
                     <input type="text" name="user" id="tendn" value="<?php if(isset($user)) echo $user ?>">
-                    <label for="pass">Mật khẩu</label>
+                    <label for="pass">Mật khẩu<span class="red">*</span></label>
                     <input type="password" name="pass" id="pass" value="<?php if(isset($pass)) echo $pass ?>">
-                    <label for="pass">HỌ tên</label>
+                    <label for="pass">Họ tên<span class="red">*</span></label>
                     <input type="text" name="name" id="name" value="<?php if(isset($name)) echo $name ?>">
-                    <label for="hinh">Hình ảnh</label>
+                    <label for="hinh">Hình ảnh<span class="red">*</span></label>
                     <input type="file" name="avatar" id="hinh" class="margin-bottom-20">
-                    <label for="email">Email</label>
+                    <label for="email">Email<span class="red">*</span></label>
                     <input type="email" name="email" id="email" value="<?php if(isset($email)) echo $email ?>">
-                    <label for="phone">Số điện thoại</label>
+                    <label for="phone">Số điện thoại<span class="red">*</span></label>
                     <input type="text" name="phone" id="phone" value="<?php if(isset($phone)) echo $phone ?>">
-                    <label for="address">Địa chỉ</label>
+                    <label for="address">Địa chỉ<span class="red">*</span></label>
                     <input type="text" name="address" id="address" value="<?php if(isset($address)) echo $address ?>">
                     <!-- <input type="submit" name="btn-add" value="Thêm tài khoản" > -->
                     <div class="box-button">
                     <button class="btn-submit" name="btn-add" type="submit">Đăng ký</button>
-                    <button class="btn-login" name="dangnhap">Đăng nhập</button>
+                    <button class="btn-login" name="dangnhap">
+                      <a href="index.php?act=dangnhap">Đăng nhập</a> 
+                    </button>
           </div>
-                </form>
+              </form>
       </div>
     </section>
 

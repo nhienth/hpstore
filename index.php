@@ -10,6 +10,8 @@ include 'model/binhluan.php';
 $listdanhmuc = loadall_danhmuc();
 include 'site/header.php';
 
+if(!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
+
 $productNew = loadNew_hanghoa();
 $listGiay = loadGiay_hanghoa();
 $listAo = loadAo_hanghoa();
@@ -84,7 +86,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     $thongbao = "Không được để trống địa chỉ !";
                 }else{
                     insert_khachhang($user, $pass, $name, $address, $phone, $email, $avatar);
-                    $thongbao = "Thêm tài khoản thành công !";
+                    $thongbao = "Đăng ký tài khoản thành công !";
                     $user = "";
                     $pass = "";
                     $name = "";
@@ -126,7 +128,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             session_unset();
             header("Location: index.php");
             break;
-        case 'update-tk' :
+        case 'update-info' :
             if(isset($_POST['btn-update'])){
                 $ma_khachhang = $_POST['ma_khachhang'];
                 $user = $_POST['user'];
@@ -141,13 +143,44 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $target_file = $target_dir . basename($avatar);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
                 update_khachhang2($user,$pass,$name,$address,$phone,$email,$avatar,$ma_khachhang);
-                
-                $_SESSION['user'] =checkuser($user,$pass);
-                header("location: index.php?act=update-tk");
+                $_SESSION['user'] = checkuser($user,$pass);
                 $thongbao = "Tài khoản đã dược cập nhật !";
-                // header("Location: site/account/info.php");
             }
+            include "site/account/info-update.php";
+            break;
+        case 'info-acc' :
             include "site/account/info.php";
+            break;
+        case 'addtocart':
+            // add thông tin sp từ form add to cart đến session
+            if(isset($_POST['add-cart'])) {
+                $ma_hanghoa = $_POST['ma_hanghoa'];
+                $ten_hanghoa = $_POST['ten_hanghoa'];
+                $don_gia = $_POST['don_gia'];
+                $hinh = $_POST['hinh'];
+                $size = $_POST['size'];
+                $so_luong = $_POST['quantity'];
+                $thanh_tien = $don_gia * $so_luong;
+                $productAdd = [$ma_hanghoa, $ten_hanghoa, $hinh, $don_gia, $size, $so_luong,$thanh_tien];
+                array_push($_SESSION['cart'], $productAdd);
+                $_SESSION['cart'];
+            }
+            include 'site/cart/viewcart.php';
+            break;
+        case 'delete-cart' :
+            if(isset($_GET['id'])) {
+                array_splice($_SESSION['cart'],$_GET['id'],1);
+            }else{
+                $_SESSION['cart']= [];
+            }
+            header('Location: index.php?act=viewcart');
+            break;
+        case 'viewcart' :
+            include 'site/cart/viewcart.php';
+            break;
+        case 'checkout' :
+            // include 'site/cart/check-out.php';
+            header('Location: ./site/cart/check-out.php');
             break;
         default:
             include 'site/home.php';
