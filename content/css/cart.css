@@ -68,9 +68,13 @@
   /* border: 1px solid green; */
 }
 .list-cart--img {
+  height: 180px;
   width: 15%;
 }
 .list-cart--img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   border-radius: 2px;
 }
 .list-cart--name {
@@ -157,6 +161,7 @@
   background-color: #08193f;
 }
 .btn-ctn {
+  text-align: center;
   border: 1px solid #112d6b;
   color: #08193f;
   position: relative;

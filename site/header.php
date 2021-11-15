@@ -52,6 +52,8 @@
     <link rel="stylesheet" href="content/css/product.css" />
     <link rel="stylesheet" href="content/css/details.css" />
     <link rel="stylesheet" href="content/css/comment.css" />
+    <link rel="stylesheet" href="content/css/cart.css" />
+    <link rel="stylesheet" href="content/css/check-out.css" />
     <title>Cửa hàng bóng chuyển HPstore</title>
   </head>
   <body>
@@ -85,9 +87,9 @@
               extract($_SESSION['user']);
             ?>
               <ul>
-                <li><a href="index.php?act=update-tk">Quản lý tài khoản</a></li>
+                <li><a href="index.php?act=info-acc">Quản lý tài khoản</a></li>
                 <li><a href="index.php?act=logout">Đăng xuất</a></li>
-                <?php if($vai_tro == 1) echo '<li><a href="">Quản trị website</a></li>';?>
+                <?php if($vai_tro == 1) echo '<li><a href="./admin/index.php">Quản trị website</a></li>';?>
               </ul>
             <?php } else { ?>
             
@@ -122,11 +124,19 @@
         </div>
         <div class="header-top-cart">
           <div class="cart-icon">
-            <a href="./site/cart/list-cart.html" style="color: white"
+            <a href="index.php?act=viewcart" style="color: white"
               ><i class="fas fa-shopping-bag"></i
             ></a>
           </div>
-          <div class="cart-count">0</div>
+          <?php 
+              $tong_cart = 0;
+              if(isset($_SESSION['cart']) && ($_SESSION['cart'] != [])) {
+                foreach ($_SESSION['cart'] as $cart) {
+                  $tong_cart+= $cart[5];
+                }
+              }
+          ?>
+          <div class="cart-count"><?=$tong_cart?></div>
         </div>
       </div>
     </header>

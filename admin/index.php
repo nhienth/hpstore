@@ -6,6 +6,7 @@
     include "../model/tintuc.php";
     include "../model/binhluan.php";
     include "../model/thongke.php";
+    include "../model/donhang.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -259,6 +260,17 @@
             include "khachhang/list.php";
             break;
             case 'listhd' :
+                $listhoadon = loadAll_hoadon();
+                include "hoadon/list.php";
+                break;
+            case 'update-listhd' :
+                if(isset($_POST['btn-update'])) {
+                    $ma_hoadon = $_POST['ma_hoadon'];
+                    $trang_thai = $_POST['trang_thai'];
+                    update_hoadon($ma_hoadon, $trang_thai);
+                }
+                // header('Location : index.php?act=listhd');
+                $listhoadon = loadAll_hoadon();
                 include "hoadon/list.php";
                 break;
             case 'listbl' :

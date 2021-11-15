@@ -59,7 +59,11 @@
           <p class="details-condition">
             <span>Tình trạng : </span> Chỉ còn <?=$sumSL?> sản phẩm
           </p>
-          <form action="index.php?act=viewcart" method="post">
+          <form action="index.php?act=addtocart" method="post">
+            <input type="hidden" name="ma_hanghoa" value="<?=$ma_hanghoa?>">
+            <input type="hidden" name="ten_hanghoa" value="<?=$ten_hanghoa?>">
+            <input type="hidden" name="don_gia" value="<?=$don_gia?>">
+            <input type="hidden" name="hinh" value="<?=$hinh?>">
             <div class="details-size">
               <div class="details-size--title">Kích thước</div>
               <div class="box-size">
@@ -96,12 +100,10 @@
               </div>
             </div>
             <div class="details-buy">
-              <a href="index.php?act=viewcart">
-                <button type="submit" name="addcart">
-                  <span class="txt-main">Mua ngay</span>
-                  <span class="txt-sub">Giao hàng tận nơi</span>
-                </button>
-              </a>
+              <button type="submit" name="add-cart">
+                <span class="txt-main">Mua ngay</span>
+                <span class="txt-sub">Giao hàng tận nơi</span>
+              </button>
             </div>
           </form>
         </div>

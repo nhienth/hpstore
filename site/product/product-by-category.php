@@ -35,14 +35,14 @@
               </form>
             </div>
             <div class="filter-name">Giá sản phẩm</div>
-            <form action="index.php?hanghoa2" method="post" class="form-price">
-              <select name="select" id="">
-                <option value="1">Tất cả</option>
-                <option name="" value="2">Dưới 300.000đ</option>
-                <option name="" value="3">Dưới 500.000đ</option>
-                <option name="" value="4">Dưới 1.000.000đ</option>
+            <form action="./index.php?act=load-filter" method="post" class="form-price">
+              <select name="filterValue" id="">
+                <option value="0">Tất cả</option>
+                <option value="1">Dưới 300.000đ</option>
+                <option value="2">Dưới 500.000đ</option>
+                <option value="3">Dưới 1.000.000đ</option>
               </select>
-              <button type="submit" name="timkiem2">
+              <button type="submit" name="btn-filter">
                 <i class="fas fa-search font-filter"></i>
               </button>
             </form>

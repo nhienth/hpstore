@@ -29,7 +29,9 @@ body::-webkit-scrollbar-thumb {
   object-fit: cover;
   /* border-radius: 12px; */
 }
-
+.white {
+  color: white;
+}
 /* .image-slider {
     padding-bottom: 50px;
   } */
