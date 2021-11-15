@@ -24,6 +24,16 @@ function loadWhere_hanghoa($kyw, $ma_danhmuc) {
     return $listhoanghoa;
 }
 
+function filterPrice_hanghoa($value) {
+    $sql = "SELECT * FROM hang_hoa WHERE 1";
+    if($value == 1) {
+        $sql.=" AND don_gia < 300000 ";
+    }
+    $sql.= " ORDER BY ma_hanghoa DESC";
+    $listhoanghoa = pdo_query($sql);
+    return $listhoanghoa;
+}
+
 function loadNew_hanghoa() {
     $sql = "SELECT * FROM hang_hoa ORDER BY ma_hanghoa DESC LIMIT 6";
     $listhanghoa = pdo_query($sql);

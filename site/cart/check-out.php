@@ -52,7 +52,7 @@ session_start();
   <body>
 
 <div class="container">
-      <form action="" class="form-payment">
+      <form action="../../index.php?act=billconfirm" method="post" class="form-payment">
         <div class="payment-flex">
           <div class="info-user">
             <div class="shop-title"><a href="#">HPstore</a></div>
@@ -84,19 +84,19 @@ session_start();
             </div>
             <div class="form-input">
               <div class="form-field">
-                <input type="text" id="name" placeholder=" " value="<?=$name?>" />
+                <input type="text" id="name" name="name" placeholder=" " value="<?=$name?>" />
                 <label for="name">Họ và tên</label>
               </div>
               <div class="form-field">
-                <input type="text" id="phone" placeholder=" " value="<?=$tel?>" />
+                <input type="text" id="phone" name="tel" placeholder=" " value="<?=$tel?>" />
                 <label for="phone">Số điện thoại</label>
               </div>
               <div class="form-field">
-                <input type="email" name="" id="email" placeholder=" " value="<?=$email?>" />
+                <input type="email" name="email" id="email" placeholder=" " value="<?=$email?>" />
                 <label for="email">Email</label>
               </div>
               <div class="form-field">
-                <input type="text" id="address" placeholder=" " value="<?=$address?>" />
+                <input type="text" id="address" name="address" placeholder=" " value="<?=$address?>" />
                 <label for="address">Địa chỉ</label>
               </div>
               <div class="form-field">
@@ -112,14 +112,14 @@ session_start();
               <div>
                 <input type="radio" name="transport" onchange="changetrans(this)" value="35000" id="transport-fast" />
                 <label for="transport-fast" class="box-label">
-                  <div class="label-txt">Giao hàng nhanh</div>
+                  <div class="label-txt">Giao hàng chậm</div>
                   <div class="label-number">35.000đ</div>
                 </label>
               </div>
               <div>
                 <input type="radio" name="transport" onchange="changetrans(this)" value="50000" id="transport-slow" />
                 <label for="transport-slow" class="box-label">
-                  <div class="label-txt">Giao hàng chậm</div>
+                  <div class="label-txt">Giao hàng nhanh</div>
                   <div class="label-number">50.000đ</div>
                 </label>
               </div>
@@ -130,7 +130,7 @@ session_start();
             <div class="payment-choice--transport margin-top">
               <div class="payment-choice--title">Thanh toán</div>
               <div>
-                <input type="radio" name="payment" id="payment-off" />
+                <input type="radio" value="0" name="payment" id="payment-off" />
                 <label for="payment-off" class="box-label">
                   <div class="label-txt">Thanh toán khi nhận hàng</div>
                   <div class="label-number">
@@ -139,7 +139,7 @@ session_start();
                 </label>
               </div>
               <div>
-                <input type="radio" name="payment" id="payment-onl" />
+                <input type="radio" value="1" name="payment" id="payment-onl" />
                 <label for="payment-onl" class="box-label">
                   <div class="label-txt">Thanh toán online</div>
                   <div class="label-number">
@@ -161,8 +161,10 @@ session_start();
             <div class="payment-order--product">
 
             <?php
-            
+            $tong_tien = 0;
             foreach ($_SESSION['cart'] as $cart) {
+              $tmp_tien = $cart[3] * $cart[5];
+              $tong_tien+=$tmp_tien;
             ?>
 
                 <div class="product-order">
@@ -183,11 +185,12 @@ session_start();
             <?php } ?>
 
             <!-- ---------------------------------------------------------------- -->
+            <input type="hidden" name="tmp_tong" value="<?=$tong_tien?>">
             </div>
             <div class="payment-order--price">
               <div class="order-price--element">
                 <div class="oder-price--text">Tạm tính</div>
-                <div class="oder-price--number">2.740.000đ</div>
+                <div class="oder-price--number"><?=number_format($tong_tien)?>đ</div>
               </div>
               <div class="order-price--element">
                 <div class="oder-price--text">Phí vận chuyển</div>
@@ -197,7 +200,7 @@ session_start();
             <div class="payment-order--price last-oder">
               <div class="order-price--element">
                 <div class="oder-price--sum">Tổng cộng</div>
-                <div class="oder-price--offcial">2.775.00đ</div>
+                <div class="oder-price--offcial" id="tong_tien"></div>
               </div>
               <div class="payment-oder--submit">
                 <div class="order-submit--box">
@@ -205,7 +208,7 @@ session_start();
                     <a href="../../index.php?act=viewcart">Quay về giỏ hàng</a>
                   </div>
                   <div>
-                    <button class="btn-order" type="submit">
+                    <button class="btn-order" name="btn-submit" type="submit">
                       <span></span><span></span><span></span><span></span> Đặt
                       hàng
                     </button>

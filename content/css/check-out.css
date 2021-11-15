@@ -148,7 +148,7 @@
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  transition: all 0.25s linear;
+  transition: all 0.2s linear;
 }
 .box-label::after {
   content: "";
@@ -198,8 +198,8 @@
 .payment-order--product {
   border-bottom: 1px solid lightgray;
   margin: 15px;
-  max-height: 200px;
-  overflow-y: scroll;
+  max-height: 220px;
+  overflow-y: auto;
 }
 .payment-order--product::-webkit-scrollbar {
   width: 0.5em;

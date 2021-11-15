@@ -7,6 +7,7 @@ include 'model/hanghoa.php';
 include 'model/khachhang.php';
 include 'model/tintuc.php';
 include 'model/binhluan.php';
+include 'model/donhang.php';
 $listdanhmuc = loadall_danhmuc();
 include 'site/header.php';
 
@@ -36,6 +37,14 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             }
             $ten_danhmuc = loadTen_danhmuc($id);
             $hanghoa_danhmuc = loadWhere_hanghoa($kyw, $id);
+            include './site/product/product-by-category.php';
+            break;
+        case 'load-filter' :
+            if(isset($_POST['btn-filter'])) {
+                $value = $_POST['filterValue'];
+                $hanghoa_danhmuc = filterPrice_hanghoa($value);
+            }
+            
             include './site/product/product-by-category.php';
             break;
         case 'details-pro' :
@@ -179,8 +188,34 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             include 'site/cart/viewcart.php';
             break;
         case 'checkout' :
-            // include 'site/cart/check-out.php';
             header('Location: ./site/cart/check-out.php');
+            break;
+        case 'billconfirm' :
+            // Tao hoa don
+            if(isset($_POST['btn-submit'])) {
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $tel = $_POST['tel'];
+                $address = $_POST['address'];
+                $date = date("Y-m-d");
+                $transport = $_POST['transport'];
+                $paymentMethod = $_POST['payment'];
+                $sumBill = sum_bill();
+
+                $idbill = insert_bill($name, $email, $address, $tel, $date, $transport, $paymentMethod, $sumBill);
+
+                //Insert into hoa_don_chi_tiet : $_SESSION['cart'] & idbill;
+
+                foreach ($_SESSION['cart'] as $cart) {
+                    insert_billDetail($_SESSION['user']['ma_khachhang'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $cart[6], $idbill);
+                }
+
+                $_SESSION['cart'] = [];
+
+            }
+            $bill = loadOne_bill($idbill);
+            $billDetails = loadAll_billDetail($idbill);
+            include 'site/cart/billconfirm.php';
             break;
         default:
             include 'site/home.php';
