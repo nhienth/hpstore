@@ -11,17 +11,28 @@ function loadAll_hanghoa(){
     return $listhanghoa;
 }
 
-function loadWhere_hanghoa($kyw, $ma_danhmuc) {
+function loadWhere_hanghoa($kyw, $id) {
     $sql = "SELECT * FROM hang_hoa WHERE 1";
     if($kyw!="") {
         $sql.=" AND ten_hanghoa LIKE '%".$kyw."%' ";
     }
-    if($ma_danhmuc>0) {
-        $sql.=" AND ma_danhmuc = '".$ma_danhmuc."' ";
+    if($id>0) {
+        $sql.=" AND ma_danhmuc = '".$id."' ";
     }
     $sql.= " ORDER BY ma_hanghoa DESC";
     $listhoanghoa = pdo_query($sql);
     return $listhoanghoa;
+}
+
+function load_ten_dm($id){
+    if($id>0){
+        $sql="select * from danh_muc where ma_danhmuc=".$id;
+        $dm=pdo_query_one($sql);
+        extract($dm);
+        return $ten_danhmuc;
+    }else{
+        return "";
+    }
 }
 
 function loadNew_hanghoa() {
@@ -160,5 +171,19 @@ function loadGoiy_hanghoa() {
     return $listGoiY;
 }
 
+function filterprice_hanghoa($value){
+    $sql = "SELECT * FROM hang_hoa WHERE 1";
+    if($value==2){
+        $sql.= " AND don_gia <300000";
+    }elseif ($value==3) {
+        $sql.= " AND don_gia <500000";
+    }elseif ($value==4) {
+        $sql.= " AND don_gia <1000000";
+    }else{
+        $sql.= " ORDER BY ma_hanghoa DESC";
+    }
+    $listhoanghoa2 = pdo_query($sql);
+    return $listhoanghoa2;
+}
 
 ?>

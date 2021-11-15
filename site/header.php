@@ -62,9 +62,9 @@
         </div>
         <div class="header-top-search">
           <!-- <div class="header-inputSearch"> -->
-          <form action="" method="post">
-            <input type="text" placeholder="Bạn cần tìm gì hôm nay ?" />
-            <button type="submit">
+          <form action="index.php?act=hanghoa" method="post">
+            <input type="text" placeholder="Bạn cần tìm gì hôm nay ?" name="kyw" />
+            <button type="submit" name="timkiem">
               <i class="fas fa-search"></i>
             </button>
           </form>

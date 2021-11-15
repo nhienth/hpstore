@@ -27,22 +27,22 @@
           <div class="product-left--filter">
             <div class="filter-name">Tên sản phẩm</div>
             <div class="filter-form">
-              <form action="" method="post">
-                <input type="text" placeholder="Tìm theo tên" />
-                <button type="submit">
+              <form action="index.php?act=hanghoa" method="post">
+                <input type="text" placeholder="Tìm theo tên" name="kyw"/>
+                <button type="submit" name="timkiem" >
                   <i class="fas fa-search font-filter"></i>
                 </button>
               </form>
             </div>
             <div class="filter-name">Giá sản phẩm</div>
-            <form action="" class="form-price">
-              <select name="" id="">
-                <option value="">Tất cả</option>
-                <option value="">Dưới 300.000đ</option>
-                <option value="">Dưới 300.000đ</option>
-                <option value="">Dưới 300.000đ</option>
+            <form action="index.php?hanghoa2" method="post" class="form-price">
+              <select name="select" id="">
+                <option value="1">Tất cả</option>
+                <option name="" value="2">Dưới 300.000đ</option>
+                <option name="" value="3">Dưới 500.000đ</option>
+                <option name="" value="4">Dưới 1.000.000đ</option>
               </select>
-              <button type="submit">
+              <button type="submit" name="timkiem2">
                 <i class="fas fa-search font-filter"></i>
               </button>
             </form>

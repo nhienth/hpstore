@@ -15,7 +15,7 @@ $listGiay = loadGiay_hanghoa();
 $listAo = loadAo_hanghoa();
 $listPhuKien = loadPhuKien_hanghoa();
 $listNews = loadHome_tintuc();
-
+if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
 
 if(isset($_GET['act']) && ($_GET['act'] != "")){
@@ -32,10 +32,18 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             }else{
                 $id = 0;
             }
-            $ten_danhmuc = loadTen_danhmuc($id);
+            $ten_danhmuc = load_ten_dm($id);
             $hanghoa_danhmuc = loadWhere_hanghoa($kyw, $id);
-            include './site/product/product-by-category.php';
+            include 'site/product/product-by-category.php';
             break;
+        case 'hanghoa2' :
+            if(isset($_POST['timkiem2'])){
+                $value = $_POST['select'];
+                $hanghoa_danhmuc = filterprice_hanghoa($value);
+                include 'site/product/product-by-category.php';
+                break;
+            }
+    
         case 'details-pro' :
             if(isset($_GET['id']) && ($_GET['id']>0)){
                 $id = $_GET['id'];
@@ -148,6 +156,9 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 // header("Location: site/account/info.php");
             }
             include "site/account/info.php";
+            break;
+        case 'viewcart' :
+            include "site/cart/viewcart.php";
             break;
         default:
             include 'site/home.php';
