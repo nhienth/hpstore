@@ -137,3 +137,41 @@
 .btn-chart a:hover {
   background-color: #112d6b;
 }
+.sandybrown {
+  background-color: #febe40;
+}
+.royalblue {
+  background-color: #4a6edc;
+}
+.mediumturquoise {
+  background-color: #37b7d0;
+}
+.lightseagreen {
+  background-color: #1cc98a;
+}
+.bill-form select {
+  border-radius: 2px;
+  border: 1px solid lightgray;
+  padding: 5px;
+}
+.bill-form button {
+  display: block;
+  background-color: #4a6edc;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 auto;
+  margin-top: 5px;
+  border-radius: 2px;
+  transition: all 0.2s linear;
+}
+.bill-form button:hover {
+  background-color: #112d6b;
+}
+.status-bill {
+  padding: 4px 2px;
+  border-radius: 3px;
+  color: white;
+}
+.mb50 {
+  margin-bottom: 50px;
+}

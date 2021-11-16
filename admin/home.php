@@ -5,6 +5,7 @@ $countCate = countAll_danhmuc();
 $countAcc = countAll_khachhang();
 $coungNew = countAll_tintuc();
 $countCMT = countAll_binhluan();
+$countBill = countAll_hoadon();
 
 ?>
 
@@ -53,7 +54,7 @@ $countCMT = countAll_binhluan();
               <div class="right-main--boxed">
                 <div class="main-boxed--content">
                   <div class="boxed-content--txt">Đơn hàng</div>
-                  <div class="boxed-content--count">11</div>
+                  <div class="boxed-content--count"><?=$countBill?></div>
                 </div>
                 <div class="main-boxed--icon">
                   <i class="fas fa-people-carry"></i>

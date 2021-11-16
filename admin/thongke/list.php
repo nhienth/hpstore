@@ -42,9 +42,9 @@
                     <tr>
                         <td>'.$ten_danhmuc.'</td>
                         <td>'.$countSP.'</td>
-                        <td>'.number_format($maxPrice).'</td>
-                        <td>'.number_format($minPrice).'</td>
-                        <td>'.number_format($avgPrice,2).'</td>
+                        <td>'.number_format($maxPrice).'đ</td>
+                        <td>'.number_format($minPrice).'đ</td>
+                        <td>'.number_format($avgPrice,2).'đ</td>
                     </tr>
                     
                     ';

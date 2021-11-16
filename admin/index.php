@@ -273,6 +273,13 @@
                 $listhoadon = loadAll_hoadon();
                 include "hoadon/list.php";
                 break;
+            case 'details-bill' :
+                if(isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $bill = loadOne_bill($_GET['id']);
+                    $listhanghoa = loadAll_billDetail($_GET['id']);
+                }
+                include "hoadon/details.php";
+                break;
             case 'listbl' :
                 $listcomment = thongke_binhluan();
                 include "binhluan/list.php";

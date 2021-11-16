@@ -25,7 +25,7 @@ function loadOne_bill($id) {
 }
 
 function loadAll_billDetail($id) {
-    $sql = "SELECT * FROM hoa_don_chi_tiet WHERE id=".$id;
+    $sql = "SELECT * FROM hoa_don_chi_tiet WHERE idbill=".$id;
     return pdo_query($sql);
 }
 
@@ -37,6 +37,12 @@ function loadAll_hoadon() {
 function update_hoadon($ma_hoadon, $trang_thai) {
     $sql = "UPDATE hoa_don SET trang_thai = '".$trang_thai."' WHERE ma_hoadon =".$ma_hoadon;
     pdo_execute($sql);
+}
+
+function countAll_hoadon(){
+    $sql = "SELECT COUNT(*) FROM hoa_don";
+    $count = pdo_query_value($sql);
+    return $count;
 }
 
 ?>

@@ -38,7 +38,7 @@
                 
                 foreach ($listhoadon as $hoadon) {
                     extract($hoadon);
-                    $details = "";
+                    $details = "index.php?act=details-bill&&id=".$ma_hoadon;
                     if($thanh_toan == 0){
                       $thanh_toan = "Thanh toán khi nhận hàng";
                     }else{
@@ -47,12 +47,16 @@
 
                     if($trang_thai == 0){
                       $trang_thai = "Đơn hàng mới";
+                      $bgc = "sandybrown";
                     }else if($trang_thai == 1){
-                      $trang_thai = "Đang xử lý";
+                      $trang_thai = "Đã xác nhận";
+                      $bgc = "royalblue";
                     }else if($trang_thai == 2){
                       $trang_thai = "Đang giao hàng";
+                      $bgc = "mediumturquoise";
                     }else{
                       $trang_thai = "Đã hoàn thành";
+                      $bgc = "lightseagreen";
                     }
                     echo '   
                     <tr>
@@ -60,15 +64,15 @@
                       <td>'.$ten_khachhang.'</td>
                       <td>'.number_format($tong_tien).'đ</td>
                       <td>'.$thanh_toan.'</td>
-                      <td>'.$trang_thai.'</td>
+                      <td><div class="'.$bgc.' status-bill">'.$trang_thai.'</div></td>
                       <td>
                         <form action="index.php?act=update-listhd" method="post" class="bill-form">
                           <input type="hidden" name="ma_hoadon" value="'.$ma_hoadon.'">
                           <select name="trang_thai" id="">
                             <option value="0">Đơn hàng mới</option>
-                            <option value="1">Đang xử lý</option>
+                            <option value="1">Đã xác nhận</option>
                             <option value="2">Đang giao hàng</option>
-                            <option value="3">Đã giao hàng</option>
+                            <option value="3">Đã hoàn thành</option>
                           </select>
                           <button type="submit" name="btn-update">Cập nhật</button>
                         </form>
