@@ -47,15 +47,54 @@ if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
             <div class="account-order--list">
               <table class="order-table">
                 <tr>
-                  <th>#</th>
+                  <th>Mã HĐ</th>
                   <th>Ngày mua</th>
-                  <th>Địa chỉ</th>
+                  <th>Chuyển đến</th>
                   <th>Tổng tiền</th>
                   <th>Tình trạng đơn hàng</th>
+                  <th>Xem chi tiết</th>
                 </tr>
-                <tr>
-                  <td colspan="5">Không có đơn hàng nào</td>
-                </tr>
+                
+                <?php
+                
+                if(is_array($listbill) && ($listbill != [])){
+                    foreach ($listbill as $bill) {
+                      extract($bill);
+                      $details = "index.php?act=mybill&&id=".$ma_hoadon;
+
+                    if($trang_thai == 0){
+                      $trang_thai = "Chờ xử lý";
+                      $bgc = "sandybrown";
+                    }else if($trang_thai == 1){
+                      $trang_thai = "Đã xác nhận";
+                      $bgc = "royalblue";
+                    }else if($trang_thai == 2){
+                      $trang_thai = "Đang giao hàng";
+                      $bgc = "mediumturquoise";
+                    }else{
+                      $trang_thai = "Đã hoàn thành";
+                      $bgc = "lightseagreen";
+                    }
+                      echo '
+                      <tr>
+                        <td>'.$ma_hoadon.'</td>
+                        <td>'.$ngay_dat.'</td>
+                        <td>'.$dia_chi.'</td>
+                        <td>'.number_format($tong_tien + $van_chuyen).'đ</td>
+                        <td>'.$trang_thai.'</td>
+                        <td><a href="'.$details.'" class="a-edit"><i class="fas fa-eye"></i></a></td>
+                      </tr>
+                      ';
+                    }
+                }else{
+                  echo '
+                  <tr>
+                    <td colspan="5">Không có đơn hàng nào</td>
+                  </tr>
+                  ';
+                }
+                
+                ?>
               </table>
             </div>
           </div>

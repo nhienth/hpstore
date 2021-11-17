@@ -183,12 +183,15 @@
   width: 100%;
   border-collapse: collapse;
 }
-.order-tabl,
+.order-table,
 tr,
 th,
 td {
   border: 1px solid darkgray;
   padding: 10px;
+}
+.order-table td {
+  text-align: center;
 }
 .account-info--details {
   width: 25%;
@@ -272,4 +275,35 @@ td {
   font-size: 17px;
   color: #4a6edc;
   font-weight: 500;
+}
+.td-top {
+  display: block;
+  position: relative;
+  background-color: #112d6b;
+}
+/* .tr-top {
+  border: none;
+} */
+.td-top--boxed {
+  display: inline-block;
+  color: white;
+  font-size: 15px;
+}
+.td-top--boxed:after {
+  border: 19px solid transparent;
+  border-left-color: #112d6b;
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.mb50 {
+  margin-bottom: 50px;
+}
+.bill-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 2px;
+  object-fit: cover;
+  margin: 0 auto;
 }

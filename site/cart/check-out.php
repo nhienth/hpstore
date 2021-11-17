@@ -75,7 +75,7 @@ session_start();
                     $tel = "";
                     $email = "";
                     $address = "";
-                    echo '<a href="index.php?act=logout"> <i class="fas fa-user-circle"></i> Đăng xuất</a>';
+                    echo '<a href="index.php?act=dangnhap"> <i class="fas fa-user-circle"></i> Đăng nhập</a>';
                 }
                
                 ?>
@@ -100,7 +100,7 @@ session_start();
                 <label for="address">Địa chỉ</label>
               </div>
               <div class="form-field">
-                <textarea id="note" rows="2" placeholder=" "></textarea>
+                <textarea id="note" rows="2" name="note" placeholder=" "></textarea>
                 <label for="note">Ghi chú</label>
               </div>
             </div>

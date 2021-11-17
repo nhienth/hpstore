@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/hanghoa.php";
@@ -84,6 +85,7 @@
             case 'delete-pro':
                 if(isset($_GET['id']) && ($_GET['id'])>0){
                     deleteModel_hanghoa($_GET['id']);
+                    deleteCmt_hanghoa($_GET['id']);
                     delete_hanghoa($_GET['id']);
                     $thongbao ="Đã xóa sản phẩm !";
                 }

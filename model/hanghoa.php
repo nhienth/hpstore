@@ -173,17 +173,22 @@ function loadGoiy_hanghoa() {
 
 function filterprice_hanghoa($value){
     $sql = "SELECT * FROM hang_hoa WHERE 1";
-    if($value==2){
+    if($value==1){
         $sql.= " AND don_gia <300000";
-    }elseif ($value==3) {
+    }elseif ($value==2) {
         $sql.= " AND don_gia <500000";
-    }elseif ($value==4) {
+    }elseif ($value==3) {
         $sql.= " AND don_gia <1000000";
     }else{
         $sql.= " ORDER BY ma_hanghoa DESC";
     }
     $listhoanghoa2 = pdo_query($sql);
     return $listhoanghoa2;
+}
+
+function subpro_hoanghoa($size, $ma_hanghoa, $so_luong) {
+    $sql = "UPDATE model_hang_hoa SET so_luong = so_luong - '".$so_luong."' WHERE size LIKE '%".$size."%' AND ma_hanghoa =".$ma_hanghoa;
+    pdo_execute($sql);
 }
 
 ?>

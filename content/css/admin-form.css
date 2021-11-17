@@ -175,3 +175,13 @@
 .mb50 {
   margin-bottom: 50px;
 }
+.details-bill--img {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.td-witdh15 {
+  width: 10%;
+}
