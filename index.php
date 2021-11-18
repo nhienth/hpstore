@@ -18,7 +18,7 @@ $listGiay = loadGiay_hanghoa();
 $listAo = loadAo_hanghoa();
 $listPhuKien = loadPhuKien_hanghoa();
 $listNews = loadHome_tintuc();
-
+$dstop10 = loadall_sanpham_top10();
 
 
 if(isset($_GET['act']) && ($_GET['act'] != "")){
@@ -45,7 +45,14 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $hanghoa_danhmuc = filterPrice_hanghoa($value);
             }
             
-            include './site/product/product-by-category.php';
+            include 'site/product/product-by-category.php';
+            break;
+        case 'sapxep' :
+            if(isset($_POST['btn-sx'])){
+                $valuesx = $_POST['sapxephh'];
+                $hanghoa_danhmuc = thutuhh($valuesx);
+            }
+            include 'site/product/product-by-category.php';
             break;
         case 'details-pro' :
             if(isset($_GET['id']) && ($_GET['id']>0)){
