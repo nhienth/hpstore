@@ -39,4 +39,9 @@ function countCP_binhluan($ma_hanghoa) {
     return pdo_query_value($sql);
 }
 
+function deleteCmt_hanghoa($ma_hanghoa) {
+    $sql = "DELETE FROM binh_luan WHERE ma_hanghoa =".$ma_hanghoa;
+    pdo_execute($sql);
+}
+
 ?>

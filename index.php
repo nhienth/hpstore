@@ -165,6 +165,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             include "site/account/info-update.php";
             break;
         case 'info-acc' :
+            $listbill = loadAll_byKH_hoadon($_SESSION['user']['ma_khachhang']);
             include "site/account/info.php";
             break;
         case 'addtocart':
@@ -200,29 +201,42 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
         case 'billconfirm' :
             // Tao hoa don
             if(isset($_POST['btn-submit'])) {
+                $iduser = $_SESSION['user']['ma_khachhang'];
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $tel = $_POST['tel'];
                 $address = $_POST['address'];
+                $note = $_POST['note'];
                 $date = date("Y-m-d");
                 $transport = $_POST['transport'];
                 $paymentMethod = $_POST['payment'];
                 $sumBill = sum_bill();
 
-                $idbill = insert_bill($name, $email, $address, $tel, $date, $transport, $paymentMethod, $sumBill);
+                $idbill = insert_bill($iduser,$name, $email, $address, $tel, $date, $transport, $paymentMethod, $sumBill, $note);
 
                 //Insert into hoa_don_chi_tiet : $_SESSION['cart'] & idbill;
 
                 foreach ($_SESSION['cart'] as $cart) {
-                    insert_billDetail($_SESSION['user']['ma_khachhang'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $cart[6], $idbill);
+                    insert_billDetail($cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $cart[6], $idbill);
+                    subpro_hoanghoa($cart[4], $cart[0], $cart[5]);
                 }
+
 
                 $_SESSION['cart'] = [];
 
             }
-            $bill = loadOne_bill($idbill);
-            $billDetails = loadAll_billDetail($idbill);
-            include 'site/cart/billconfirm.php';
+            // $bill = loadOne_bill($idbill);
+            // $billDetails = loadAll_billDetail($idbill);
+            // include 'site/cart/billconfirm.php';
+            header('Location: index.php?act=info-acc');
+            break;
+        case 'mybill' :
+            if(isset($_GET['id']) && ($_GET['id'] >0)) {
+                $ma_hoadon = $_GET['id'];
+                $bill = loadOne_bill($ma_hoadon);
+                $listproduct = loadAll_billDetail($ma_hoadon);
+            }
+            include 'site/account/mybill.php'; 
             break;
         default:
             include 'site/home.php';

@@ -2,10 +2,15 @@
 <div class="right-top">
             <div class="website-title">Trang quản trị websitie</div>
             <div class="admin-info">
-              <div class="admin-name">ADMIN</div>
-              <div class="admin-img">
-                <img src="../content/images/home/ec9a4c0a7f3aea8a819354a0933540ad.jpg" alt="">
-              </div>
+              <?php 
+                  if(isset($_SESSION['user'])) {
+                    $hinh = $_SESSION['user']['hinh'];
+                    echo '
+                    <div class="admin-name">'.$_SESSION['user']['ten_dangnhap'].'</div>
+                    <div class="admin-img"><img src="../uploads/'.$hinh.'"></div>
+                    ';
+                  }
+              ?>
             </div>
           </div>
 

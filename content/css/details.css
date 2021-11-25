@@ -126,7 +126,6 @@
 .box-size {
   margin-top: 10px;
   display: flex;
-  gap: 10px;
 }
 .size-checked {
   width: 35px;
@@ -134,6 +133,7 @@
   background-color: white;
   position: relative;
   transition: all 0.2s linear;
+  margin-right: 10px;
 }
 .size-checked input {
   /* visibility: hidden; */

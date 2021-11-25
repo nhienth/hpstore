@@ -202,7 +202,7 @@
                 <div class="product-image width-img">
                     <a href="<?=$linkDetails?>"><img src="./uploads/<?=$hinh?>"/></a>
                 </div>
-                <div class="product-name"><?=$ten_hanghoa?></div>
+                <div class="product-name"><span><?=$ten_hanghoa?></span></div>
                 <div class="product-price"><?=number_format($don_gia)?>đ</div>
             </div>
         <?php } ?>

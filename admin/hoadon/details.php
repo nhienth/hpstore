@@ -2,10 +2,15 @@
 <div class="right-top">
             <div class="website-title">Trang quản trị websitie</div>
             <div class="admin-info">
-              <div class="admin-name">ADMIN</div>
-              <div class="admin-img">
-                <img src="../content/images/home/ec9a4c0a7f3aea8a819354a0933540ad.jpg" alt="">
-              </div>
+              <?php 
+                  if(isset($_SESSION['user'])) {
+                    $hinh = $_SESSION['user']['hinh'];
+                    echo '
+                    <div class="admin-name">'.$_SESSION['user']['ten_dangnhap'].'</div>
+                    <div class="admin-img"><img src="../uploads/'.$hinh.'"></div>
+                    ';
+                  }
+              ?>
             </div>
           </div>
 
@@ -62,7 +67,7 @@
                     <td><?=$dia_chi?></td>
                     <td><?=$dien_thoai?></td>
                     <td><?=$van_chuyen?></td>
-                    <td></td>
+                    <td><?=$ghi_chu?></td>
                   </tr>
             
 
@@ -77,7 +82,7 @@
                 <table class="tabel-list--normal">
                   <tr>
                     <th>Tên sản phẩm</th>
-                    <th>Hình sản phẩm</th>
+                    <th>Hình ảnh</th>
                     <th>Size</th>
                     <th>Số lượng</th>
                     <th>Đơn giá</th>
@@ -91,7 +96,7 @@
                       echo '
                       <tr>
                         <td>'.$ten_hanghoa.'</td>
-                        <td><img src="../uploads/'.$hinh.'" style="margin : 0 auto" width="100px" height="100px"></td>
+                        <td class="td-witdh15"><img src="../uploads/'.$hinh.'" class="details-bill--img"></td>
                         <td>'.$size.'</td>
                         <td>'.$so_luong.'</td>
                         <td>'.number_format($gia).'đ</td>
