@@ -370,11 +370,16 @@
                 break;
             case 'list-tk':
                 $listthongke = loadAll_thongke();
+                $thongke_hanghoa = thongke_hanghoa();
                 include 'thongke/list.php';
                 break;
             case 'chart-tk':
                 $listthongke = loadAll_thongke();
                 include 'thongke/chart.php';
+                break;
+            case 'chart-tksl':
+                $thongke_hanghoa = thongke_hanghoa();
+                include 'thongke/chart-pro.php';
                 break;
             default :
                 include "home.php";

@@ -44,6 +44,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $value = $_POST['filterValue'];
                 $hanghoa_danhmuc = filterPrice_hanghoa($value);
             }
+            $ten_danhmuc = "";
             include './site/product/product-by-category.php';
             break;
         case 'details-pro' :

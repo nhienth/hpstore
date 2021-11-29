@@ -179,9 +179,8 @@ function filterprice_hanghoa($value){
         $sql.= " AND don_gia <500000";
     }elseif ($value==3) {
         $sql.= " AND don_gia <1000000";
-    }else{
-        $sql.= " ORDER BY ma_hanghoa DESC";
     }
+    $sql.= " ORDER BY don_gia DESC";
     $listhoanghoa2 = pdo_query($sql);
     return $listhoanghoa2;
 }
