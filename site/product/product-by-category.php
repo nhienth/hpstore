@@ -73,6 +73,21 @@
           </div>
           <div class="filter-title margin-top-20">
             <p class="filter-filer">Top 10 yêu thích</p>
+            
+          </div>
+          <div>
+              <?php 
+                foreach ($dstop10 as $ds) {
+                  extract($ds);
+                  echo '
+                    <div>
+                      <img src="./uploads/'.$hinh.'" alt="" width="50px" height="50px">
+                      <h4>'.$ten_hanghoa.'</h4>
+                    </div>
+                  ';
+                }
+              ?>
+            
           </div>
           <div class="product-left--img">
             <img src="./content/images/home/aside_banner.png" />
@@ -81,18 +96,18 @@
         <div class="main-product--right">
           <div class="product-sort">
             <div class="producr-sort--right">
-              <form action="" method="post">
+              <form action="./index.php?act=sapxep" method="post">
                 <label for="sort">Sắp xếp : </label>
-                <select id="sort">
-                  <option value="">Thứ tự</option>
-                  <option value="">A - Z</option>
-                  <option value="">Z - A</option>
-                  <option value="">Giá tăng dần</option>
-                  <option value="">Giá giảm dần</option>
-                  <option value="">Hàng mới nhất</option>
-                  <option value="">Hàng cũ nhất</option>
+                <select id="sort" name="sapxephh">
+                  <option value="0">Thứ tự</option>
+                  <option value="1">A - Z</option>
+                  <option value="2">Z - A</option>
+                  <option value="3">Giá tăng dần</option>
+                  <option value="4">Giá giảm dần</option>
+                  <option value="5">Hàng mới nhất</option>
+                  <option value="6">Hàng cũ nhất</option>
                 </select>
-                <button class="btn-sort"></button>
+                <button class="btn-sort" name="btn-sx"><i class="fas fa-search font-filter"></i></button>
               </form>
             </div>
           </div>

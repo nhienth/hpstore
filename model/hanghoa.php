@@ -174,20 +174,46 @@ function loadGoiy_hanghoa() {
 function filterprice_hanghoa($value){
     $sql = "SELECT * FROM hang_hoa WHERE 1";
     if($value==1){
-        $sql.= " AND don_gia <300000";
+        $sql.= " AND don_gia < 300000";
     }elseif ($value==2) {
-        $sql.= " AND don_gia <500000";
+        $sql.= " AND don_gia < 500000";
     }elseif ($value==3) {
+<<<<<<< HEAD
         $sql.= " AND don_gia <1000000";
+=======
+        $sql.= " AND don_gia < 1000000";
+    }else{
+        $sql.= " ORDER BY ma_hanghoa DESC";
+>>>>>>> ba778b8566a5698ac4f57be87b006759eaf4a284
     }
     $sql.= " ORDER BY don_gia DESC";
     $listhoanghoa2 = pdo_query($sql);
     return $listhoanghoa2;
 }
 
-function subpro_hoanghoa($size, $ma_hanghoa, $so_luong) {
-    $sql = "UPDATE model_hang_hoa SET so_luong = so_luong - '".$so_luong."' WHERE size LIKE '%".$size."%' AND ma_hanghoa =".$ma_hanghoa;
-    pdo_execute($sql);
+function thutuhh($valuesx){
+    $sql = "SELECT * FROM hang_hoa WHERE 1";
+    if($valuesx==1){
+        $sql.= "  order by ten_hanghoa asc";
+    }elseif ($valuesx==2) {
+        $sql.= "  order by ten_hanghoa desc";
+    }elseif ($valuesx==3) {
+        $sql.= "  order by don_gia asc";
+    }elseif ($valuesx==4) {
+        $sql.= "  order by don_gia desc";
+    }elseif ($valuesx==5) {
+        $sql.= "  order by ma_hanghoa asc";
+    }elseif ($valuesx==6) {
+        $sql.= "  order by ma_hanghoa desc";
+    }
+    $listhoanghoa3 = pdo_query($sql);
+    return $listhoanghoa3;
+}
+
+function loadall_sanpham_top10(){
+    $sql="select * from hang_hoa where 1 order by so_luot_xem desc limit 0,10"; 
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
 }
 
 ?>
