@@ -44,11 +44,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $value = $_POST['filterValue'];
                 $hanghoa_danhmuc = filterPrice_hanghoa($value);
             }
-<<<<<<< HEAD
             $ten_danhmuc = "";
-            include './site/product/product-by-category.php';
-=======
-            
             include 'site/product/product-by-category.php';
             break;
         case 'sapxep' :
@@ -56,8 +52,8 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $valuesx = $_POST['sapxephh'];
                 $hanghoa_danhmuc = thutuhh($valuesx);
             }
+            $ten_danhmuc = "";
             include 'site/product/product-by-category.php';
->>>>>>> ba778b8566a5698ac4f57be87b006759eaf4a284
             break;
         case 'details-pro' :
             if(isset($_GET['id']) && ($_GET['id']>0)){
