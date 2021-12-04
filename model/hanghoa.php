@@ -182,6 +182,7 @@ function filterprice_hanghoa($value){
     }else{
         $sql.= " ORDER BY ma_hanghoa DESC";
     }
+    $sql.= " ORDER BY don_gia DESC";
     $listhoanghoa2 = pdo_query($sql);
     return $listhoanghoa2;
 }
@@ -197,16 +198,16 @@ function thutuhh($valuesx){
     }elseif ($valuesx==4) {
         $sql.= "  order by don_gia desc";
     }elseif ($valuesx==5) {
-        $sql.= "  order by ma_hanghoa asc";
-    }elseif ($valuesx==6) {
         $sql.= "  order by ma_hanghoa desc";
+    }elseif ($valuesx==6) {
+        $sql.= "  order by ma_hanghoa asc";
     }
     $listhoanghoa3 = pdo_query($sql);
     return $listhoanghoa3;
 }
 
 function loadall_sanpham_top10(){
-    $sql="select * from hang_hoa where 1 order by so_luot_xem desc limit 0,10"; 
+    $sql="select * from hang_hoa where 1 order by so_luot_xem desc limit 0,5"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }

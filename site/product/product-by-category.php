@@ -72,21 +72,30 @@
             </div>
           </div>
           <div class="filter-title margin-top-20">
-            <p class="filter-filer">Top 10 yêu thích</p>
-            
+            <p class="filter-filer">Top 5 yêu thích</p>
           </div>
-          <div>
-              <?php 
-                foreach ($dstop10 as $ds) {
-                  extract($ds);
-                  echo '
-                    <div>
-                      <img src="./uploads/'.$hinh.'" alt="" width="50px" height="50px">
-                      <h4>'.$ten_hanghoa.'</h4>
+          <div class="topViews-box">
+              <?php
+              
+              foreach ($dstop10 as $pro) {
+                extract($pro);
+                $linkDetails = "index.php?act=details-pro&&id=".$ma_hanghoa;
+                echo '
+                
+                  <div class="topViews-pro">
+                    <div class="topViews-pro--img">
+                      <a href="'.$linkDetails.'"><img src="./uploads/'.$hinh.'" /></a>
                     </div>
-                  ';
-                }
+                    <div class="topViews-pro--name"><a href="'.$linkDetails.'">'.$ten_hanghoa.'</a></div>
+                  </div>
+                
+                ';
+              }
+              
               ?>
+              
+            </div>
+          <div>
             
           </div>
           <div class="product-left--img">
@@ -107,7 +116,7 @@
                   <option value="5">Hàng mới nhất</option>
                   <option value="6">Hàng cũ nhất</option>
                 </select>
-                <button class="btn-sort" name="btn-sx"><i class="fas fa-search font-filter"></i></button>
+                <button class="btn-sort" name="btn-sx"></button>
               </form>
             </div>
           </div>

@@ -30,3 +30,9 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 // -----------------------------------------------------------------------------
+var sizeElement = document.querySelector(".size-checked");
+var labelText = sizeElement.lastElementChild.innerHTML;
+console.log(labelText);
+if (labelText.length >= 3) {
+  sizeElement.style.marginRight = "30px";
+}
