@@ -21,6 +21,13 @@
           <input type="password" id="pass" name="pass" placeholder="Mật khẩu" />
           <button class="btn-submit" type="submit" name="dangnhap" >Đăng nhập</button>
         </form>
+        <?php
+              
+              if(isset($thongbao) && ($thongbao != "")) {
+              echo ' <div class="notification margin-bottom-20"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+              }
+          
+          ?>
         <div class="login-register">
           Bạn chưa có tài khoản. Đăng ký <a href="index.php?act=dangki">tại đây</a>.
         </div>

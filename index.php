@@ -119,7 +119,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $email = $_POST['email'];
                 $check = laymk($user,$email);
                 if(is_array($check)){
-                    $thongbao = "Mật khẩu của bạn là :".$check['mat_khau'];
+                    $thongbao = "Mật khẩu đã được gửi đến email của bạn !";
                 }else {
                     $thongbao = "Tài khoản không tồn tại";
                 }
@@ -134,8 +134,14 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 if(is_array($checkuser)){
                     $_SESSION['user'] = $checkuser;
                     header("location: index.php");
-                }else {
+                }elseif(exist_khachhang($user) != $user){
+                    $thongbao ="Tên đăng nhập không chính xác ! Vui lòng nhập lại !";
+                }elseif(exitmk_khachhang($pass) != $pass){
+                    $thongbao ="Mật khẩu không chính xác ! Vui lòng nhập lại !";
+                }
+                else {
                     $thongbao = "Tài khoản không tồn tại";
+                    
                 }
             }
             include 'site/account/login.php';

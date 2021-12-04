@@ -54,6 +54,12 @@ function exist_khachhang($user){
     return $isExist > 0;
 }
 
+function exitmk_khachhang($pass){
+    $sql = "SELECT count(*) FROM khach_hang WHERE mat_khau LIKE '%".$pass."%' ";
+    $isExist = pdo_query_value($sql);
+    return $isExist > 0;
+}
+
 function laymk($user,$email){
     $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' AND email = '".$email."'";
     $lay = pdo_query_one($sql);
