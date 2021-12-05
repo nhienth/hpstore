@@ -74,7 +74,6 @@
 
                   <tr>
                     <th>Loại hàng</th>
-                    <th>SL sản phẩm</th>
                     <th>Tổng SL tồn kho</th>
                     <th>SL thấp nhất</th>
                     <th>SL cao nhất</th>
@@ -89,7 +88,6 @@
                     
                     <tr>
                         <td>'.$ten_danhmuc.'</td>
-                        <td>'.$countSP.'</td>
                         <td>'.$so_luong.'</td>
                         <td>'.$sl_min.'</td>
                         <td>'.$sl_max.'</td>

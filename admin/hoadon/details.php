@@ -50,7 +50,7 @@
             </div>
 
             <div class="details-order--boxed mb50">
-              <div class="function-title">Thông tin vận chuyền</div>
+              <div class="function-title">Thông tin vận chuyển</div>
               <div class="function-table">
              
                 <table class="tabel-list--normal">
