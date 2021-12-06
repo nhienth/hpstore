@@ -28,11 +28,11 @@ function update_khachhang($user, $pass, $name, $address, $phone, $email, $role, 
   
 
 }
-function update_khachhang2($user,$pass,$name,$address,$phone,$email,$avatar,$ma_khachhang){
+function update_khachhang2($user,$name,$address,$phone,$email,$avatar,$ma_khachhang){
     if($avatar != ""){
-        $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."', mat_khau = '".$pass."', ho_ten = '".$name."', hinh = '".$avatar."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."' WHERE ma_khachhang =".$ma_khachhang;
+        $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."',  ho_ten = '".$name."', hinh = '".$avatar."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."' WHERE ma_khachhang =".$ma_khachhang;
     }else{
-        $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."', mat_khau = '".$pass."', ho_ten = '".$name."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."' WHERE ma_khachhang =".$ma_khachhang;
+        $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."',  ho_ten = '".$name."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."' WHERE ma_khachhang =".$ma_khachhang;
     }
     pdo_execute($sql);
 }    
@@ -72,5 +72,10 @@ function checkuser($user,$pass){
     return $check;
 }
 
+function update_matkhaunew($pass2,$id){
+    $sql = "UPDATE khach_hang SET mat_khau ='".$pass2."' where ma_khachhang =".$id;
+    pdo_execute($sql);
+
+}
 
 ?>

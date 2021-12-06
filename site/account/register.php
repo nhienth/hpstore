@@ -35,13 +35,13 @@
             <button class="btn-login" name="dangnhap">Đăng nhập</button>
           </div>
         </form> -->
-        <!-- <?php
+        <?php
               
               if(isset($thongbao) && ($thongbao != "")) {
               echo ' <div class="notification margin-bottom-20"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
               }
           
-          ?> -->
+          ?>
         <form action="index.php?act=dangki" method="post" class="login-form" enctype="multipart/form-data">
                     <label for="tendn">Tên đăng nhập<span class="red">*</span></label>
                     <input type="text" name="user" id="tendn" value="<?php if(isset($user)) echo $user ?>">
@@ -66,13 +66,7 @@
           </div>
 
               </form>
-              <?php
-              
-              if(isset($thongbao) && ($thongbao != "")) {
-              echo ' <div class="notification margin-bottom-20"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
-              }
-          
-          ?>
+        
       </div>
     </section>
 

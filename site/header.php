@@ -77,7 +77,8 @@
           <div class="phone-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <div class="phone-number">0866100339</div>
+          <div class="phone-number">0866100339
+           </div>
         </div>
         <div class="header-top-account">
           <div class="account-hover">
@@ -87,7 +88,9 @@
               extract($_SESSION['user']);
             ?>
               <ul>
+
                 <li><a href="index.php?act=info-acc">Quản lý tài khoản</a></li>
+                <li><a href="index.php?act=doimatkhau">Đổi mật khẩu</a></li>
                 <li><a href="index.php?act=logout">Đăng xuất</a></li>
                 <?php if($vai_tro == 1) echo '<li><a href="./admin/index.php">Quản trị website</a></li>';?>
               </ul>
