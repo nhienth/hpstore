@@ -64,7 +64,9 @@
                       <a href="index.php?act=dangnhap">Đăng nhập</a> 
                     </button>
           </div>
+
               </form>
+        
       </div>
     </section>
 

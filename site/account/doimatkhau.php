@@ -115,23 +115,26 @@
       <div class="bottom-nav--title width-normal">
         <a href="../../index.html">Trang chủ</a>
         <i class="fas fa-chevron-right"></i>
-        <span class="blue">Tìm lại mật khẩu</span>
+        <span class="blue">Đổi lại mật khẩu</span>
       </div>
     </div>
 
     <section class="section-row width-normal">
       <div class="login-block">
-        <div class="login-title">Tìm lại mật khẩu</div>
+        <div class="login-title">Đổi mật khẩu</div>
         <div class="login-title--else">
-          Nếu bạn đã quên mật khẩu, điền thông tin đề tìm lại
+          
         </div>
-        <form action="index.php?act=quenmk" class="login-form" method="post" enctype="multipart/form-data">
-          <label for="user">Tên đăng nhập<span class="red">*</span></label>
-          <input type="text" id="user" name="user" placeholder="Tên đăng nhập" values="<?php if(isset($user)) echo $user; ?>"/>
-          <label for="email">Email<span class="red">*</span></label>
-          <input type="text" id="email" name="email" placeholder="Email" values="<?php if(isset($email)) echo $email; ?>" />
+        <form action="index.php?act=doimatkhau" class="login-form" method="post" enctype="multipart/form-data">
+           
+          <label for="user">Mật khẩu cũ<span class="red">*</span></label>
+          <input type="password" id="pass" name="pass" placeholder="Mật khẩu cũ" />
+          <label for="email">Mật khẩu mới<span class="red">*</span></label>
+          <input type="password" id="email" name="pass1" placeholder="Mật khẩu mới" />
+          <label for="email">Nhập lại mật khẩu mới<span class="red">*</span></label>
+          <input type="password" id="email" name="pass2" placeholder="Nhập lại mật khẩu mới" />
           <!-- <input type="submit" value="Đăng nhập" class="btn-submit" /> -->
-          <button class="btn-submit" name="laylaimk" type="submit">Tìm lại mật khẩu</button>
+          <button class="btn-submit" name="doimatkhau" type="submit">Đổi mật khẩu</button>
         </form>
       </div>
     </section>

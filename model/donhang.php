@@ -46,13 +46,10 @@ function countAll_hoadon(){
 }
 
 function loadAll_byKH_hoadon($ma_khachhang) {
+    // $sql = "SELECT * FROM hoa_don WHERE ma_khachhang = '".$ma_khachhang."' ORDER BY ma_hoadon DESC";
     $sql = "SELECT * FROM hoa_don WHERE ma_khachhang = '".$ma_khachhang."' ORDER BY ma_hoadon DESC";
     return pdo_query($sql);
 }
 
-function subpro_hoadon($so_luong, $size, $ma_hanghoa) {
-    $sql = "UPDATE model_hang_hoa SET so_luong = so_luong - '".$so_luong."' WHERE size LIKE '%".$size."%' AND ma_hanghoa=".$ma_hanghoa;
-    pdo_execute($sql);
-}
 
 ?>

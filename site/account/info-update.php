@@ -68,8 +68,7 @@ if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
           <form action="index.php?act=update-info" method="post" class="login-form" enctype="multipart/form-data">
                   <label for="tendn">Tên đăng nhập</label>
                   <input type="text" name="user" id="tendn" value="<?=$ten_dangnhap?>">
-                  <label for="pass">Mật khẩu</label>
-                  <input type="password" name="pass" id="pass" value="<?=$mat_khau?>">
+               
                   <label for="name">Họ tên</label>
                   <input type="text" name="name" id="name" value="<?=$ho_ten?>">
                   <label for="hinh">Hình đại diện</label>

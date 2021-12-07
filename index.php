@@ -52,7 +52,6 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $valuesx = $_POST['sapxephh'];
                 $hanghoa_danhmuc = thutuhh($valuesx);
             }
-            $ten_danhmuc = "";
             include 'site/product/product-by-category.php';
             break;
         case 'details-pro' :
@@ -119,8 +118,9 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $user = $_POST['user'];
                 $email = $_POST['email'];
                 $check = laymk($user,$email);
+
                 if(is_array($check)){
-                    $thongbao = "Mật khẩu của bạn là :".$check['mat_khau'];
+                    $thongbao = "Mật khẩu đã được gửi đến email: $email !";
                 }else {
                     $thongbao = "Tài khoản không tồn tại";
                 }
@@ -135,8 +135,14 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 if(is_array($checkuser)){
                     $_SESSION['user'] = $checkuser;
                     header("location: index.php");
-                }else {
+                }elseif(exist_khachhang($user) != $user){
+                    $thongbao ="Tên đăng nhập không chính xác ! Vui lòng nhập lại !";
+                }elseif(exitmk_khachhang($pass) != $pass){
+                    $thongbao ="Mật khẩu không chính xác ! Vui lòng nhập lại !";
+                }
+                else {
                     $thongbao = "Tài khoản không tồn tại";
+                    
                 }
             }
             include 'site/account/login.php';
@@ -149,7 +155,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             if(isset($_POST['btn-update'])){
                 $ma_khachhang = $_POST['ma_khachhang'];
                 $user = $_POST['user'];
-                $pass = $_POST['pass'];
+                $pass = $_SESSION['user']['mat_khau'];
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $address = $_POST['address'];
@@ -159,7 +165,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $target_dir = "./uploads/";
                 $target_file = $target_dir . basename($avatar);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
-                update_khachhang2($user,$pass,$name,$address,$phone,$email,$avatar,$ma_khachhang);
+                update_khachhang2($user,$name,$address,$phone,$email,$avatar,$ma_khachhang);
                 $_SESSION['user'] = checkuser($user,$pass);
                 $thongbao = "Tài khoản đã dược cập nhật !";
             }
@@ -219,8 +225,7 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
 
                 foreach ($_SESSION['cart'] as $cart) {
                     insert_billDetail($cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $cart[6], $idbill);
-                    // subpro_hoanghoa($cart[4], $cart[0], $cart[5]);
-                    subpro_hoadon($cart[5], $cart[4], $cart[0]);
+                    
                 }
 
                 $_SESSION['cart'] = [];
@@ -238,6 +243,28 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 $listproduct = loadAll_billDetail($ma_hoadon);
             }
             include 'site/account/mybill.php'; 
+            break;
+        case 'doimatkhau' :
+            if(isset($_POST['doimatkhau'])){
+                $id = $_SESSION['user']['ma_khachhang'];
+                
+                $pass = $_POST['pass'];
+                $pass1 = $_POST['pass1'];
+                $pass2 = $_POST['pass2'];
+                if($_SESSION['user']['mat_khau']!=$pass){
+                    $thongbao = "Mật khẩu cũ không đúng !";
+                }else if(strlen($pass1) < 5){
+                    $thongbao = "Mật khẩu phải lớn hơn 5 ký tự";
+                }else if($pass1 != $pass2){
+                    $thongbao = "Mật khẩu không trùng khớp !";
+                }else{
+                    update_matkhaunew($pass2,$id);
+                    $thongbao = "Thay đổi mật khẩu thành công !";
+              
+                }
+                
+            }
+            include 'site/account/doimatkhau.php';
             break;
         default:
             include 'site/home.php';
