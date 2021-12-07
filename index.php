@@ -219,9 +219,9 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
 
                 foreach ($_SESSION['cart'] as $cart) {
                     insert_billDetail($cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $cart[6], $idbill);
-                    subpro_hoanghoa($cart[4], $cart[0], $cart[5]);
+                    // subpro_hoanghoa($cart[4], $cart[0], $cart[5]);
+                    subpro_hoadon($cart[5], $cart[4], $cart[0]);
                 }
-
 
                 $_SESSION['cart'] = [];
 
