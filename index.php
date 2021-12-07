@@ -228,7 +228,6 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     
                 }
 
-
                 $_SESSION['cart'] = [];
 
             }
