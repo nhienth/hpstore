@@ -28,7 +28,7 @@
                 }
             
             ?>
-              <div class="function-title">Sửa tài khoản</div>
+              <div class="function-title">Sửa tin tức</div>
               
             <div class="form-funtcion">
                 <form action="index.php?act=update-tt" method="post" class="form-add--product" enctype="multipart/form-data">
