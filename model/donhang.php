@@ -51,5 +51,15 @@ function loadAll_byKH_hoadon($ma_khachhang) {
     return pdo_query($sql);
 }
 
+function subpro_donhang($ma_hanghoa, $size, $so_luong) {
+    $sql = "UPDATE model_hang_hoa SET so_luong = so_luong - '".$so_luong."' WHERE 
+    size LIKE '%".$size."%' AND ma_hanghoa =".$ma_hanghoa;
+    pdo_execute($sql);
+}
+
+function check_donhang(){
+    $sql = "SELECT count(*) FROM hoa_don WHERE trang_thai = 0";
+    return pdo_query_value($sql);
+}
 
 ?>
