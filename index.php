@@ -117,32 +117,38 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             if(isset($_POST['laylaimk'])){
                 $user = $_POST['user'];
                 $email = $_POST['email'];
-                $check = laymk($user,$email);
-
-                if(is_array($check)){
-                    $thongbao = "Mật khẩu đã được gửi đến email: $email !";
-                }else {
-                    $thongbao = "Tài khoản không tồn tại";
+                if($user == "") {
+                    $thongbao = "Vui lòng nhập tên đăng nhập !";
+                }else if($email == "") {
+                    $thongbao = "Vui lòng nhập email !";
+                }else{
+                    $check = laymk($user,$email);
+                    if(is_array($check)){
+                        $thongbao = "Mật khẩu đã được gửi đến email :
+                        ".'<strong>'.$email.'</strong>';
+                    }else {
+                        $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra lại thông tin !";
+                    }
                 }
             }
             include "site/account/forget-pass.php";
-                break;
+            break;
         case 'dangnhap' :
             if(isset($_POST['dangnhap'])){
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                $checkuser = checkuser($user,$pass);
-                if(is_array($checkuser)){
-                    $_SESSION['user'] = $checkuser;
-                    header("location: index.php");
-                }elseif(exist_khachhang($user) != $user){
-                    $thongbao ="Tên đăng nhập không chính xác ! Vui lòng nhập lại !";
-                }elseif(exitmk_khachhang($pass) != $pass){
-                    $thongbao ="Mật khẩu không chính xác ! Vui lòng nhập lại !";
-                }
-                else {
-                    $thongbao = "Tài khoản không tồn tại";
-                    
+                if($user == "") {
+                    $thongbao = "Vui lòng nhập tên đăng nhập !";
+                }else if($pass == "") {
+                    $thongbao = "Vui lòng nhập mật khẩu !";
+                }else{
+                    $checkuser = checkuser($user,$pass);
+                    if(is_array($checkuser)){
+                        $_SESSION['user'] = $checkuser;
+                        header("location: index.php");
+                    }else {
+                        $thongbao = "Thông tin đăng nhập không chính xác !";
+                    }
                 }
             }
             include 'site/account/login.php';
@@ -247,22 +253,32 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
         case 'doimatkhau' :
             if(isset($_POST['doimatkhau'])){
                 $id = $_SESSION['user']['ma_khachhang'];
-                
+                $user = $_SESSION['user']['ten_dangnhap'];
                 $pass = $_POST['pass'];
                 $pass1 = $_POST['pass1'];
                 $pass2 = $_POST['pass2'];
-                if($_SESSION['user']['mat_khau']!=$pass){
-                    $thongbao = "Mật khẩu cũ không đúng !";
-                }else if(strlen($pass1) < 5){
-                    $thongbao = "Mật khẩu phải lớn hơn 5 ký tự";
-                }else if($pass1 != $pass2){
-                    $thongbao = "Mật khẩu không trùng khớp !";
+                if($pass == "") {
+                    $thongbao = "Vui lòng nhập mật khẩu hiện tại !";
+                }else if($pass1 == "") {
+                    $thongbao = "Vui lòng nhập mật khẩu mới !";
+                }else if($pass2 == "") {
+                    $thongbao = "Vui lòng nhập lại mật khẩu mới !";
                 }else{
-                    update_matkhaunew($pass2,$id);
-                    $thongbao = "Thay đổi mật khẩu thành công !";
-              
+                    if($_SESSION['user']['mat_khau']!=$pass){
+                        $thongbao = "Mật khẩu cũ không đúng !";
+                    }else if(strlen($pass1) < 5){
+                        $thongbao = "Mật khẩu phải lớn hơn 5 ký tự";
+                    }else if($pass1 != $pass2){
+                        $thongbao = "Mật khẩu mới không trùng khớp !";
+                    }else{
+                        update_matkhaunew($pass2,$id);
+                        $_SESSION['user'] = checkuser($user,$pass2);
+                        $thongbao = "Thay đổi mật khẩu thành công !";
+                        $pass = "";
+                        $pass1 = "";
+                        $pass2 = "";
+                    }
                 }
-                
             }
             include 'site/account/doimatkhau.php';
             break;

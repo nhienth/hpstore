@@ -14,35 +14,13 @@
         <div class="login-title--else">
           Nếu chưa có tài khoản vui lòng đăng ký tại đây
         </div>
-        <!-- <form action="index.php?act=dangki" class="login-form"  enctype="multipart/form-data">
-          <label for="name">Họ và tên<span class="red">*</span></label>
-          <input type="text" id="name" name="hoten" />
-          <label for="email">Email<span class="red">*</span></label>
-          <input type="email" id="email" name="email" />
-          <label for="user">Tên đăng nhập<span class="red">*</span></label>
-          <input type="text" id="user" name="user" />
-          <label for="pass">Mật khẩu<span class="red">*</span></label>
-          <input type="password" id="pass" name="pass" />
-          <label for="">Hình ảnh<span class="red">*</span></label>
-          <input type="file" id="" name="avatar" /><br>
-          <label for="">Số điện thoại<span class="red">*</span></label>
-          <input type="text" id="" name="phone" />
-          <label for="">Địa chỉ<span class="red">*</span></label>
-          <input type="text" id="" name="address" />
-        
-          <div class="box-button">
-            <button class="btn-submit" name="btn-add" type="submit">Đăng ký</button>
-            <button class="btn-login" name="dangnhap">Đăng nhập</button>
-          </div>
-        </form> -->
+    
         <?php
-              
               if(isset($thongbao) && ($thongbao != "")) {
-              echo ' <div class="notification margin-bottom-20"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+                echo '<div class="thongbaos"><i class="fas fa-bell"></i> '.$thongbao.'</div>';
               }
-          
-          ?>
-        <form action="index.php?act=dangki" method="post" class="login-form" enctype="multipart/form-data">
+        ?>
+              <form action="index.php?act=dangki" method="post" class="login-form" enctype="multipart/form-data">
                     <label for="tendn">Tên đăng nhập<span class="red">*</span></label>
                     <input type="text" name="user" id="tendn" value="<?php if(isset($user)) echo $user ?>">
                     <label for="pass">Mật khẩu<span class="red">*</span></label>
@@ -59,13 +37,13 @@
                     <input type="text" name="address" id="address" value="<?php if(isset($address)) echo $address ?>">
                     <!-- <input type="submit" name="btn-add" value="Thêm tài khoản" > -->
                     <div class="box-button">
-                    <button class="btn-submit" name="btn-add" type="submit">Đăng ký</button>
-                    <button class="btn-login" name="dangnhap">
-                      <a href="index.php?act=dangnhap">Đăng nhập</a> 
-                    </button>
-          </div>
+                      <button class="btn-submit" name="btn-add" type="submit">Đăng ký</button>
+                      <button class="btn-login" name="dangnhap">
+                        <a href="index.php?act=dangnhap">Đăng nhập</a> 
+                      </button>
+                    </div>
 
-              </form>
+            </form>
         
       </div>
     </section>

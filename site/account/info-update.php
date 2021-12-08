@@ -54,7 +54,7 @@ if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
         <?php
               
               if(isset($thongbao) && ($thongbao != "")) {
-              echo ' <div class="notification"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+              echo ' <div class="notification"><i class="fas fa-bell"></i> '.$thongbao.'</div>';
               }
           
           ?>

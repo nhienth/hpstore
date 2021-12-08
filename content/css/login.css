@@ -307,3 +307,8 @@ td {
   object-fit: cover;
   margin: 0 auto;
 }
+.thongbaos {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: red;
+}
