@@ -28,7 +28,7 @@
                 }
             
             ?>
-              <div class="function-title">Thêm tài khoản</div>
+              <div class="function-title">Cập nhật tài khoản</div>
               
             <div class="form-funtcion">
                 <form action="index.php?act=update-acc" method="post" class="form-add--product" enctype="multipart/form-data">
