@@ -105,7 +105,11 @@
           <div class="left-emelent">
             <div class="left-element--title">Quản lý thống kê</div>
             <div class="left-element--content">
-              <a href="index.php?act=list-tk"><i class="fas fa-chart-pie"></i> Thống kê</a>
+            <div class="more-function">
+                <a href="index.php?act=tk-hanghoa">Hàng hóa</a>
+                <a href="index.php?act=tk-donhang">Đơn hàng</a>
+              </div>
+              <a href="index.php?act=tk-hanghoa"><i class="fas fa-chart-pie"></i> Thống kê</a>
             </div>
           </div>
         </div>

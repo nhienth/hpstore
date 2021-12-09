@@ -86,6 +86,18 @@ $countBill = countAll_hoadon();
                 </div>
               </div>
             </div>
+
+            <?php 
+            
+            if(isset($newbill) && ($newbill > 0)) {
+              echo '
+              <div class="noti-bill">
+                <i class="fas fa-bell"></i> Bạn có '.$newbill.' đơn hàng mới cần xử lý
+              </div>
+              ';
+            }
+            
+            ?>
           </div>
         </div>
       </div>

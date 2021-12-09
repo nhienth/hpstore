@@ -124,6 +124,9 @@
   text-align: left !important;
   padding: 20px 50px !important;
 }
+.table-padding {
+  padding: 20px 50px !important;
+}
 .btn-chart a {
   display: inline-block;
   color: white;
@@ -184,4 +187,46 @@
 }
 .td-witdh15 {
   width: 10%;
+}
+.noti-bill {
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 18px;
+  padding: 15px 10px;
+  background-color: white;
+  border-radius: 3px;
+  color: #112d6b;
+  border-left: 3.5px solid #112d6b;
+  box-shadow: 3px 3px 10px gray;
+}
+.form-filter--bill select {
+  padding: 6px;
+  outline: none;
+  border: 1px solid darkgray;
+  border-radius: 1px;
+}
+.form-filter--bill button {
+  display: inline-block;
+  padding: 15px;
+  transform: translateY(-4px);
+  background-color: white;
+  color: #4c73dd;
+  border: 1px solid darkgray;
+  outline: none;
+  position: relative;
+  border-radius: 1px;
+  transition: all 0.3s linear;
+}
+.form-filter--bill button:hover {
+  background-color: #4c73dd;
+  color: white;
+}
+.form-filter--bill button::before {
+  content: "\f0dc";
+  font-family: Fontawesome;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

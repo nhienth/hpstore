@@ -26,7 +26,7 @@ if(is_array($hanghoa)) extract($hanghoa);
             <?php
               
                 if(isset($thongbao) && ($thongbao != "")) {
-                echo ' <div class="thongbao"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+                echo ' <div class="thongbao"><i class="fas fa-bell"></i> '.$thongbao.'</div>';
                 }
             
             ?>

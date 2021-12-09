@@ -16,18 +16,16 @@
         </div>
         <form action="index.php?act=dangnhap" method="post" class="login-form" enctype="multipart/form-data">
           <label for="user">Tên đăng nhập<span class="red">*</span></label>
-          <input type="text" id="user" name="user" placeholder="Tên đăng nhập" />
+          <input type="text" id="user" name="user" value="<?php if(isset($user)) echo $user ?>" placeholder="Tên đăng nhập" />
           <label for="pass">Mật khẩu<span class="red">*</span></label>
           <input type="password" id="pass" name="pass" placeholder="Mật khẩu" />
           <button class="btn-submit" type="submit" name="dangnhap" >Đăng nhập</button>
         </form>
         <?php
-              
               if(isset($thongbao) && ($thongbao != "")) {
-              echo ' <div class="notification margin-bottom-20"><i class="far fa-check-circle"></i> '.$thongbao.'</div>';
+                echo '<div class="thongbaos"><i class="fas fa-bell"></i> '.$thongbao.'</div>';
               }
-          
-          ?>
+        ?>
         <div class="login-register">
           Bạn chưa có tài khoản. Đăng ký <a href="index.php?act=dangki">tại đây</a>.
         </div>

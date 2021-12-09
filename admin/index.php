@@ -9,6 +9,7 @@
     include "../model/thongke.php";
     include "../model/donhang.php";
     include "header.php";
+    $newbill = check_donhang();
 
     if(isset($_GET['act'])){
         $act=$_GET['act'];
@@ -38,6 +39,7 @@
                     foreach ($listhanghoa as $hanghoa) {
                         extract($hanghoa);
                         deleteModel_hanghoa($ma_hanghoa);
+                        deleteCmt_hanghoa($ma_hanghoa);
                     }
                     deletePro_by_danhmuc($_GET['id']);
                     delete_danhmuc($_GET['id']);
@@ -368,10 +370,19 @@
                 }
                 include "tintuc/edit.php";
                 break;
-            case 'list-tk':
+            case 'tk-hanghoa':
                 $listthongke = loadAll_thongke();
                 $thongke_hanghoa = thongke_hanghoa();
                 include 'thongke/list.php';
+                break;
+            case 'tk-donhang':
+                if(isset($_POST['btn-filter'])) {
+                    $value = $_POST['filterbill'];
+                    $listthongke = thongke_donhang($value);
+                }else{
+                    $listthongke = thongke_donhang(0);
+                }
+                include 'thongke/billsta.php';
                 break;
             case 'chart-tk':
                 $listthongke = loadAll_thongke();
