@@ -126,6 +126,8 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                     if(is_array($check)){
                         $thongbao = "Mật khẩu đã được gửi đến email :
                         ".'<strong>'.$email.'</strong>';
+                        $user = "";
+                        $email = "";
                     }else {
                         $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra lại thông tin !";
                     }
