@@ -37,8 +37,7 @@ function load_ten_dm($id){
 
 function loadNew_hanghoa() {
     $sql = "SELECT * FROM hang_hoa ORDER BY ma_hanghoa DESC LIMIT 6";
-    $listhanghoa = pdo_query($sql);
-    return $listhanghoa;
+    return pdo_query($sql);
 }
 
 function loadGiay_hanghoa() {
@@ -210,6 +209,11 @@ function loadall_sanpham_top10(){
     $sql="select * from hang_hoa where 1 order by so_luot_xem desc limit 0,5"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
+}
+
+function check_model_hanghoa() {
+    $sql = "SELECT * FROM model_hang_hoa WHERE so_luong = 0";
+    return pdo_query($sql);
 }
 
 ?>

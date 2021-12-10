@@ -40,7 +40,7 @@
         <img src="./content/images/home/feature_cate_3.jpg" />
       </div>
     </section>
-<!-- -----------------------------Load  6 sản phẩm mới nhất ----------------->
+
     <section class="awe-section3 width-normal">
 
     <?php
@@ -64,7 +64,7 @@
     
     ?>
     </section>
-<!-- -----------------------------END ------------------------------------->
+
 
     <section class="awe-section4 width-normal">
       <div class="section4-img">

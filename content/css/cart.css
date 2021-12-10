@@ -198,3 +198,14 @@
   height: 30px;
   padding: 0 5px;
 }
+.a-fc {
+  background-color: white;
+  color: black;
+  padding: 3px 5px;
+  border-radius: 2px;
+  transition: all 0.2s linear;
+  border: 1px solid darkgray;
+}
+.a-fc:hover {
+  background-color: lightgray;
+}

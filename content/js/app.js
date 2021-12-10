@@ -30,9 +30,36 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 // -----------------------------------------------------------------------------
+
+function changeSize(inSize) {
+  var quantily = inSize.nextElementSibling.nextElementSibling;
+  console.log(quantily.value);
+  var statusElement = document.querySelector("#status-pro");
+  // var buttonBuy = document.getElementsByName("add-cart");
+  var buttonBuy = document.getElementById("add-cart");
+  var buttonBuyFC = buttonBuy.firstElementChild;
+  var buttonBuyLC = buttonBuy.lastElementChild;
+  if (quantily.value == 10) {
+    statusElement.innerHTML = "Hết hàng";
+    buttonBuy.style.backgroundColor = "#65779f";
+    buttonBuy.style.userSelect = "none";
+    buttonBuy.style.cursor = "default";
+    buttonBuyFC.innerHTML = "Hết hàng";
+    buttonBuyLC.innerHTML = "Liên hệ 0866100339";
+    buttonBuy.removeAttribute("name");
+    console.log(buttonBuy);
+  } else {
+    statusElement.innerHTML = "Chỉ còn " + quantily.value + " sản phẩm";
+    buttonBuy.style.backgroundColor = "";
+    buttonBuyFC.innerHTML = "Mua ngay";
+    buttonBuyLC.innerHTML = "Giao hàng tận nơi";
+    buttonBuy.style.cursor = "pointer";
+    buttonBuy.setAttribute("name", "add-cart");
+    console.log(buttonBuy);
+  }
+}
 var sizeElement = document.querySelector(".size-checked");
-var labelText = sizeElement.lastElementChild.innerHTML;
-console.log(labelText);
+var labelText = sizeElement.firstElementChild.nextElementSibling.innerHTML;
 if (labelText.length >= 3) {
   sizeElement.style.marginRight = "30px";
 }

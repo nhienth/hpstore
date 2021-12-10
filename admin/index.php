@@ -10,6 +10,7 @@
     include "../model/donhang.php";
     include "header.php";
     $newbill = check_donhang();
+    $check_kho = check_model_hanghoa();
 
     if(isset($_GET['act'])){
         $act=$_GET['act'];
@@ -273,7 +274,6 @@
                     $trang_thai = $_POST['trang_thai'];
                     update_hoadon($ma_hoadon, $trang_thai);
                 }
-                // header('Location : index.php?act=listhd');
                 $listhoadon = loadAll_hoadon();
                 include "hoadon/list.php";
                 break;
