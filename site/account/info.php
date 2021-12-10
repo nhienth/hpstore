@@ -52,7 +52,8 @@ if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
                   <th>Chuyển đến</th>
                   <th>Tổng tiền</th>
                   <th>Tình trạng đơn hàng</th>
-                  <th>Xem chi tiết</th>
+                  <th>Chi tiết</th>
+                  <th>Khác</th>
                 </tr>
                 
                 <?php
@@ -61,20 +62,28 @@ if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
                     foreach ($listbill as $bill) {
                       extract($bill);
                       $details = "index.php?act=mybill&&id=".$ma_hoadon;
-
-                    if($trang_thai == 0){
-                      $trang_thai = "Chờ xử lý";
-                      $bgc = "sandybrown";
-                    }else if($trang_thai == 1){
-                      $trang_thai = "Đã xác nhận";
-                      $bgc = "royalblue";
-                    }else if($trang_thai == 2){
-                      $trang_thai = "Đang giao hàng";
-                      $bgc = "mediumturquoise";
-                    }else{
-                      $trang_thai = "Đã hoàn thành";
-                      $bgc = "lightseagreen";
-                    }
+                      $khac = "";
+                      if($trang_thai == 0){
+                        $trang_thai = "Chờ xử lý";
+                        $khac = "Hủy đơn hàng";
+                      }else if($trang_thai == 1){
+                        $trang_thai = "Đã xác nhận";
+                      }else if($trang_thai == 2){
+                        $trang_thai = "Đang giao hàng";
+                      }else if($trang_thai == 3){
+                        $trang_thai = "Đã hoàn thành";
+                      }else{
+                        $trang_thai = "Đã hủy đơn";
+                        $khac = "Đặt lại";
+                      }
+                      $khac_a = "";
+                      if($khac == "Hủy đơn hàng") {
+                        $khac_href = "index.php?act=huy_don&&id=".$ma_hoadon;
+                        $khac_a = '<a href="'.$khac_href.'" class="a-fc">'.$khac.'</a>';
+                      }else if($khac == "Đặt lại"){
+                        $khac_href = "index.php?act=dat_lai&&id=".$ma_hoadon;
+                        $khac_a = '<a href="'.$khac_href.'" class="a-fc">'.$khac.'</a>';
+                      }
                       echo '
                       <tr>
                         <td>'.$ma_hoadon.'</td>
@@ -82,14 +91,15 @@ if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
                         <td>'.$dia_chi.'</td>
                         <td>'.number_format($tong_tien + $van_chuyen).'đ</td>
                         <td>'.$trang_thai.'</td>
-                        <td><a href="'.$details.'" class="a-edit"><i class="fas fa-eye"></i></a></td>
+                        <td><a href="'.$details.'" class="a-fc">Xem</a></td>
+                        <td>'.$khac_a.'</td>
                       </tr>
                       ';
                     }
                 }else{
                   echo '
                   <tr>
-                    <td colspan="5">Không có đơn hàng nào</td>
+                    <td colspan="7">Không có đơn hàng nào</td>
                   </tr>
                   ';
                 }

@@ -152,6 +152,9 @@
 .lightseagreen {
   background-color: #1cc98a;
 }
+.dimgray {
+  background-color: #6f6e6e;
+}
 .bill-form select {
   border-radius: 2px;
   border: 1px solid lightgray;
@@ -199,6 +202,14 @@
   color: #112d6b;
   border-left: 3.5px solid #112d6b;
   box-shadow: 3px 3px 10px gray;
+}
+.noti-bill a {
+  color: #e64e39;
+  margin-left: 70px;
+  transition: all 0.2s linear;
+}
+.noti-bill a:hover {
+  text-decoration: underline;
 }
 .form-filter--bill select {
   padding: 6px;

@@ -57,7 +57,8 @@
             <?=$price?>đ</div>
           <p class="details-note">* Giá sản phẩm chưa bao gồm VAT</p>
           <p class="details-condition">
-            <span>Tình trạng : </span> Chỉ còn <?=$sumSL?> sản phẩm
+            <span>Tình trạng : </span>
+            <span id="status-pro">Chỉ còn <?=$sumSL?> sản phẩm</span>
           </p>
           <form action="index.php?act=addtocart" method="post">
             <input type="hidden" name="ma_hanghoa" value="<?=$ma_hanghoa?>">
@@ -74,8 +75,9 @@
                     extract($model);
                 ?>
                     <div class="size-checked">
-                        <input type="radio" class="variant-0" id="<?=$size?>" value="<?=$size?>" name="size" />
+                        <input type="radio" class="variant-0" id="<?=$size?>" value="<?=$size?>" name="size" onchange="changeSize(this)" />
                         <label for="<?=$size?>"><?=$size?></label>
+                        <input type="hidden" id="sl_model" value="<?=$so_luong?>">
                     </div>
                 <?php } ?>
   
@@ -100,7 +102,7 @@
               </div>
             </div>
             <div class="details-buy">
-              <button type="submit" name="add-cart">
+              <button type="submit" name="add-cart" id="add-cart">
                 <span class="txt-main">Mua ngay</span>
                 <span class="txt-sub">Giao hàng tận nơi</span>
               </button>

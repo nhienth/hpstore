@@ -11,10 +11,10 @@ if(is_array($hanghoa)) extract($hanghoa);
             <div class="admin-info">
               <?php 
                   if(isset($_SESSION['user'])) {
-                    $hinh = $_SESSION['user']['hinh'];
+                    $hinhdd = $_SESSION['user']['hinh'];
                     echo '
                     <div class="admin-name">'.$_SESSION['user']['ten_dangnhap'].'</div>
-                    <div class="admin-img"><img src="../uploads/'.$hinh.'"></div>
+                    <div class="admin-img"><img src="../uploads/'.$hinhdd.'"></div>
                     ';
                   }
               ?>

@@ -96,6 +96,21 @@ $countBill = countAll_hoadon();
               </div>
               ';
             }
+
+            if(isset($check_kho)) {
+                foreach ($check_kho as $pro) {
+                  extract($pro);
+                  $ten_hanghoa = loadTen_hanghoa($ma_hanghoa);
+                  $edit_a = "index.php?act=edit-SL&&id=".$ma_model;
+                  echo '
+                  <div class="noti-bill" style="margin-top:30px">
+                    <i class="fas fa-bell"></i>
+                    Sản phẩm '.$ten_hanghoa.' - '.$size.' đã hết hàng !
+                    <a href="'.$edit_a.'"">Cập nhật</a>
+                  </div>
+                  ';
+                }
+            }
             
             ?>
           </div>

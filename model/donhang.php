@@ -62,4 +62,14 @@ function check_donhang(){
     return pdo_query_value($sql);
 }
 
+function huydon_donhang($ma_hoadon) {
+    $sql = "UPDATE hoa_don SET trang_thai = 4 WHERE ma_hoadon=".$ma_hoadon;
+    pdo_execute($sql);
+}
+
+function delete_hoadon($ma_hoadon) {
+    $sql = "DELETE FROM hoa_don WHERE ma_hoadon=".$ma_hoadon;
+    pdo_execute($sql);
+}
+
 ?>

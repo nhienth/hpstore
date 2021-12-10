@@ -249,6 +249,27 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
             }
             include 'site/account/mybill.php'; 
             break;
+        case 'huy_don' :
+            if(isset($_GET['id']) && ($_GET['id'] >0)) {
+                huydon_donhang($_GET['id']);
+            }
+            $listbill = loadAll_byKH_hoadon($_SESSION['user']['ma_khachhang']);
+            include "site/account/info.php";
+            break;
+        case 'dat_lai' :
+            if(isset($_GET['id']) && ($_GET['id'] >0)) {
+                $_SESSION['cart'] = [];
+                $productList = loadAll_billDetail($_GET['id']);
+                foreach ($productList as $pro) {
+                    extract($pro);
+                    $productAdd = [$ma_hanghoa, $ten_hanghoa, $hinh, $gia, $size, $so_luong,$thanh_tien];
+                    array_push($_SESSION['cart'], $productAdd);
+                    $_SESSION['cart'];
+                }
+                delete_hoadon($_GET['id']);
+            }
+            header('Location: ./site/cart/check-out.php');
+            break;
         case 'doimatkhau' :
             if(isset($_POST['doimatkhau'])){
                 $id = $_SESSION['user']['ma_khachhang'];
