@@ -78,8 +78,9 @@ if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
                       }
                       $khac_a = "";
                       if($khac == "Hủy đơn hàng") {
+                        $quiz = 'onclick="return confirm(\'Xác nhận hủy đơn hàng ?\')"';
                         $khac_href = "index.php?act=huy_don&&id=".$ma_hoadon;
-                        $khac_a = '<a href="'.$khac_href.'" class="a-fc">'.$khac.'</a>';
+                        $khac_a = '<a '.$quiz.' href="'.$khac_href.'" class="a-fc">'.$khac.'</a>';
                       }else if($khac == "Đặt lại"){
                         $khac_href = "index.php?act=dat_lai&&id=".$ma_hoadon;
                         $khac_a = '<a href="'.$khac_href.'" class="a-fc">'.$khac.'</a>';

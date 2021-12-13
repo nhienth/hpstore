@@ -10,7 +10,7 @@
     }
 
     function loadHome_tintuc() {
-        $sql = "SELECT * FROM tin_tuc ORDER BY ma_tintuc DESC LIMIT 6";
+        $sql = "SELECT * FROM tin_tuc ORDER BY ma_tintuc DESC LIMIT 4";
         $listtintuc = pdo_query($sql);
         return $listtintuc;
     }

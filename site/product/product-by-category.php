@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="filter-title margin-top-20">
-            <p class="filter-filer">Top 5 yêu thích</p>
+            <p class="filter-filer">Top sản phẩm yêu thích</p>
           </div>
           <div class="topViews-box">
               <?php
@@ -141,7 +141,7 @@
                     <?php
 
                     if($giam_gia > 0) {
-                        echo '
+                        echo '  
                         <div class="item-price">
                         <span class="price-off">'.number_format($don_gia * (100 - $giam_gia)*0.01).'đ</span>
                         <span class="price-sale">'.number_format($don_gia).'đ</span>

@@ -39,7 +39,7 @@ function changeSize(inSize) {
   var buttonBuy = document.getElementById("add-cart");
   var buttonBuyFC = buttonBuy.firstElementChild;
   var buttonBuyLC = buttonBuy.lastElementChild;
-  if (quantily.value == 10) {
+  if (quantily.value == 0) {
     statusElement.innerHTML = "Hết hàng";
     buttonBuy.style.backgroundColor = "#65779f";
     buttonBuy.style.userSelect = "none";
@@ -49,7 +49,7 @@ function changeSize(inSize) {
     buttonBuy.removeAttribute("name");
     console.log(buttonBuy);
   } else {
-    statusElement.innerHTML = "Chỉ còn " + quantily.value + " sản phẩm";
+    statusElement.innerHTML = "Còn " + quantily.value + " sản phẩm";
     buttonBuy.style.backgroundColor = "";
     buttonBuyFC.innerHTML = "Mua ngay";
     buttonBuyLC.innerHTML = "Giao hàng tận nơi";

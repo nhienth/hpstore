@@ -36,13 +36,6 @@
                 break;
             case 'xoadm' :
                 if(isset($_GET['id'])&&($_GET['id']>0)){
-                    $listhanghoa = loadAll_by_danhmuc($_GET['id']);
-                    foreach ($listhanghoa as $hanghoa) {
-                        extract($hanghoa);
-                        deleteModel_hanghoa($ma_hanghoa);
-                        deleteCmt_hanghoa($ma_hanghoa);
-                    }
-                    deletePro_by_danhmuc($_GET['id']);
                     delete_danhmuc($_GET['id']);
                     $thongbao = "Danh mục đã được xóa !";
                 }
@@ -87,8 +80,6 @@
                 break;
             case 'delete-pro':
                 if(isset($_GET['id']) && ($_GET['id'])>0){
-                    deleteModel_hanghoa($_GET['id']);
-                    deleteCmt_hanghoa($_GET['id']);
                     delete_hanghoa($_GET['id']);
                     $thongbao ="Đã xóa sản phẩm !";
                 }

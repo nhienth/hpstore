@@ -8,14 +8,12 @@ function insert_khachhang($user, $pass, $name, $address, $phone, $email, $avatar
 
 function loadAll_khachhang(){
     $sql ="SELECT * FROM khach_hang";
-    $listkhachhang = pdo_query($sql);
-    return $listkhachhang;
+    return pdo_query($sql);
 }
 
 function loadOne_khachhang($ma_khachhang){
     $sql = "SELECT * FROM khach_hang WHERE ma_khachhang =".$ma_khachhang;
-    $khachhang = pdo_query_one($sql);
-    return $khachhang;
+    return pdo_query_one($sql);
 }
 
 function update_khachhang($user, $pass, $name, $address, $phone, $email, $role, $avatar, $ma_khachhang){
@@ -25,9 +23,8 @@ function update_khachhang($user, $pass, $name, $address, $phone, $email, $role, 
         $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."', mat_khau = '".$pass."', ho_ten = '".$name."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."', vai_tro = '".$role."' WHERE ma_khachhang =".$ma_khachhang;
     }
     pdo_execute($sql);
-  
-
 }
+
 function update_khachhang2($user,$name,$address,$phone,$email,$avatar,$ma_khachhang){
     if($avatar != ""){
         $sql = "UPDATE khach_hang SET ten_dangnhap = '".$user."',  ho_ten = '".$name."', hinh = '".$avatar."', so_dien_thoai = '".$phone."', email = '".$email."', dia_chi = '".$address."' WHERE ma_khachhang =".$ma_khachhang;
@@ -39,8 +36,7 @@ function update_khachhang2($user,$name,$address,$phone,$email,$avatar,$ma_khachh
 
 function countAll_khachhang(){
     $sql = "SELECT COUNT(*) FROM khach_hang";
-    $count = pdo_query_value($sql);
-    return $count;
+    return pdo_query_value($sql);
 }
 
 function delete_khachhang($ma_khachhang) {
@@ -62,14 +58,12 @@ function exitmk_khachhang($pass){
 
 function laymk($user,$email){
     $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' AND email = '".$email."'";
-    $lay = pdo_query_one($sql);
-    return $lay;
+    return pdo_query_one($sql);
 }
 
 function checkuser($user,$pass){
     $sql = "SELECT * FROM khach_hang WHERE ten_dangnhap = '".$user."' AND mat_khau = '".$pass."'";
-    $check = pdo_query_one($sql);
-    return $check;
+    return pdo_query_one($sql);
 }
 
 function update_matkhaunew($pass2,$id){

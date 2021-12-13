@@ -124,10 +124,16 @@ if(isset($_GET['act']) && ($_GET['act'] != "")){
                 }else{
                     $check = laymk($user,$email);
                     if(is_array($check)){
+                        // $to = $email;
+                        // $subject = "Cửa hàng bóng chuyền Hpstore";
+                        // $message = "Xin chào, ".$check['ho_ten'].", Chúng tôi nhận được yêu cầu tìm lại mật khẩu của bạn. Mật khẩu của bạn là : ".$check['mat_khau'];
+                        // mail($to ,$subject ,$message);
+                        include 'site/account/sendmail.php';
                         $thongbao = "Mật khẩu đã được gửi đến email :
                         ".'<strong>'.$email.'</strong>';
                         $user = "";
                         $email = "";
+                        
                     }else {
                         $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra lại thông tin !";
                     }

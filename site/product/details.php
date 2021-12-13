@@ -19,7 +19,7 @@
     <div class="container margin-bottom-20">
       <div class="detalils-name width-normal">
         <?=$ten_hanghoa?>
-        <a href="#">Viết đánh giá</a>
+        <a href="#cmt">Viết đánh giá</a>
       </div>
     </div>
 
@@ -58,7 +58,7 @@
           <p class="details-note">* Giá sản phẩm chưa bao gồm VAT</p>
           <p class="details-condition">
             <span>Tình trạng : </span>
-            <span id="status-pro">Chỉ còn <?=$sumSL?> sản phẩm</span>
+            <span id="status-pro">Còn <?=$sumSL?> sản phẩm</span>
           </p>
           <form action="index.php?act=addtocart" method="post">
             <input type="hidden" name="ma_hanghoa" value="<?=$ma_hanghoa?>">
@@ -127,6 +127,7 @@
           <div class="details-description--content">
             <?=$mo_ta?>
           </div>
+          <div id="cmt"></div>
           <div class="details-description--comment">
             <div class="description--comment--top">
               <?php $countC = countCP_binhluan($ma_hanghoa) ?>

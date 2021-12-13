@@ -39,19 +39,16 @@ function loadNew_hanghoa() {
     $sql = "SELECT * FROM hang_hoa ORDER BY ma_hanghoa DESC LIMIT 6";
     return pdo_query($sql);
 }
-
 function loadGiay_hanghoa() {
     $sql = "SELECT * FROM hang_hoa WHERE ma_danhmuc = 37 ORDER BY ma_hanghoa DESC LIMIT 6";
     $listhanghoa = pdo_query($sql);
     return $listhanghoa;
 }
-
 function loadAo_hanghoa() {
     $sql = "SELECT * FROM hang_hoa WHERE ma_danhmuc = 36 ORDER BY ma_hanghoa DESC LIMIT 6";
     $listhanghoa = pdo_query($sql);
     return $listhanghoa;
 }
-
 function loadPhuKien_hanghoa() {
     $sql = "SELECT * FROM hang_hoa WHERE ma_danhmuc = 35 ORDER BY ma_hanghoa DESC LIMIT 6";
     $listhanghoa = pdo_query($sql);
@@ -66,8 +63,7 @@ function loadLuuNiem_hanghoa() {
 
 function loadOne_hanghoa($ma_hanghoa){
     $sql ="SELECT * FROM hang_hoa WHERE ma_hanghoa=".$ma_hanghoa;
-    $hanghoa = pdo_query_one($sql);
-    return $hanghoa;
+    return pdo_query_one($sql);
 }
 
 function  insertSL_hanghoa($masp, $size, $so_luong){
@@ -77,8 +73,7 @@ function  insertSL_hanghoa($masp, $size, $so_luong){
 
 function loadSP_by_ID($ma_hanghoa){
     $sql = "SELECT * FROM hang_hoa HH join model_hang_hoa MDHH on MDHH.ma_hanghoa = HH.ma_hanghoa WHERE HH.ma_hanghoa =".$ma_hanghoa;
-    $listhanghoa = pdo_query($sql);
-    return $listhanghoa;
+    return pdo_query($sql);
 }
 
 function loadTen_hanghoa($ma_hanghoa){
@@ -160,8 +155,7 @@ function addViews_hanghoa($ma_hanghoa) {
 
 function selectCungloai_hanghoa($ma_danhmuc, $id) {
     $sql = "SELECT * FROM hang_hoa WHERE ma_danhmuc = ".$ma_danhmuc." AND ma_hanghoa <> ".$id." ORDER BY ma_hanghoa DESC LIMIT 5 ";
-    $listhoanghoa = pdo_query($sql);
-    return $listhoanghoa;
+    return pdo_query($sql);
 }
 
 function loadGoiy_hanghoa() {

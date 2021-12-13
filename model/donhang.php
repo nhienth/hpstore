@@ -46,7 +46,6 @@ function countAll_hoadon(){
 }
 
 function loadAll_byKH_hoadon($ma_khachhang) {
-    // $sql = "SELECT * FROM hoa_don WHERE ma_khachhang = '".$ma_khachhang."' ORDER BY ma_hoadon DESC";
     $sql = "SELECT * FROM hoa_don WHERE ma_khachhang = '".$ma_khachhang."' ORDER BY ma_hoadon DESC";
     return pdo_query($sql);
 }
