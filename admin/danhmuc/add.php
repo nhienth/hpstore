@@ -30,7 +30,7 @@
             <div class="form-funtcion">
                 <form action="index.php?act=adddm" method="post" class="form-add--product">
                     <label for="">Mã danh mục</label>
-                    <input type="text" disabled placeholder="AUTO NUMBER" >
+                    <input type="text" disabled placeholder="Auto number" >
                     <label for="">Tên danh mục</label>
                     <input type="text" name="tenloai" id="" value="<?php if(isset($ten_danhmuc)) echo $ten_danhmuc ?>">
                     <!-- <button type="submit" name="themmoi" value="Thêm danh mục"> -->

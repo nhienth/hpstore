@@ -78,7 +78,15 @@
                 </div>
                 <!-- <div class="money--into">Thành tiền : 650.000đ</div> -->
                 <div class="money-button margin-top">
-                    <button class="btn-pay"><a href="index.php?act=checkout" class="white">Thanh toán ngay</a></button>
+                    <?php
+                    
+                    if(isset($_SESSION['user'])) {
+                        echo '<button class="btn-pay"><a href="index.php?act=checkout" class="white">Thanh toán ngay</a></button>';
+                    }else{
+                        echo '<button class="btn-pay"><a href="index.php?act=dangnhap" class="white">Đăng nhập để thanh toán</a></button>';
+                    }
+                    ?>
+                    
                     <a href="index.php" class="btn-ctn">Tiếp tục mua hàng</a>
                 </div>
             </div>
